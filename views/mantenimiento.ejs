@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('includes/head') %>
+    <title>Este es el index</title>
+  </head>
+  <body>
+    <div class="micontenedor">
+      <div class="mirow">
+        <div class="col100">
+          <div class="b1 br4 bc-eee bg-eee tc-333">
+            <div class="micontenedor">
+              <button type="button" class="btn btn-primary mt15 mb15" data-toggle="modal" data-target="#modalAgregarPersona">
+                Agregar
+              </button>
+              <div class="mirow">
+                <div class="col33">
+
+                </div>
+                <div class="col33">
+                  <select id="limit" class="form-control" name="limit">
+                    <option value="10">10</option>
+                    <option value="100">100</option>
+                    <option value="1000">1000</option>
+                  </select>
+                </div>
+                <div class="col33">
+                  <input type="text"  class="form-control" name="filtro" value="" placeholder="Buscar">
+                </div>
+              </div>
+              <table border="1" class="mb15">
+                <thead>
+                  <tr class="bg-444 tc-eee">
+                    <td class="p2">Id</td>
+                    <td class="p2">Nombre</td>
+                    <td class="p2">Cel</td>
+                    <td class="p2">Marca</td>
+                    <td class="p2">Serial</td>
+                    <td class="p2">Observaciones</td>
+                    <td class="p2">Precio</td>
+                    <td class="p2">Whats</td>
+                    <td class="p2">PDF</td>
+                    <td class="p2">Del</td>
+                  </tr>
+                </thead>
+                <tbody id="tbody-clientes">
+                  <!--ajax-->
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalAgregarPersona" tabindex="-1" role="dialog" aria-labelledby="modalAgregarPersona" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title tc-333">Agregar Mantenimiento</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <form id="form_guardarPersona" class="" action="guardarPersona" method="post">
+            <div class="modal-body">
+              <div class="tc-333">
+                <div class="mirow">
+                  <div class="col25">
+                    <input id="nombre" class="form-control" type="text" name="nombre" value="" placeholder="Nombre">
+                  </div>
+                  <div class="col25">
+                    <input id="cel" class="form-control" type="number" name="cel" value="" placeholder="Cel">
+                  </div>
+                  <div class="col25">
+                    <input id="marca" class="form-control" type="text" name="marca" value="" placeholder="Marca">
+                  </div>
+                  <div class="col25">
+                    <input id="serial" class="form-control" type="text" name="serial" value="" placeholder="Serial">
+                  </div>
+                </div>
+                <div class="mirow">
+                  <div class="col100">
+                    <textarea id="observaciones" class="form-control" name="observaciones" rows="4" cols="80" placeholder="Observaciones"></textarea>
+                  </div>
+                </div>
+                <div class="mirow">
+                  <div class="col50 right tc-666">
+                    Precio $
+                  </div>
+                  <div class="col50">
+                    <input id="precio" class="form-control" type="number" name="precio" value="" placeholder="Precio">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="dialog-confirm" class="oculto" title="Alerta!">
+      <div class="mirow">
+        <div class="col10 center">
+          <i class="fa fa-exclamation-triangle orange f45" aria-hidden="true"></i>
+        </div>
+        <div class="col90">
+          <div class=""><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>No prodrá recuperar los datos eliminados. <br>Desea Continuar?</div>
+        </div>
+      </div>
+    </div>
+
+
+    <%- include('includes/scripts') %>
+    <script type="text/javascript" src="../js/miscript_mantenimiento.js"></script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include('includes/head') %>
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="login-container">
+        <form class="login-form" id="formlogin">
+            <h2 class="tc-333">Iniciar Sesión</h2>
+            <div class="input-group">
+                <label class="tc-aaa" for="username">Usuario</label>
+                <input type="text" id="username" name="username" required value="">
+            </div>
+            <div class="input-group">
+                <label class="tc-aaa" for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required value="">
+            </div>
+            <button type="submit">Ingresar</button>
+        </form>
+    </div>
+
+    <%- include('includes/scripts') %>
+    <script type="text/javascript" src="../js/login.js"></script>
+</body>
+</html>

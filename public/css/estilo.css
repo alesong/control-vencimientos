@@ -1,0 +1,238 @@
+body{
+  background-color: #333;
+  color: #ccc;
+}
+#box-consultas{
+  padding-bottom: 400px;
+}
+.borde0{border:none;}
+.borde1{border:solid 1px #c7e1d6;}
+.borde2{border:solid 2px #c7e1d6;}
+.borde3{border:solid 3px #c7e1d6;}
+.borde1,.borde2,.borde3{border-radius: 6px;}
+.borde1,.borde2,.borde3{background-color: #fff;}
+
+.encabezado-ficha-datos{
+  color: #2f6661;
+  background-color: #c7e1d6;
+  text-align: center;
+  border-radius: 4px 4px 0px 0px;
+}
+.encabezado-ficha-datos-left{
+  color: #2f6661;
+  background-color: #c7e1d6;
+  border-radius: 4px 4px 0px 0px;
+  padding-left:15px;
+}
+
+.dato-ficha-datos{
+  color: #444;
+  text-align: center;
+}
+.bg-perfil{
+  background-color: #bed8d7;
+}
+.bg-propietario{
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.bg-anamnesicos{
+  background-color: #ebf8f8;
+  margin-top: -30px;
+}
+.bg-tabla-pacientes{
+  padding: 30px 0px;
+  background-color: #ebf8f8;
+}
+.encabezado-datos-propietario{
+  background-color: #eee;
+  margin: -15px;
+  padding: 15px;
+}
+.bg-encabezado-consultas-up{
+  background-color: #448eba;
+  color: #FFF;
+  border-radius: 4px 4px 4px 4px;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+}
+.bg-encabezado-consultas-down{
+  background-color: #448eba;
+  color: #FFF;
+  border-radius: 4px 4px 4px 4px;
+  padding: 5px 15px 5px 15px;
+  cursor: pointer;
+}
+.bg-responsable-modal{
+  background-color: #58a2ab;
+  margin: -15px -30px 0px -30px;
+  padding: 30px;
+  color: #dff0ff;
+}
+.bg-celo{
+    background-color: ;
+    margin: 15px -15px 0px -15px;
+    padding: 0px 15px 0px 15px;
+    display: none;
+}
+.fuxia{
+  color:#b95faf;
+}
+.fa-chevron-down,.fa-chevron-up{
+  position: absolute;
+  right: 0;
+  margin-right: 30px;
+}
+.areadetexto{
+  border: none;
+}
+.areadetextoexamen{
+  width: 50%;
+  box-shadow: 0px 0px;
+  font-size: 30px;
+  padding: 0px;
+  border: 0px none;
+  text-align: center;
+}
+.footer_consulta_up{
+  background-color: #eee;
+  padding: 15px;
+  height: 45px;
+  cursor: pointer;
+  margin-top: 100px;
+}
+.footer_consulta_up i{
+
+}
+#ul_resultados{
+  position: absolute;
+  background-color: #FFF;
+  color:#444;
+  cursor:pointer;
+  border: solid #58a2ab;
+  border-radius: 0px 0px 4px 4px;
+}
+#ul_resultados li:hover{
+  background-color: #8bd2db;
+}
+#n_ul_resultados{
+  position: absolute;
+  background-color: #FFF;
+  color:#444;
+  cursor:pointer;
+  border: solid #58a2ab;
+  border-radius: 0px 0px 4px 4px;
+}
+#n_ul_resultados li:hover{
+  background-color: #8bd2db;
+}
+.linea-vacunas{
+  border-bottom: solid 1px #c7e1d6;
+}
+.titu-vacunas{
+  padding: 0px;
+  font-weight: 900;
+  color: #578680;
+}
+.td-form-organos{
+  padding: 0px;
+}
+.pro_check{
+  float: left;
+  padding: 5px 15px;
+  background-color: #C7E1D65E;
+  margin: 5px;
+  color: #2f6661;
+}
+
+.cb{
+  color:#fff;
+}
+.cn{
+  color:#111;
+}
+.borde1{
+  overflow: hidden;
+  transition: max-height 950ms linear;
+}
+.titu-fecha{
+  background-color: #b2fdb2;
+}
+.titu-tomador{
+  background-color: #7edbff;
+}
+.titu-ramo{
+  background-color: #ffc9c1;
+}
+.titu-cia{
+  background-color: #ffa3e8;
+}
+.titu-descripcion{
+  background-color: #ffae58;
+}
+.titu-observaciones{
+  background-color: #bf89ff;
+}
+.titu-opciones{
+  background-color: #5af94d;
+  cursor: pointer;
+}
+.td-opciones{
+  //width: 40px;
+}
+.spinner_celdas{
+  height: 20px;
+  position: absolute;
+  right: 2px;
+}
+table tr td{
+  position: relative;
+}
+.ventana-nav{
+  overflow: scroll;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.sub-ventana-nav{
+  width: 1000px;
+}
+.boxseguimientos{
+  height: 400px;
+  overflow-y: auto;
+}
+#colorPicker {
+    display: none;
+    position: absolute;
+    border: 2px solid #999898;
+    background-color: #ddd;
+    width: 60px;
+    padding: 0px 5px;
+    border-radius: 4px;
+}
+.colorOption {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.colorBox {
+  display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #333;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 7px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+input{
+  background-color: transparent;
+}
+@media only screen and (max-width: 800px) {
+  #mesesButtom{
+    display: none;
+  }

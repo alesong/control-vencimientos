@@ -1,0 +1,47 @@
+[
+{
+  "id":1,
+  "puntaje1":1,
+  "nombre1":"David Rapu",
+  "puntaje2":0,
+  "nombre2":"Aleson.gg",
+  "estrella":1,
+  "visible":1
+},
+{
+  "id":2,
+  "puntaje1":2,
+  "nombre1":"Aleson.gg",
+  "puntaje2":0,
+  "nombre2":"SHOWTI",
+  "estrella":1,
+  "visible":1
+},
+{
+  "id":3,
+  "puntaje1":5,
+  "nombre1":"Aleson.gg",
+  "puntaje2":3,
+  "nombre2":"LEO",
+  "estrella":1,
+  "visible":1
+},
+{
+  "id":4,
+  "puntaje1":0,
+  "nombre1":"Aleson.gg",
+  "puntaje2":0,
+  "nombre2":"Nombre",
+  "estrella":1,
+  "visible":1
+},
+{
+  "id":5,
+  "puntaje1":0,
+  "nombre1":"Aleson.gg",
+  "puntaje2":0,
+  "nombre2":"Nombre",
+  "estrella":1,
+  "visible":1
+}
+]

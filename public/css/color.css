@@ -1,0 +1,31 @@
+.red{color: red} .tc-red{color: red} .bc-red{border-color: red} .bg-red{background-color: red}
+.white{color: white} .tc-white{color: white} .bc-white{border-color: white} .bg-white{background-color: white}
+.black{color: black} .tc-black{color: black} .bc-black{border-color: black} .bg-black{background-color: black}
+.green{color: green} .tc-green{color: green} .bc-green{border-color: green} .bg-green{background-color: green}
+.blue{color: blue} .tc-blue{color: blue} .bc-blue{border-color: blue} .bg-blue{background-color: blue}
+.yellow{color: yellow} .tc-yellow{color: yellow} .bc-yellow{border-color: yellow} .bg-yellow{background-color: yellow}
+.pink{color: pink} .tc-pink{color: pink} .bc-pink{border-color: pink} .bg-pink{background-color: pink}
+.orange{color: orange} .tc-orange{color: orange} .bc-orange{border-color: orange} .bg-orange{background-color: orange}
+.brown{color: brown} .tc-brown{color: brown} .bc-brown{border-color: brown} .bg-brown{background-color: brown}
+.purple{color: purple} .tc-purple{color: purple} .bc-purple{border-color: purple} .bg-purple{background-color: purple}
+.gray{color: gray} .tc-gray{color: gray} .bc-gray{border-color: gray} .bg-gray{background-color: gray}
+.violet{color: violet} .tc-violet{color: violet} .bc-violet{border-color: violet} .bg-violet{background-color: violet}
+.blueviolet{color: blueviolet} .tc-blueviolet{color: blueviolet} .bc-blueviolet{border-color: blueviolet} .bg-blueviolet{background-color: blueviolet}
+
+
+.tc-000{color: #000} .bc-000{border-color: #000} .bg-000{background-color: #000}
+.tc-111{color: #111} .bc-111{border-color: #111} .bg-111{background-color: #111}
+.tc-222{color: #222} .bc-222{border-color: #222} .bg-222{background-color: #222}
+.tc-333{color: #333} .bc-333{border-color: #333} .bg-333{background-color: #333}
+.tc-444{color: #444} .bc-444{border-color: #444} .bg-444{background-color: #444}
+.tc-555{color: #555} .bc-555{border-color: #555} .bg-555{background-color: #555}
+.tc-666{color: #666} .bc-666{border-color: #666} .bg-666{background-color: #666}
+.tc-777{color: #777} .bc-777{border-color: #777} .bg-777{background-color: #777}
+.tc-888{color: #888} .bc-888{border-color: #888} .bg-888{background-color: #888}
+.tc-999{color: #999} .bc-999{border-color: #999} .bg-999{background-color: #999}
+.tc-aaa{color: #aaa} .bc-aaa{border-color: #aaa} .bg-aaa{background-color: #aaa}
+.tc-bbb{color: #bbb} .bc-bbb{border-color: #bbb} .bg-bbb{background-color: #bbb}
+.tc-ccc{color: #ccc} .bc-ccc{border-color: #ccc} .bg-ccc{background-color: #ccc}
+.tc-ddd{color: #ddd} .bc-ddd{border-color: #ddd} .bg-ddd{background-color: #ddd}
+.tc-eee{color: #eee} .bc-eee{border-color: #eee} .bg-eee{background-color: #eee}
+.tc-fff{color: #fff} .bc-fff{border-color: #fff} .bg-fff{background-color: #fff}

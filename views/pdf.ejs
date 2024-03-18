@@ -1,0 +1,167 @@
+  <!DOCTYPE html>
+  <html lang="en" dir="ltr">
+    <head>
+      <%- include('includes/head') %>
+      <title>Este es el index</title>
+    </head>
+    <style media="screen">
+      .membretehead{
+      background-image: url('../img/membrete-head.png');
+      height: 170px;
+      background-position: right;
+      background-repeat:no-repeat;
+      }
+      .logo{
+        width: 150px;
+      }
+      .membretefooter{
+        background-image: url('../img/membrete-pie.png');
+        height: 538px;
+        background-position: right;
+        background-repeat:no-repeat;
+        position:relative;
+      }
+      .footer{
+        height: 115px;
+        width: 100%;
+        background-color: #258b79;
+        position: absolute;
+        bottom: 0;
+      }
+      .box1{
+        height: 600px;
+        margin-bottom:  -350px;
+      }
+      .precio{
+        color : #258b79;
+      }
+      .fecha{
+        position: absolute;
+        right: 50px;
+        top: 30px;
+        color: #eee;
+      }
+      .bg-secundario{
+        background-color: #7dbaaf;
+      }
+      .bc-secundario{
+        border-color: #7dbaaf;
+      }
+
+    </style>
+    <body class="bg-fff">
+      <div class="membretehead">
+        <div class="ml50 mr50">
+          <img src="../img/logo-vip-systems.png" class="logo pt30" alt="VIP SYSTEMS">
+        </div>
+        <div class="fecha">
+          <%= fecha%>
+        </div>
+      </div>
+      <div class="ml50 mr50">
+        <div class="">
+          <div class="mirow">
+            <div class="col10">
+              <i class="fa fa-user f50 mt20" aria-hidden="true"></i>
+            </div>
+            <div class="col80 tc-444">
+              <div class="f22">Nombre: <%= nombre%></div>
+              <div class="f22">Celular: <%= cel%></div>
+              <div class="f18">Socorro - Santander</div>
+            </div>
+            <div class="col10">
+              <div class="center f18 bg-secundario radius4 tc-fff">#<%= id%></div>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="b1 radius4 bc-secundario b8 tc-444 mt40 p30 box1">
+          <div class="bg-secundario f18 tc-fff ml30 -mt30 -ml30 -mr30 mb30 center">
+            MANTENIMIENTO DE COMPUTADORES
+          </div>
+          <div class="f22">
+            Marca: <%= marca%>
+          </div>
+          <div class="f22">
+            Serial: <%= serial%>
+          </div>
+          <hr>
+          <div class="mt15 f22">
+            <div class="mirow">
+
+                <div class="col80 f25">
+                  <p><%= observaciones%></p>
+                </div>
+                <div class="col20 f30 precio right">
+                  $<%= precio%>
+                </div>
+
+            </div>
+            <div class="mirow mt50">
+              <div class="col50">
+                <div class="b1 bc-ccc radius4 p15">
+                  <h5 class="f20">Medios de pago.</h5>
+                  <img src="../img/daviplata.png" alt="Daviplata" width="80px">
+                  <img src="../img/nequi.jpg" alt="Nequi" width="100px">
+                  <img src="../img/cash.png" alt="Nequi" width="50px">
+                </div>
+              </div>
+              <div class="col50">
+                <div class="b1 bc-ccc radius4 p15">
+                  <h5 class="f20">Contacto: Alex Garcia</h5>
+                  <img src="../img/WhatsApp.webp" alt="Daviplata" width="60px"><span class="green f28">3118552494</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="membretefooter">
+        <div class="footer center tc-fff f18 pt25">
+          <div class="">
+            (+57) 311 855 2494 - alesong@gmail.com - www.vipsystems.com.co
+          </div>
+          <div class="">
+            Carrera 11A # 7sur - 34 Bis / Socorro Santander
+          </div>
+        </div>
+      </div>
+
+
+      <%- include('includes/scripts') %>
+      <script type="text/javascript" src="../js/miscript_mantenimiento.js"></script>
+      <script type="text/javascript">
+        $(document).ready(function(){
+          generar_pdf(<%= id%>)
+        });
+
+        function generar_pdf(){
+        const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
+        html2pdf()
+            .set({
+                margin: 0,
+                filename: 'cc-mantenimiento-#<%= id%>.pdf',
+                image: {
+                    type: 'jpeg',
+                    quality: 3
+                },
+                html2canvas: {
+                    scale: 6, // A mayor escala, mejores gráficos, pero más peso
+                    letterRendering: true,
+                },
+                jsPDF: {
+                    unit: "in",
+                    format: "a4",
+                    orientation: 'portrait' // landscape o portrait
+                }
+            })
+            .from($elementoParaConvertir)
+            .save()
+            .catch(err => console.log(err));
+        }
+      </script>
+    </body>
+  </html>

@@ -1,0 +1,146 @@
+.img100{width: 100%;}
+.img90{width: 90%;}
+.img80{width: 80%;}
+.img75{width: 75%;}
+.img70{width: 70%;}
+.img66{width: 66.6%;}
+.img60{width: 60%;}
+.img50{width: 50%;}
+.img40{width: 40%;}
+.img33{width: 33.3%;}
+.img30{width: 30%;}
+.img25{width: 25%;}
+.img20{width: 20%;}
+.img10{width: 10%;}
+
+.micontenedor{
+  max-width: 1550px;
+  margin: auto;
+  padding: 0 15px;
+  font-family: verdana;
+}
+.mirow{
+  position: relative;
+  display: inline-block;
+  width:calc(100% + 30px);
+  margin: 0 -15px;
+  padding: 15px 0;
+}
+.mirow-sm{
+  position: relative;
+  display: inline-block;
+  width:calc(100% + 2px);
+  margin: 0;
+  padding: 2px 0;
+}
+.col100,.col90,.col80,.col75,.col70,.col66,.col60,.col50,.col40,.col35,.col33,.col30,.col25,.col20,.col10,.col5{
+  float: left;
+  position: relative;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.col100{width:100%;}
+.col90{width:90%;}
+.col80{width:80%;}
+.col75{width:75%;}
+.col70{width:70%;}
+.col66{width:66.6%;}
+.col60{width:60%;}
+.col50{width:50%;}
+.col40{width:40%;}
+.col35{width:35%;}
+.col33{width:33.3%;}
+.col30{width:30%;}
+.col25{width:25%;}
+.col20{width:20%;}
+.col10{width:10%;}
+.col5{width:5%;}
+
+.margin0{margin:0px;}
+.padding0{padding:0px;}
+.margin15{margin:15px;}
+.padding15{padding:15px;}
+
+@media only screen and (max-width: 800px) {
+  .col90,.col80,.col75,.col70,.col66,.col60,.col50,.col40,.col35,.col33,.col25,.col20,.col10,.col5{
+    width:100%;
+    padding:15px;
+  }
+  .mirow{
+    padding: 0;
+  }
+}
+.justificado{
+  text-align: justify;
+  min-height: 15px;
+}
+.left{
+  text-align: left;
+}
+.right{
+  text-align: right;
+}
+.center{
+  text-align: center;
+}
+.negrita{
+  font-weight: bold;
+}
+.oculto, .hidden{
+  display:none;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.f6{font-size: 6px}
+.f7{font-size: 7px}
+.f8{font-size: 8px}
+.f9{font-size: 9px}
+.f10{font-size: 10px}
+.f11{font-size: 11px}
+.f12{font-size: 12px}
+.f13{font-size: 13px}
+.f14{font-size: 14px}
+.f15{font-size: 15px}
+.f16{font-size: 16px}
+.f17{font-size: 17px}
+.f18{font-size: 18px}
+.f19{font-size: 19px}
+.f20{font-size: 20px}
+.f21{font-size: 21px}
+.f22{font-size: 22px}
+.f23{font-size: 23px}
+.f24{font-size: 24px}
+.f25{font-size: 25px}
+.f26{font-size: 26px}
+.f27{font-size: 27px}
+.f28{font-size: 28px}
+.f29{font-size: 29px}
+.f30{font-size: 30px}
+.f31{font-size: 31px}
+.f32{font-size: 32px}
+.f33{font-size: 33px}
+.f34{font-size: 34px}
+.f35{font-size: 35px}
+.f36{font-size: 36px}
+.f37{font-size: 37px}
+.f38{font-size: 38px}
+.f39{font-size: 39px}
+.f40{font-size: 40px}
+.f41{font-size: 41px}
+.f42{font-size: 42px}
+.f43{font-size: 43px}
+.f44{font-size: 44px}
+.f45{font-size: 45px}
+.f46{font-size: 46px}
+.f47{font-size: 47px}
+.f48{font-size: 48px}
+.f49{font-size: 49px}
+.f50{font-size: 50px}
+.f60{font-size: 60px}
+.f70{font-size: 70px}
+.f80{font-size: 80px}
+.f90{font-size: 90px}
+.f100{font-size: 100px}

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('includes/head') %>
+    <title>PVP edit</title>
+  </head>
+  <style media="screen">
+    .bg-vs{
+      background-image: linear-gradient(to right, purple , orange);
+    }
+    .opaco{
+      opacity: 0.3;
+    }
+    input{
+      background: none;
+      border:none;
+    }
+  </style>
+  <body>
+
+    <div class="row">
+
+      <div class="center col90" id="0box">
+        <div class="mirow bg-vs radius5">
+          <input type="number" value="" onchange="update(1,'0Anum')" class="col10 center f50 negrita white" id="0Anum">
+
+        </input>
+          <div class="col35 center pt0 f30">
+            <input type="text" value="" onchange="update(1,'0Aname')" class="mr10" id="0Aname">
+
+            </input>
+          </div>
+          <div class="col10">
+          <img class="img30 mt15" src="img/flecha-doble.png" alt="">
+          </div>
+          <div class="col35 center pt0 f30">
+          <i id="0start" class="fa" aria-hidden="true" onclick="estrella(1,'0start')"></i>
+          <input type="text" value="" onchange="update(1,'0Bname')" id="0Bname">
+
+          </input>
+          </div>
+          <input type="number" value="" onchange="update(1,'0Bnum')" class="col10 center f50 negrita white" id="0Bnum">
+
+        </input>
+        </div>
+      </div>
+
+      <div class="center col10">
+        <i id="0visible" class="fa f50 mt20" aria-hidden="true" onclick="visible(1,'0visible')"></i>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+
+      <div class="center col90" id="1box">
+        <div class="mirow bg-vs radius5">
+          <input type="number" value="" onchange="update(2,'1Anum')" class="col10 center f50 negrita white" id="1Anum">
+
+        </input>
+          <div class="col35 center pt0 f30">
+            <input type="text" value="" onchange="update(2,'1Aname')" class="mr10" id="1Aname">
+
+          </input>
+          </div>
+          <div class="col10">
+          <img class="img30 mt15" src="img/flecha-doble.png" alt="">
+          </div>
+          <div class="col35 center pt0 f30">
+          <i id="1start" class="fa" aria-hidden="true" onclick="estrella(2,'1start')"></i>
+          <input type="text" value="" onchange="update(2,'1Bname')" id="1Bname">
+
+        </input>
+          </div>
+          <input type="number" value="" onchange="update(2,'1Bnum')" class="col10 center f50 negrita white" id="1Bnum">
+
+        </input>
+        </div>
+      </div>
+
+
+      <div class="center col10">
+        <i id="1visible" class="fa f50 mt20" aria-hidden="true" onclick="visible(2,'1visible')"></i>
+      </div>
+    </div>
+
+
+    <div class="row">
+
+      <div class="center col90" id="2box">
+        <div class="mirow bg-vs radius5">
+          <input type="number" value="" onchange="update(3,'2Anum')" class="col10 center f50 negrita white" id="2Anum">
+
+        </input>
+          <div class="col35 center pt0 f30">
+            <input type="text" value="" onchange="update(3,'2Aname')" class="mr10" id="2Aname">
+
+          </input>
+          </div>
+          <div class="col10">
+          <img class="img30 mt15" src="img/flecha-doble.png" alt="">
+          </div>
+          <div class="col35 center pt0 f30">
+          <i id="2start" class="fa" aria-hidden="true" onclick="estrella(3,'2start')"></i>
+          <input type="text" value="" onchange="update(3,'2Bname')" id="2Bname">
+
+        </input>
+          </div>
+          <input type="number" value="" onchange="update(3,'2Bnum')" class="col10 center f50 negrita white" id="2Bnum">
+
+        </input>
+        </div>
+      </div>
+
+      <div class="center col10">
+        <i id="2visible" class="fa f50 mt20" aria-hidden="true" onclick="visible(3,'2visible')"></i>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="center col90" id="3box">
+        <div class="mirow bg-vs radius5">
+          <input type="number" value="" onchange="update(4,'3Anum')" class="col10 center f50 negrita white" id="3Anum">
+
+        </input>
+          <div class="col35 center pt0 f30">
+            <input type="text" value="" onchange="update(4,'3Aname')" class="mr10" id="3Aname">
+
+          </input>
+          </div>
+          <div class="col10">
+          <img class="img30 mt15" src="img/flecha-doble.png" alt="">
+          </div>
+          <div class="col35 center pt0 f30">
+          <i id="3start" class="fa" aria-hidden="true" onclick="estrella(4,'3start')"></i>
+          <input type="text" value="" onchange="update(4,'3Bname')" id="3Bname">
+
+        </input>
+          </div>
+          <input type="number" value="" onchange="update(4,'3Bnum')" class="col10 center f50 negrita white" id="3Bnum">
+
+        </input>
+        </div>
+      </div>
+
+      <div class="center col10">
+        <i id="3visible" class="fa f50 mt20" aria-hidden="true" onclick="visible(4,'3visible')"></i>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="center col90" id="4box">
+        <div class="mirow bg-vs radius5">
+          <input type="number" value="" onchange="update(5,'4Anum')" class="col10 center f50 negrita white" id="4Anum">
+
+        </input>
+          <div class="col35 center pt0 f30">
+            <input type="text" value="" onchange="update(5,'4Aname')" class="mr10" id="4Aname">
+
+          </input>
+          </div>
+          <div class="col10">
+          <img class="img30 mt15" src="img/flecha-doble.png" alt="">
+          </div>
+          <div class="col35 center pt0 f30">
+          <i id="4start" class="fa" aria-hidden="true" onclick="estrella(5,'4start')"></i>
+          <input type="text" value="" onchange="update(5,'4Bname')" id="4Bname">
+
+        </input>
+          </div>
+          <input type="number" value="" onchange="update(5,'4Bnum')" class="col10 center f50 negrita white" id="4Bnum">
+
+        </input>
+        </div>
+      </div>
+
+      <div class="center col10">
+        <i id="4visible" class="fa f50 mt20" aria-hidden="true" onclick="visible(5,'4visible')"></i>
+      </div>
+    </div>
+
+
+
+    <div class="f30 mt10 oculto">
+      <i class="fa" aria-hidden="true"></i> Lugar Asegurado - Donantes de la semana.
+    </div>
+
+    <%- include('includes/scripts') %>
+    <script type="text/javascript" src="js/miscriptpvpedit.js"></script>
+  </body>
+</html>

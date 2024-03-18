@@ -1,0 +1,18 @@
+Para iniciar servodor digitar en la consola.
+npm start
+ó
+node index.js
+Para iniciar sesión en la aplicación agregar el usuario al archivo usuarios.json en la carpeta json.
+-------------------------------------
+Informacion básica.
+express: es el servidor http. //para instalar: npm i espress
+nodemon: es para que el servidor se reinicie cada vez que guarde. // para istalar: npm i nodemon -D
+  en interfas de desarrollo ejecutar así: npx nodemon index.js
+morgan: es un miderware para revisar las rutas antes que se prosesen // esto es opcional, existen muchos miderware, ejemplo para loguear usuario
+ejs: para renderizar las viastas html //npm i ejs
+axios: es para comunicarse entre servidores --- el servidor puede hacer peticiones get a otro servidor / npm i axios
+------------------------------------------
+Recursos
+postman: es para testear las rutas.
+
+setTimeout(function(),milisegundos):

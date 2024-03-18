@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('includes/head') %>
+    <title>Este es el index</title>
+  </head>
+  <body>
+    <div class="micontenedor">
+      <div class="right">
+        <i class="fa fa-sign-out f30" aria-hidden="true" id="iconLogOut"></i>
+      </div>
+
+      <h3>Control vencimientos</h3>
+
+
+    </div>
+
+    <div class="bgform">
+      <div class="micontenedor">
+        <div class="micontenedor">
+          <div class="mirow f12 borde1 cn center">
+            <div class="mb15">
+              <div class="col33 justificado">
+                <h4>Renovaciones</h4>
+              </div>
+              <div class="col33">
+                <!--espacio en blanco-->.
+              </div>
+              <div class="col33">
+                <form class="" action="" method="get">
+                  <select id="fecha_busqueda" class="form-control" name="">
+                    <option></option>
+                    <option value="ene">enero</option>
+                    <option value="feb">febrero</option>
+                    <option value="mar">marzo</option>
+                    <option value="abr">abril</option>
+                    <option value="may">mayo</option>
+                    <option value="jun">junio</option>
+                    <option value="jul">julio</option>
+                    <option value="ago">agosto</option>
+                    <option value="sept">septiembre</option>
+                    <option value="oct">octubre</option>
+                    <option value="nov">noviembre</option>
+                    <option value="dic">diciembre</option>
+                  </select>
+                </form>
+              </div>
+            </div>
+            <div class="micontenedor">
+              <div class="img100 pb15" style="overflow:auto">
+                <table border="1" class="col100">
+                  <tr>
+                    <td class="pt5 pb5 titu-fecha">FECHA</td>
+                    <td class="titu-tomador">TOMADOR / ASEGURADO</td>
+                    <td class="titu-ramo">RAMO</td>
+                    <td class="titu-cia">CIA</td>
+                    <td class="titu-descripcion">DESCRIPCION DEL BIEN</td>
+                    <td class="titu-observaciones">OBSERVACIONES</td>
+                    <td class="titu-estado">ESTADDO</td>
+                    <td class="titu-opciones td-opciones"><i class="fa fa-indent" aria-hidden="true"></i><i class="fa fa-outdent oculto" aria-hidden="true"></i></td>
+                  </tr>
+                  <tbody class="tabla-control">
+                    <!--><tr><td colspan="6" class="center"><img src="img/spinner.gif" /></td></tr>
+                    <!--ajax-->
+                  </tbody>
+                </table>
+              </div>
+
+            </div>
+          </div>
+
+          <div id="box-tabla-nuevos" class="mirow mt30 f12 borde1 black cn center oculto">
+            <div class="micontenedor">
+              <h4 class="justificado">Nuevos Casos</h4>
+              <div class="img100 pb15" style="overflow:auto">
+                <table border="1" class="col100">
+                  <tr>
+                    <td class="pt5 pb5 titu-fecha">FECHA</td>
+                    <td class="titu-tomador">TOMADOR / ASEGURADO</td>
+                    <td class="titu-ramo">RAMO</td>
+                    <td class="titu-cia">CIA</td>
+                    <td class="titu-descripcion">DESCRIPCION DEL BIEN</td>
+                    <td class="titu-observaciones">OBSERVACIONES</td>
+                    <td class="titu-esado">ESTADO</td>
+                    <td class="titu-opciones td-opciones"><i class="fa fa-indent" aria-hidden="true"></i><i class="fa fa-outdent oculto" aria-hidden="true"></i></td>
+                  </tr>
+                  <tbody class="tabla-nuevos">
+                    <tr><td colspan="8" class="center"><img src="img/spinner.gif" /></td></tr>
+                    <!--ajax-->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="mirow">
+            <div class="borde1 mt15 black">
+              <table>
+                <tr>
+                  <form id="form_add" class="" action="/control" method="post">
+                  <td class="b0 pl15"><input type="date" class="form-control oculto" name="fecha" disabled value=""></td>
+                  <td class="b0"><input type="text" class="form-control" name="nombre" value="" placeholder="Nombre" required></td>
+                  <td class="b0"><input type="text" class="form-control oculto" name="ramo" value="" placeholder="Ramo"></td>
+                  <td class="b0"><input type="text" class="form-control oculto" name="cia" value="" placeholder="CIA"></td>
+                  <td class="b0"><input type="text" class="form-control" name="descripcion" value="" placeholder="Descripción del bien"></td>
+                  <td class="b0"><input type="text" class="form-control oculto" name="observaciones" value="" placeholder="Observaciones"></td>
+                  <td class="b0"><input id="btn_add" type="image" class="ml4 mt4 mb0" src="img/save.png" style="height:38px;"></td>
+                  </form>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ventana-nav" id=mesesButtom>
+      <div class="sub-ventana-nav">
+        <div class="col33">
+          <div class="mirow">
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('ene');carga_control();">ene</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('feb');carga_control();">feb</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('mar');carga_control();">mar</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('abr');carga_control();">abr</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('may');carga_control();">may</div>
+          </div>
+        </div>
+        <div class="col33">
+          <div class="mirow">
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('jun');carga_control();">jun</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('jul');carga_control();">jul</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('ago');carga_control();">ago</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('sept');carga_control();">sep</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('oct');carga_control();">oct</div>
+          </div>
+        </div>
+        <div class="col33">
+          <div class="mirow">
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('nov');carga_control();">nov</div>
+            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('dic');carga_control();">dic</div>
+            <div class="col20"></div>
+            <div class="col20"></div>
+            <div class="col20"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalInfo" tabindex="-1" role="dialog" aria-labelledby="modalInfo" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 id="modalInfo-titulo" class="modal-title tc-333">Titulo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+            <div id="modalInfo-header">
+              Modal Header
+            </div>
+            <div id="modalInfo-body" class="modal-body">
+              Modal body
+            </div>
+            <div class="modal-footer">
+              <input type="text" id="nuevoSegInput" name="nuevoSeg" class="form-control mb10" autocomplete="off" value="" placeholder="Escriba aquí un nuevo seguimiento">
+              <button  id="nuevoSegBtn" onclick="" class="btn btn-primary">Guardar</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+
+<div id="colorPicker">
+    <div class="colorOption" style="background: gray;"></div>
+    <div class="colorOption" style="background: white;"></div>
+    <div class="colorOption" style="background: #ffff94;"></div>
+    <div class="colorOption" style="background: #f79090;"></div>
+    <div class="colorOption" style="background: #a9e8a9;"></div>
+    <div class="colorOption" style="background: #9797ec;"></div>
+    <div class="colorOption" style="background: #95f7ed;"></div>
+    <div class="colorOption" style="background: orange;"></div>
+    <div class="colorOption" style="background: #e687e6;"></div>
+    <!-- Agrega más colores si lo deseas -->
+</div>
+
+
+
+
+    <div id="dialog-confirm" class="oculto" title="Alerta!">
+      <p class="mt20"><span class="ui-icon ui-icon-alert" style="float:left; margin:12px 12px 20px 0;"></span>No prodrá recuperar los datos eliminados. <br>Desea Continuar?</p>
+    </div>
+    <%- include('includes/scripts') %>
+    <script type="text/javascript" src="../js/miscript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <%- include('includes/head') %>
+    <link href="../css/recordsA2G.css" rel="stylesheet" type="text/css" />
+    <title>Recors A2G</title>
+  </head>
+<script type="text/javascript">
+var datos = {
+"nombre": "Juan",
+"record": "15-3",
+"headshot": "7"
+};
+var ficha = document.querySelector(".ficha");
+ficha.children[0].innerHTML = "Nombre: " + datos.nombre;
+ficha.children[1].innerHTML = "Récord: " + datos.record;
+ficha.children[2].innerHTML = "Número de headshot: " + datos.headshot;
+</script>
+<body>
+<div class="total oculto">
+
+</div>
+  <div class="ficha">
+    <img src="images/avatar-gamer.png" alt="Avatar de un gamer con gafas y auriculares">
+    <p class="f32">Nombre: Juan</p>
+    <p class="f28">Récord: 15-3</p>
+    <p class="f28">Número de headshot: 7</p>
+  </div>
+
+
+<%- include('includes/scripts') %>
+<script type="text/javascript" src="js/miscriptrecordsA2G.js"></script>
+
+</body>
+</html>

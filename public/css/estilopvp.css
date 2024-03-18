@@ -1,0 +1,18 @@
+body{
+  color: #333;
+  font-weight: bold;
+}
+.bg-vs{
+  //background-image: linear-gradient(to right, purple , fuchsia);
+}
+.boxpvp{
+  width: 1000px;
+  height: 180px;
+  background-image: url('../img/scoreboard.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 20px;
+}
+.imgvs{
+  width: 350%;
+}

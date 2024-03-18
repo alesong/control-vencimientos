@@ -1,0 +1,123 @@
+{
+    "seguimientos": [
+        {
+            "id": 1,
+            "idcliente": 10,
+            "fecha_seguimiento": "2023-10-02",
+            "seguimiento": "este es el primer seguimiento del 10",
+            "papelera": 0
+        },
+        {
+            "id": 2,
+            "idcliente": 10,
+            "fecha_seguimiento": "2023-12-27",
+            "seguimiento": "este es el segundo seguimiento del 10",
+            "papelera": 1
+        },
+        {
+            "id": 3,
+            "idcliente": 10,
+            "fecha_seguimiento": "2023-10-02",
+            "seguimiento": "este es el tercer seguimiento del 10",
+            "papelera": 1
+        },
+        {
+            "id": 4,
+            "idcliente": 10,
+            "fecha_seguimiento": "2023-12-27",
+            "seguimiento": "este es el cuarto seguimiento del 10",
+            "papelera": 0
+        },
+        {
+            "id": 5,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-12T06:41:18.207Z",
+            "seguimiento": "Care Verga",
+            "papelera": 0
+        },
+        {
+            "id": 6,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-12T06:44:49.064Z",
+            "seguimiento": "care mondá",
+            "papelera": 0
+        },
+        {
+            "id": 7,
+            "idcliente": "11",
+            "fecha_seguimiento": "2024-03-12T06:56:29.686Z",
+            "seguimiento": "Care Chimbo X2",
+            "papelera": 0
+        },
+        {
+            "id": 8,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-13T02:24:01.782Z",
+            "seguimiento": "d sdfsdfsdf  fñsd",
+            "papelera": 0
+        },
+        {
+            "id": 9,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-13T02:24:09.894Z",
+            "seguimiento": "gdfgdfg dfgd fgdfgdf",
+            "papelera": 0
+        },
+        {
+            "id": 10,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-13T02:27:53.211Z",
+            "seguimiento": "¿Dónde puedo conseguirlo?  Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. Usa un diccionario de mas de 200 palabras provenientes del latín, combinadas con estructuras muy útiles de sentencias, para generar texto de Lorem Ipsum que parezca razonable. Este Lorem Ipsum generado siempre estará libre de repeticiones, humor agregado o palabras no características del lenguaje, etc.",
+            "papelera": 1
+        },
+        {
+            "id": 11,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-13T02:29:01.183Z",
+            "seguimiento": "1.10.33 de \"de Finnibus Bonorum et Malorum\" (Los Extremos del Bien y El Mal) por Cicero, escrito en el año 45 antes de Cristo. Este libro es un tratado de teoría de éticas, muy popular durante el Renacimiento. La primera linea del Lorem Ipsum, \"Lorem ipsum dolor sit amet..\", viene de una linea en la sección 1.10.32  El trozo de texto estándar de Lorem Ipsum usado desde el año 1500 es reproducido debajo para aquellos interesados. Las secciones 1.10.32 y 1.10.33 de \"de Finibus Bonorum et Malorum\" por Cicero son también reproducidas en su forma original exacta, acompañadas por versiones en Inglés de la traducción realizada en 1914 por H. Rackham.",
+            "papelera": 1
+        },
+        {
+            "id": 12,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-13T03:13:33.860Z",
+            "seguimiento": "Seguimiento",
+            "papelera": 0
+        },
+        {
+            "id": 13,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-13T03:25:19.425Z",
+            "seguimiento": "seguimiento",
+            "papelera": 0
+        },
+        {
+            "id": 14,
+            "idcliente": "1",
+            "fecha_seguimiento": "2024-03-16T18:09:31.790Z",
+            "seguimiento": "Primer seguimiento",
+            "papelera": 1
+        },
+        {
+            "id": 15,
+            "idcliente": "1",
+            "fecha_seguimiento": "2024-03-16T18:10:46.897Z",
+            "seguimiento": "Segundo seguimiento",
+            "papelera": 0
+        },
+        {
+            "id": 16,
+            "idcliente": "3",
+            "fecha_seguimiento": "2024-03-18T00:03:31.824Z",
+            "seguimiento": "Este es el primer seguimiento",
+            "papelera": 0
+        },
+        {
+            "id": 17,
+            "idcliente": "5",
+            "fecha_seguimiento": "2024-03-18T02:01:24.671Z",
+            "seguimiento": "Celular 3186218365",
+            "papelera": 0
+        }
+    ]
+}

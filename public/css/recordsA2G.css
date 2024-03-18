@@ -1,0 +1,31 @@
+/* Seleccionamos el elemento div con la clase ficha */
+.ficha {
+  /* Le damos un borde sólido de color verde claro */
+  border: 0px solid limegreen;
+  /* Le damos un color de fondo negro */
+  background-color: rgba(0,0,0,0.3);
+  /* Le damos un margen de 20 píxeles para separarlo de los demás elementos */
+  margin: 20px;
+  /* Le damos un relleno de 10 píxeles para separar el contenido del borde */
+  padding: 10px;
+  /* Le damos una fuente tipo consola de color blanco */
+  font-family: "Consolas", monospace;
+  font-size: 16px;
+  color: white;
+}
+
+/* Seleccionamos los elementos p que están dentro del elemento div con la clase ficha */
+.ficha p {
+  /* Les damos un margen de 5 píxeles para separarlos entre sí */
+  margin: -5px 5px;
+}
+
+/* Seleccionamos el elemento img que está dentro del elemento div con la clase ficha */
+.ficha img {
+  width: 100px; /* Le damos un ancho de 100 píxeles a la imagen */
+  height: 100px; /* Le damos un alto de 100 píxeles a la imagen */
+  float: left; /* Hacemos que la imagen flote a la izquierda de los párrafos */
+  margin: 5px; /* Le damos un margen de 5 píxeles para separarla de los demás elementos */
+  border: 0px solid limegreen; /* Le damos un borde verde claro de 2 píxeles de grosor */
+}
+body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }

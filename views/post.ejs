@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <%- include('includes/head') %>
+    <title>Este es el index</title>
+  </head>
+  <body>
+    <h1>Esta información viene de otro servidor</h1>
+    el parametro es: <%= parametro %>
+    <hr>
+
+<%
+for(let i=0; i < respuesta.length; i++ ){
+%>
+<article class="mirow col20">
+  <div class="borde2">
+    <div class="encabezado-ficha-datos">
+      <h4><%= respuesta[i].title %></h4>
+    </div>
+    <div class="dato-ficha-datos">
+      <p><%= respuesta[i].body %></p>
+    </div>
+  </div>
+</article>
+
+<% } %>
+
+
+
+
+
+
+
+
+
+    <%- include('includes/scripts') %>
+  </body>
+</html>

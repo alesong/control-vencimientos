@@ -1,0 +1,28 @@
+{
+    "usuarios": [
+        {
+            "id": 1,
+            "nombre": "Henry",
+            "username": "prosese",
+            "password": "Armenia#1960",
+            "fecha": "",
+            "nombreCookie": "cookie_prosese"
+        },
+        {
+            "id": 2,
+            "nombre": "Alex",
+            "username": "alesong",
+            "password": "electronica",
+            "fecha": "",
+            "nombreCookie": "cookie_alesong"
+        },
+        {
+            "id": 3,
+            "nombre": "Maribel",
+            "username": "maribelrg",
+            "password": "12345",
+            "fecha": "",
+            "nombreCookie": "cookie_alesong"
+        }
+    ]
+}

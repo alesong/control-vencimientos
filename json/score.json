@@ -1,0 +1,49 @@
+{
+    "score": [
+        {
+            "id": 1,
+            "puntaje1": "0",
+            "nombre1": "Aleson",
+            "puntaje2": "0",
+            "nombre2": "Luis V Co",
+            "estrella": 0,
+            "visible": 1
+        },
+        {
+            "id": 2,
+            "puntaje1": "0",
+            "nombre1": "Aleson",
+            "puntaje2": "0",
+            "nombre2": "Chamapua",
+            "estrella": 0,
+            "visible": 0
+        },
+        {
+            "id": 3,
+            "puntaje1": "0",
+            "nombre1": "Aleson",
+            "puntaje2": "0",
+            "nombre2": "LEO",
+            "estrella": 0,
+            "visible": 0
+        },
+        {
+            "id": 4,
+            "puntaje1": "0",
+            "nombre1": "Â2𝗚🎭 Goloso",
+            "puntaje2": "0",
+            "nombre2": "Â2𝗚🎭Erika DR",
+            "estrella": 0,
+            "visible": 0
+        },
+        {
+            "id": 5,
+            "puntaje1": "0",
+            "nombre1": "Â2𝗚🎭 Goloso",
+            "puntaje2": "0",
+            "nombre2": "Goloso",
+            "estrella": 0,
+            "visible": 0
+        }
+    ]
+}
