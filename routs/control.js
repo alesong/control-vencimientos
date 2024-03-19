@@ -3,9 +3,15 @@ console.log('pasó por control');
 const body_parser = require('body-parser')
 const cookieParser = require('cookie-parser');
 const verificarCookies = require('./requires/validadorCookies');
+const axios = require('axios');
+const moment = require('moment-timezone');
 app.use(cookieParser())
 app.use(body_parser.urlencoded({extended:true}))
 
+  app.get('/ping', function (req, res) {
+   res.send('pong'); 
+  })
+  
   app.get('/control/:mes', function (req, res) {
 
     if (session()==true) {
@@ -407,7 +413,24 @@ app.use(body_parser.urlencoded({extended:true}))
 
   })
 
+  // Define el intervalo de tiempo en segundos
+  const intervalo = 40 * 1000; // 40 segundos
 
+  setInterval(async () => {
+      try {
+          const response = await axios.get('http://localhost:4000/ping');
+        //const response = await axios.get('https://control-vencimientos.onrender.com/');
+          console.log(`Petición realizada a las ${moment().tz('America/Bogota').format('YYYY-MM-DD HH:mm:ss')}`);
+          console.log(response.data);
+      } catch (error) {
+          console.log(`Error al realizar la petición a las ${moment().tz('America/Bogota').format('YYYY-MM-DD HH:mm:ss')}`);
+          console.error(error);
+      }
+  }, intervalo);
+
+  app.get('/ping', function (req, res) {
+      res.send('pong'); 
+  })
 
 
 }
