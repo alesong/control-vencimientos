@@ -418,8 +418,8 @@ app.use(body_parser.urlencoded({extended:true}))
 
   setInterval(async () => {
       try {
-          const response = await axios.get('http://localhost:4000/ping');
-        //const response = await axios.get('https://control-vencimientos.onrender.com/');
+          //const response = await axios.get('http://localhost:4000/ping');
+          const response = await axios.get('https://demonget.onrender.com');
           console.log(`Petición realizada a las ${moment().tz('America/Bogota').format('YYYY-MM-DD HH:mm:ss')}`);
           console.log(response.data);
       } catch (error) {
