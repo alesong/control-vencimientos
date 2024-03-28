@@ -14,11 +14,12 @@ $("#formlogin").submit(function(e){
       url: "../login",
       data: {campo:'fecha',dato:fecha,username:username,password:password},
       success: function (res) {
+        console.log('Respuesta: '+res);
         if (res=='LogIn') {
           document.cookie = "cookieControl="+username+"; max-age=" + 30 * 60 + "; path=/";
           window.location.href = "./";
         }else {
-          alert('Usuario o contraseña inválidos')
+          alert(res)
         }
       }
     })

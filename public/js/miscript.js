@@ -207,12 +207,13 @@ $("#form_add").submit(function(e){
         success: function (data) {
             console.log(data);
             $("#btn_add").attr('src','img/save.png');
+            $(".form-nuevo").val('');
             if (data=='ok') {
               carga_control()
             }
         }
     });
-  },1200)   //el numero son milisegundos de delay para permitir visualizar el spinner
+  },0)   //el numero son milisegundos de delay para permitir visualizar el spinner
 })
 
 function modificar_control(id,campo,dato){
@@ -325,15 +326,62 @@ function info(id) {
       url: "../seguimientos/"+id,
       success: function (objeto) {
         console.log(objeto);
-        $("#modalInfo-body").html('')
-        $("#modalInfo-body").addClass('boxseguimientos')
+        $("#modalInfo-body").html('<div class="f18 tc-111" style="display:inline-block">Seguimientos</div>')
+        $("#modalInfo-body").addClass('boxseguimientos','pt1')
+
+        var checkbox = document.getElementById("nuevoCheckbox");
+        checkbox.checked = false;
         color='bg-eee';
         //x='<i class="fa fa-times orange" onclick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i>' //Este elemento es solo una guia, es reemplazado en el siguiente for.
+        for (var i = 0; i < objeto.length; i++) {
+          var tarea=objeto[i]['tarea']
+          console.log('tarea marcada con: '+tarea);
+          var fecha = new Date(objeto[i]['fecha_seguimiento']);
+          var opcionesFecha = { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' };
+          var opcionesHora = { hour: 'numeric', minute: 'numeric', hour12: true };
+          // Convertir la fecha y hora al formato deseado
+          var fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
+          var horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
+          if (objeto[i]['fechaResuelto']) {
+            var fechaResuelto = new Date(objeto[i]['fechaResuelto']);
+            var opcionesFechaResuelto = { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' };
+            var opcionesHoraResuelto = { hour: 'numeric', minute: 'numeric', hour12: true };
+            // Convertir la fecha y hora al formato deseado
+            var fechaResueltoFormateada = fechaResuelto.toLocaleDateString('es-ES', opcionesFechaResuelto);
+            var horaResueltoFormateada = fechaResuelto.toLocaleTimeString('es-ES', opcionesHoraResuelto);
+          }
+          var checked="";
+          var dato=0;
+          if (color=='bg-eee') {color='bg-fff'}else{color='bg-eee'}
+          console.log('el valor de resuelto es: '+objeto[i]['resuelto']);
+          if (objeto[i]['resuelto'] == '1') {
+            color='bg-green-lite';
+            checked="checked";dato=1;
+            var vistaResuelto='</br><span class="tc-555">'+fechaResueltoFormateada+'</span> - <span class="gray f10">'+horaResueltoFormateada+'</span>';
+          }else {
+            var vistaResuelto='';
+          }
+          var vistaCreado='<span class="tc-555">'+fechaFormateada+'</span> - <span class="gray f10">'+horaFormateada+'</span>';
+          //const vistaResuelto='</br><span class="tc-555">'+fechaResueltoFormateada+'</span> - <span class="gray f10">'+horaResueltoFormateada+'</span>';
+          if (fechaResueltoFormateada==undefined) {
+            $('#resuelto'+objeto[i]['id']).addClass('oculto')
+          }
+          var vistaCheckbox='';
+
+          if (objeto[i]['tarea']=='1') {
+            vistaCheckbox='<input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
+          }
+          $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+
+        }
+
+/*
         for (var i = 0; i < objeto.length; i++) {
           if (color=='bg-eee') {color='bg-fff'}else{color='bg-eee'}
           $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow '+color+'"><div class="col90"><span class="black">'+objeto[i]['fecha_seguimiento']+'</span><p class="black">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
         }
+        */
       }
     });
 }
@@ -359,19 +407,22 @@ function trashedSeguimiento(id){
 function nuevoSeguimiento(id_cliente){
   $("#nuevoSegBtn").html('<div class="center"><img src="img/spinner.gif" width="15px"></div>')
   const dataSeg=$("#nuevoSegInput").val()
-console.log(dataSeg);
+  var checkbox = document.getElementById("nuevoCheckbox");
+  var valorCheckbox = checkbox.checked;
+console.log('El valor del checkbox front es: '+valorCheckbox);
   if (dataSeg == "") {
     alert("Campos Vacios")
   }else {
     $.ajax({
         type: "POST",
         url: "../seguimientos",
-        data: {id_cliente:id_cliente, dataSeg:dataSeg},
+        data: {id_cliente:id_cliente, dataSeg:dataSeg, checkbox:valorCheckbox},
         success: function (res) {
           if (res=='ok') {
             $("#nuevoSegInput").val('')
             $("#nuevoSegBtn").html('Guardar')
             info(id_cliente)
+            carga_tareas()
           }else {
             alert(res)
           }

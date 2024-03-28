@@ -196,7 +196,7 @@ table tr td{
   width: 100%;
 }
 .sub-ventana-nav{
-  width: 1000px;
+  //width: 1000px;
 }
 .boxseguimientos{
   height: 400px;
@@ -228,6 +228,14 @@ table tr td{
     font-size: 7px;
     margin-right: 5px;
     margin-left: 5px;
+}
+#BoxNuevoCheckbox{
+  float: left;
+  margin-left: 250px;
+  margin-top: 5px;
+}
+#box-tareas{
+  height: 600px;
 }
 input{
   background-color: transparent;

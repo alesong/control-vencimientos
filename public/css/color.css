@@ -11,7 +11,11 @@
 .gray{color: gray} .tc-gray{color: gray} .bc-gray{border-color: gray} .bg-gray{background-color: gray}
 .violet{color: violet} .tc-violet{color: violet} .bc-violet{border-color: violet} .bg-violet{background-color: violet}
 .blueviolet{color: blueviolet} .tc-blueviolet{color: blueviolet} .bc-blueviolet{border-color: blueviolet} .bg-blueviolet{background-color: blueviolet}
-
+.green-lite{color: #94ec94} .tc-green-lite{color: #94ec94} .bc-green-lite{border-color: #94ec94} .bg-green-lite{background-color: #94ec94}
+.crema1{color: #ECE3DA} .tc-crema1{color: #ECE3DA} .bc-crema1{border-color: #ECE3DA} .bg-crema1{background-color: #ECE3DA}
+.crema2{color: #F1E3CC} .tc-crema2{color: #F1E3CC} .bc-crema2{border-color: #F1E3CC} .bg-crema2{background-color: #F1E3CC}
+.crema3{color: #F1E3C3} .tc-crema3{color: #F1E3C3} .bc-crema3{border-color: #F1E3C3} .bg-crema3{background-color: #F1E3C3}
+.crema4{color: #E4C9BF} .tc-crema4{color: #E4C9BF} .bc-crema4{border-color: #E4C9BF} .bg-crema4{background-color: #E4C9BF}
 
 .tc-000{color: #000} .bc-000{border-color: #000} .bg-000{background-color: #000}
 .tc-111{color: #111} .bc-111{border-color: #111} .bg-111{background-color: #111}

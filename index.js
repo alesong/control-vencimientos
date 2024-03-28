@@ -28,7 +28,7 @@ app.use(express.urlencoded({extended:false}));
 
 //------------rutas---------------
 app.use(function(req, res, next){ // eto es un mitherware, se pueden poner vairos
-    console.log('todas las peticiones. '+new Date());
+    //console.log('todas las peticiones. '+new Date());
     next(); // esto es obligatorio
 });
 

@@ -5,7 +5,7 @@
             "idcliente": 10,
             "fecha_seguimiento": "2023-10-02",
             "seguimiento": "este es el primer seguimiento del 10",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 2,
@@ -26,21 +26,21 @@
             "idcliente": 10,
             "fecha_seguimiento": "2023-12-27",
             "seguimiento": "este es el cuarto seguimiento del 10",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 5,
             "idcliente": "10",
             "fecha_seguimiento": "2024-03-12T06:41:18.207Z",
             "seguimiento": "Care Verga",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 6,
             "idcliente": "10",
             "fecha_seguimiento": "2024-03-12T06:44:49.064Z",
             "seguimiento": "care mondá",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 7,
@@ -54,14 +54,14 @@
             "idcliente": "10",
             "fecha_seguimiento": "2024-03-13T02:24:01.782Z",
             "seguimiento": "d sdfsdfsdf  fñsd",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 9,
             "idcliente": "10",
             "fecha_seguimiento": "2024-03-13T02:24:09.894Z",
             "seguimiento": "gdfgdfg dfgd fgdfgdf",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 10,
@@ -89,7 +89,7 @@
             "idcliente": "10",
             "fecha_seguimiento": "2024-03-13T03:25:19.425Z",
             "seguimiento": "seguimiento",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 14,
@@ -110,13 +110,422 @@
             "idcliente": "3",
             "fecha_seguimiento": "2024-03-18T00:03:31.824Z",
             "seguimiento": "Este es el primer seguimiento",
-            "papelera": 0
+            "tarea": 1,
+            "resuelto": "1",
+            "papelera": 1,
+            "fechaResuelto": "2024-03-23T05:09:08.739Z"
         },
         {
             "id": 17,
             "idcliente": "5",
             "fecha_seguimiento": "2024-03-18T02:01:24.671Z",
             "seguimiento": "Celular 3186218365",
+            "papelera": 0
+        },
+        {
+            "id": 18,
+            "idcliente": "10",
+            "fecha_seguimiento": "2024-03-20T20:27:00.788Z",
+            "seguimiento": "Se realiza correo con estudio y renovacion, no se incluye financiacion.",
+            "papelera": 0
+        },
+        {
+            "id": 19,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-20T22:32:18.918Z",
+            "seguimiento": "Se realiza solicitud de cotizacion previsora por la plataforma de synergias",
+            "papelera": 0
+        },
+        {
+            "id": 20,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-21T20:40:23.049Z",
+            "seguimiento": "Se descarga nueva cotización de previsora $3.240.602",
+            "papelera": 0
+        },
+        {
+            "id": 21,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-21T21:06:37.561Z",
+            "seguimiento": "Mapfre: 5.475.595",
+            "papelera": 0
+        },
+        {
+            "id": 22,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-21T21:07:07.103Z",
+            "seguimiento": "HDI: 5.639.980",
+            "papelera": 0
+        },
+        {
+            "id": 23,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-21T21:07:43.362Z",
+            "seguimiento": "Zurich: 4.853.003",
+            "papelera": 0
+        },
+        {
+            "id": 24,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-21T21:07:58.599Z",
+            "seguimiento": "SBS 6.752.318",
+            "papelera": 0
+        },
+        {
+            "id": 25,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-21T21:13:56.499Z",
+            "seguimiento": "Bolívar: 5.921.441",
+            "papelera": 0
+        },
+        {
+            "id": 26,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-22T19:43:32.572Z",
+            "seguimiento": "Financiacioin con serviefectivo de previsora 11 cuotas",
+            "papelera": 0
+        },
+        {
+            "id": 27,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-22T23:22:41.462Z",
+            "seguimiento": "Se realiza estudio, mejor oferta HDI 5.800.000",
+            "papelera": 0
+        },
+        {
+            "id": 28,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-22T23:23:33.173Z",
+            "seguimiento": "Se solicita el Numero del Cliente a Sarain para preguntar si ha tenido seguro anteriormente",
+            "papelera": 0
+        },
+        {
+            "id": 29,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-22T23:25:21.673Z",
+            "seguimiento": "Se solicita por correo electrónico realizar Póliza a Diego Loaiza, responde que reenvió la solicitud",
+            "papelera": 0
+        },
+        {
+            "id": 30,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-26T20:44:49.806Z",
+            "seguimiento": "Ingrear cotizacion de Bolívar al comparativo y enviar propuesta por whastapp",
+            "papelera": 0
+        },
+        {
+            "id": 31,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-26T20:58:59.726Z",
+            "seguimiento": "Responden solicitando contacto para progrmasr inspeccion. se responde a la solicitud",
+            "papelera": 0
+        },
+        {
+            "id": 32,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-03-26T22:30:11.143Z",
+            "seguimiento": "Expedir póliza Braulio con Bolívar y notificar a Colpatria que no se renueva, ver instrucciones en correo Colpatria remisorio de esta póliza.",
+            "papelera": 1
+        },
+        {
+            "id": 33,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-26T23:22:30.355Z",
+            "seguimiento": "Se envía cotizacion a Sarain indicando que la mejor opcion es Bolívar por 4..325..621",
+            "tarea": 0,
+            "resuelto": "1",
+            "fechaResuelto": "2024-03-27T05:07:15.086Z",
+            "usuarioResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 34,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T05:49:24.567Z",
+            "seguimiento": "Preguntar a Sarain por la decisión del señor Wilson",
+            "tarea": 0,
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 35,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T05:57:39.181Z",
+            "seguimiento": "Preguntar a Sarain por la decisión del señor Wilson",
+            "tarea": 0,
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 36,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T05:58:51.225Z",
+            "seguimiento": "Preguntar a Sarain por la decisión del señor Wilson",
+            "tarea": 0,
+            "resuelto": 0,
+            "papelera": 0
+        },
+        {
+            "id": 37,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T06:03:05.407Z",
+            "seguimiento": "Preguntar a Sarain por la decisión del señor Wilson",
+            "tarea": 0,
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 38,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T06:05:15.686Z",
+            "seguimiento": "sdfsdf",
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 39,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T06:06:44.733Z",
+            "seguimiento": "sfsfd",
+            "tarea": "0",
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 40,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T06:07:47.484Z",
+            "seguimiento": "dfsdfsd",
+            "tarea": "1",
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 41,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-03-27T06:08:12.490Z",
+            "seguimiento": "no tarea",
+            "tarea": "0",
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 42,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-03-27T06:10:32.637Z",
+            "seguimiento": "Nueva tarea",
+            "tarea": "1",
+            "resuelto": 0,
+            "papelera": 1
+        },
+        {
+            "id": 43,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-03-27T06:11:02.837Z",
+            "seguimiento": "Nueva tarea",
+            "tarea": "1",
+            "resuelto": "0",
+            "papelera": 1,
+            "fechaResuelto": ""
+        },
+        {
+            "id": 44,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-27T07:35:47.020Z",
+            "seguimiento": "Esta es una nueva tarea sin cliente",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-03-27T07:36:18.446Z",
+            "papelera": 1
+        },
+        {
+            "id": 45,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-03-27T07:59:38.429Z",
+            "seguimiento": "Expedir póliza Braulio con Bolívar y notificar a Colpatria que no se renueva, ver instrucciones en correo Colpatria remisorio de esta póliza.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 1
+        },
+        {
+            "id": 46,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-03-27T08:01:10.579Z",
+            "seguimiento": "Estudio seguro KIA Andrea Mayorga",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 47,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-03-27T19:03:34.502Z",
+            "seguimiento": "Se envia url para actualizacion de datos via whatsapp",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 48,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-27T20:03:57.129Z",
+            "seguimiento": "Voltear el Cuadro de Agente Motor",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 49,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-27T20:08:27.220Z",
+            "seguimiento": "Realizar el comparativo de las financiaciones",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 50,
+            "idcliente": "7",
+            "fecha_seguimiento": "2024-03-27T20:12:17.273Z",
+            "seguimiento": "Hacer póliza de Alexandra Mejía en Solidaria con financiación Finesa cuota inicial 500.000",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 51,
+            "idcliente": "25",
+            "fecha_seguimiento": "2024-03-27T20:14:17.950Z",
+            "seguimiento": "Hacer financiación moto Orlando Prieto con Credimapfre cuota inicial 250.000 y 9 cuotas",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-03-27T21:49:36.577Z",
+            "papelera": 0
+        },
+        {
+            "id": 52,
+            "idcliente": "26",
+            "fecha_seguimiento": "2024-03-27T21:27:16.885Z",
+            "seguimiento": "Llamar a Luis Fernando Sandoval para solicitar la tarjeta de propiedad y preguntar si necesita financiacion.",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-03-27T23:14:14.122Z",
+            "papelera": 0
+        },
+        {
+            "id": 53,
+            "idcliente": "9",
+            "fecha_seguimiento": "2024-03-27T21:30:32.318Z",
+            "seguimiento": "Requiere hacer financiación, modificar correo con el valor de la cuota y mandar a Catalina",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-03-27T23:05:45.516Z",
+            "papelera": 0
+        },
+        {
+            "id": 54,
+            "idcliente": "25",
+            "fecha_seguimiento": "2024-03-27T21:49:24.474Z",
+            "seguimiento": "Se ha creado la SOLICITUD de credito Nro. 33402400070 asociado a la poliza, que esta PENDIENTE de firma electronica. Para que el credito quede VIGENTE, debera enviar el enlace al Cliente para que realice el proceso de firma electronica. Una vez firmado electronicamente, el sistema dejara VIGENTE el credito de forma automatica.",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 55,
+            "idcliente": "25",
+            "fecha_seguimiento": "2024-03-27T21:49:48.684Z",
+            "seguimiento": "Email con la URL para firmar electrónicamente enviado a: ORLANDO6514@HOTMAIL.COM",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 56,
+            "idcliente": "25",
+            "fecha_seguimiento": "2024-03-27T21:55:36.001Z",
+            "seguimiento": "Se notifica al cliente via Whastapp para que realice la firma del pagaré",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 57,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-03-27T22:41:00.120Z",
+            "seguimiento": "Se realizan indicaciones a Sarain para llevar el carro a Automas",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 58,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-03-27T22:45:08.326Z",
+            "seguimiento": "Elaborar póliza de Braulio Gómez con Mapfre, notificar a Colpatria que no se renueva, ver instrucciones en correo Colpatria remisorio de esta póliza.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 59,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T22:50:37.717Z",
+            "seguimiento": "Elaborar póliza de Wilson Bueno con Bolívar y solicitar pago a dos contados.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 60,
+            "idcliente": "9",
+            "fecha_seguimiento": "2024-03-27T23:06:01.025Z",
+            "seguimiento": "Email con la URL para firmar electrónicamente enviado a: catalinavaldes@hotmail.com - Se envía correo con el valor de la cuota",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 61,
+            "idcliente": "26",
+            "fecha_seguimiento": "2024-03-27T23:15:21.123Z",
+            "seguimiento": "Luis Fernando indica que está gestionando la renovacion con otro asesor, va a revisar el correo y nos comunica",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 62,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-03-27T23:48:15.596Z",
+            "seguimiento": "(201PVV037)CLIENTE NO CUMPLE TOPE VINCULACIONES PARA OPCION BASICA ORA-20000: La expedicion termino con errores - Favor revisar",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 63,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-03-28T18:04:07.854Z",
+            "seguimiento": "FINSU nueva financiera de primas de SBS, ver instructivo en carpeta de SBS y agregar al comparativo de financiaciones.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
             "papelera": 0
         }
     ]

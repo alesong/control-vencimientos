@@ -13,10 +13,10 @@ function verificarCookies(req) {
 
     for (let item of usuarios) {
         if (req.cookies[item.nombreCookie]) {
-            console.log(`La cookie con nombre ${item.nombreCookie} existe y su valor es: ${req.cookies[item.nombreCookie]}`);
+            //console.log(`La cookie con nombre ${item.nombreCookie} existe y su valor es: ${req.cookies[item.nombreCookie]}`);
             return true; // Se encontró una cookie válida, se puede renderizar la vista
         } else {
-            console.log(`La cookie con nombre ${item.nombreCookie} no existe.`);
+            //console.log(`La cookie con nombre ${item.nombreCookie} no existe.`);
         }
     }
 

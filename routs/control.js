@@ -9,9 +9,9 @@ app.use(cookieParser())
 app.use(body_parser.urlencoded({extended:true}))
 
   app.get('/ping', function (req, res) {
-   res.send('pong'); 
+   res.send('pong');
   })
-  
+
   app.get('/control/:mes', function (req, res) {
 
     if (session()==true) {
@@ -292,6 +292,9 @@ app.use(body_parser.urlencoded({extended:true}))
             id_cliente : seguimientos[i]['id_cliente'],
             fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
             seguimiento : seguimientos[i]['seguimiento'],
+            tarea : seguimientos[i]['tarea'],
+            resuelto : seguimientos[i]['resuelto'],
+            fechaResuelto : seguimientos[i]['fechaResuelto'],
             papelera : seguimientos[i]['papelera'],
           })
         }
@@ -315,6 +318,140 @@ app.use(body_parser.urlencoded({extended:true}))
 
   });
 
+
+  app.get('/tareas', function (req, res) {
+    console.log('tareas back');
+    if (session()==true) {
+
+      const fs = require('fs')
+      const path = require("path")
+      const patJSON = path.join(__dirname, '../json/seguimientos.json')
+      const readJSON =  () => {
+      const data =  fs.readFileSync(patJSON, 'utf-8')
+      return JSON.parse(data)
+      }
+      const objeto = []
+      const {seguimientos} = readJSON()
+
+      for (var i = 0; i < seguimientos.length; i++) {
+        if (seguimientos[i]['papelera'] == 0 && seguimientos[i]['tarea'] == 1) {
+          if (seguimientos[i]['resuelto'] == 1) {
+            var fecha = new Date(seguimientos[i]['fechaResuelto']);
+            //console.log(fecha);
+            // Obtener la fecha actual
+            var fechaActual = new Date();
+            // Calcular la diferencia en milisegundos
+            var diferencia = fechaActual - fecha;
+            // Convertir la diferencia a días
+            var dias = diferencia / (1000 * 60 * 60 * 24);
+            //console.log(dias);
+            if (dias < 5) {
+              //Realiza el push si está resuelto y tiene menos de 5 días
+              objeto.push({
+                id : seguimientos[i]['id'],
+                id_cliente : seguimientos[i]['id_cliente'],
+                fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
+                seguimiento : seguimientos[i]['seguimiento'],
+                tarea : seguimientos[i]['tarea'],
+                resuelto : seguimientos[i]['resuelto'],
+                fechaResuelto : seguimientos[i]['fechaResuelto'],
+                papelera : seguimientos[i]['papelera'],
+              })
+            }
+          }else {
+            //Realiza el push por defecto si no esta resuelto;
+            objeto.push({
+              id : seguimientos[i]['id'],
+              id_cliente : seguimientos[i]['id_cliente'],
+              fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
+              seguimiento : seguimientos[i]['seguimiento'],
+              tarea : seguimientos[i]['tarea'],
+              resuelto : seguimientos[i]['resuelto'],
+              fechaResuelto : seguimientos[i]['fechaResuelto'],
+              papelera : seguimientos[i]['papelera'],
+            })
+          }
+        }
+      }
+      res.json(objeto);
+    }else {
+      res.send('LogOut');
+    }
+
+    //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
+    function session(){
+      const puedeRenderizar = verificarCookies(req);
+      if (puedeRenderizar) {
+          return(true); // Renderiza la vista si se pueden renderizar las cookies
+      } else {
+          return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+      }
+    }
+    //-------fin Compruebador de sesion-----//
+
+ });
+
+
+ app.put('/tareas', (req, res)=>{
+
+   if (session()==true) {
+
+
+     const id = req.body.id
+     const campo = req.body.campo
+     const dato = req.body.dato
+     if (dato == 1) {
+       fechaResuelto=new Date();
+     }else {
+       fechaResuelto='';
+     }
+     //res.send('entró al put, '+id+campo+dato)
+     const fs = require('fs');
+     const path = require("path")
+     const patJSON = path.join(__dirname, '../json/seguimientos.json')
+     const readJSON =  () => {
+     const data =  fs.readFileSync(patJSON, 'utf-8')
+     return JSON.parse(data)
+     }
+     const {seguimientos} = readJSON()
+     for (var i = 0; i < seguimientos.length; i++) {
+       if (seguimientos[i]['id']==id) {
+         seguimientos[i][campo]=dato
+         seguimientos[i]['fechaResuelto']=fechaResuelto
+       }
+     }
+     const writeJSON =  (data) => {
+        fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
+     }
+     writeJSON({
+       seguimientos: seguimientos,
+     })
+     console.log('Se ha modificado el id : '+id+' campo: '+campo+' dato: '+dato)
+
+     res.json(seguimientos)
+
+
+   }else {
+     res.send('LogOut');
+   }
+
+
+
+
+
+   //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
+   function session(){
+     const puedeRenderizar = verificarCookies(req);
+     if (puedeRenderizar) {
+         return(true); // Renderiza la vista si se pueden renderizar las cookies
+     } else {
+         return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+     }
+   }
+   //-------fin Compruebador de sesion-----//
+
+
+ })
 
   app.delete("/seguimientos", (req, res) =>{
     const id = req.body.id
@@ -355,9 +492,17 @@ app.use(body_parser.urlencoded({extended:true}))
   app.post('/seguimientos', (req, res)=>{
     console.log(req.body.id_cliente);
     console.log(req.body.dataSeg);
+    console.log('El valor del checkbox back es: '+req.body.checkbox);
     if ('dataSeg' in req.body) {
       const dataSeg = req.body.dataSeg + ''
       const id_cliente = req.body.id_cliente + ''
+      const checkbox = req.body.checkbox + ''
+      var tarea = '0';
+      if (checkbox=='true') {
+        tarea='1';
+      }
+      console.log(checkbox);
+      console.log(tarea);
       const fecha = new Date();
       if (dataSeg == '') {
         console.log('campos vacios')
@@ -385,6 +530,9 @@ app.use(body_parser.urlencoded({extended:true}))
           idcliente : id_cliente,
           fecha_seguimiento : fecha,
           seguimiento : dataSeg,
+          tarea: tarea,
+          resuelto: 0,
+          fechaResuelto : '',
           papelera : 0
         })
 
@@ -420,16 +568,16 @@ app.use(body_parser.urlencoded({extended:true}))
       try {
           //const response = await axios.get('http://localhost:4000/ping');
           const response = await axios.get('https://demonget.onrender.com/ping');
-          console.log(`Petición realizada a las ${moment().tz('America/Bogota').format('YYYY-MM-DD HH:mm:ss')}`);
+          console.log(`Petición realizada a las ${moment().tz('America/Bogota').format('HH:mm:ss DD-MM-YYYY')}`);
           console.log(response.data);
       } catch (error) {
-          console.log(`Error al realizar la petición a las ${moment().tz('America/Bogota').format('YYYY-MM-DD HH:mm:ss')}`);
+          console.log(`Error al realizar la petición a las ${moment().tz('America/Bogota').format('HH:mm:ss DD-MM-YYYY')}`);
           console.error(error);
       }
   }, intervalo);
 
   app.get('/ping', function (req, res) {
-      res.send('pong'); 
+      res.send('pong');
   })
 
 

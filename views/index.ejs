@@ -10,7 +10,7 @@
         <i class="fa fa-sign-out f30" aria-hidden="true" id="iconLogOut"></i>
       </div>
 
-      <h3>Control vencimientos</h3>
+      <h3 class="tc-crema1">Control vencimientos</h3>
 
 
     </div>
@@ -56,7 +56,7 @@
                     <td class="titu-cia">CIA</td>
                     <td class="titu-descripcion">DESCRIPCION DEL BIEN</td>
                     <td class="titu-observaciones">OBSERVACIONES</td>
-                    <td class="titu-estado">ESTADDO</td>
+                    <td class="titu-estado">ESTADOS</td>
                     <td class="titu-opciones td-opciones"><i class="fa fa-indent" aria-hidden="true"></i><i class="fa fa-outdent oculto" aria-hidden="true"></i></td>
                   </tr>
                   <tbody class="tabla-control">
@@ -81,7 +81,7 @@
                     <td class="titu-cia">CIA</td>
                     <td class="titu-descripcion">DESCRIPCION DEL BIEN</td>
                     <td class="titu-observaciones">OBSERVACIONES</td>
-                    <td class="titu-esado">ESTADO</td>
+                    <td class="titu-esado">ESTADOS</td>
                     <td class="titu-opciones td-opciones"><i class="fa fa-indent" aria-hidden="true"></i><i class="fa fa-outdent oculto" aria-hidden="true"></i></td>
                   </tr>
                   <tbody class="tabla-nuevos">
@@ -93,51 +93,92 @@
             </div>
           </div>
 
+
+
           <div class="mirow">
             <div class="borde1 mt15 black">
               <table>
                 <tr>
                   <form id="form_add" class="" action="/control" method="post">
                   <td class="b0 pl15"><input type="date" class="form-control oculto" name="fecha" disabled value=""></td>
-                  <td class="b0"><input type="text" class="form-control" name="nombre" value="" placeholder="Nombre" required></td>
-                  <td class="b0"><input type="text" class="form-control oculto" name="ramo" value="" placeholder="Ramo"></td>
-                  <td class="b0"><input type="text" class="form-control oculto" name="cia" value="" placeholder="CIA"></td>
-                  <td class="b0"><input type="text" class="form-control" name="descripcion" value="" placeholder="Descripción del bien"></td>
-                  <td class="b0"><input type="text" class="form-control oculto" name="observaciones" value="" placeholder="Observaciones"></td>
+                  <td class="b0"><input type="text" class="form-control form-nuevo" name="nombre" value="" placeholder="Tomador / Asegurado" required></td>
+                  <td class="b0"><input type="text" class="form-control form-nuevo oculto" name="ramo" value="" placeholder="Ramo"></td>
+                  <td class="b0"><input type="text" class="form-control form-nuevo oculto" name="cia" value="" placeholder="CIA"></td>
+                  <td class="b0"><input type="text" class="form-control form-nuevo" name="descripcion" value="" placeholder="Descripción del bien"></td>
+                  <td class="b0"><input type="text" class="form-control form-nuevo oculto" name="observaciones" value="" placeholder="Observaciones"></td>
                   <td class="b0"><input id="btn_add" type="image" class="ml4 mt4 mb0" src="img/save.png" style="height:38px;"></td>
                   </form>
                 </tr>
               </table>
             </div>
           </div>
+
+
+          <div class="mirow mb50">
+            <div class="">
+              <div class="mirow">
+                <div class="col33">
+                  <div class="f12 borde1 bg-white tc-333">
+                    <h4 class="mt15 ml15">Tareas</h4>
+                    <div class="" id="box-tareas">
+                      tolls
+                    </div>
+                    <div class="modal-footer">
+                      <input type="text" id="nuevoTareaInput" name="nuevoTareaInput" class="form-control mb10" autocomplete="off" value="" placeholder="Escriba aquí una nueva tarea">
+                      <button  id="nuevoTareaBtn" onclick="nuevoTarea()" class="btn btn-primary">Guardar</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="col33">
+                  <div class="oculto">
+                    <h4 class="">Notas Tápidas</h4>
+                    <div class="f12 borde1 bg-white tc-333">
+                      Nota
+                    </div>
+                  </div>
+                </div>
+                <div class="col33">
+                  <div class="oculto">
+                    <h4 class="">Otra Cosa</h4>
+                    <div class="f12 borde1 bg-white tc-333">
+                      Algo
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
 
-    <div class="ventana-nav" id=mesesButtom>
-      <div class="sub-ventana-nav">
+    <div class="ventana-nav bg-crema1 tc-444" id=mesesButtom>
+      <div class="sub-ventana-nav micontenedor">
         <div class="col33">
-          <div class="mirow">
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('ene');carga_control();">ene</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('feb');carga_control();">feb</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('mar');carga_control();">mar</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('abr');carga_control();">abr</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('may');carga_control();">may</div>
+          <div class="mirow pt6 pb6">
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('ene');carga_control();">ene</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('feb');carga_control();">feb</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('mar');carga_control();">mar</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('abr');carga_control();">abr</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('may');carga_control();">may</div>
           </div>
         </div>
         <div class="col33">
-          <div class="mirow">
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('jun');carga_control();">jun</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('jul');carga_control();">jul</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('ago');carga_control();">ago</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('sept');carga_control();">sep</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('oct');carga_control();">oct</div>
+          <div class="mirow pt6 pb6">
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('jun');carga_control();">jun</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('jul');carga_control();">jul</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('ago');carga_control();">ago</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('sept');carga_control();">sep</div>
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('oct');carga_control();">oct</div>
           </div>
         </div>
         <div class="col33">
-          <div class="mirow">
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('nov');carga_control();">nov</div>
-            <div class="col20 pointer" onclick="$('#fecha_busqueda').val('dic');carga_control();">dic</div>
+          <div class="mirow pt6 pb6">
+            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('nov');carga_control();">nov</div>
+            <div class="col20 pointer bl1 bc-aaa center br1" onclick="$('#fecha_busqueda').val('dic');carga_control();">dic</div>
             <div class="col20"></div>
             <div class="col20"></div>
             <div class="col20"></div>
@@ -163,6 +204,10 @@
             </div>
             <div class="modal-footer">
               <input type="text" id="nuevoSegInput" name="nuevoSeg" class="form-control mb10" autocomplete="off" value="" placeholder="Escriba aquí un nuevo seguimiento">
+              <div class="left" id="BoxNuevoCheckbox">
+                <label class="tc-444" for="nuevoCheckbox">Marcar como tarea</label>
+                <input type="checkbox" name="nuevoCheckbox" id="nuevoCheckbox">
+              </div>
               <button  id="nuevoSegBtn" onclick="" class="btn btn-primary">Guardar</button>
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
@@ -193,5 +238,6 @@
     </div>
     <%- include('includes/scripts') %>
     <script type="text/javascript" src="../js/miscript.js"></script>
+    <script type="text/javascript" src="../js/script-tareas-control.js"></script>
   </body>
 </html>

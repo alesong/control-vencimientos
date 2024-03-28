@@ -32,7 +32,7 @@ app.use(body_parser.urlencoded({extended:true}))
     const {usuarios} = readJSON()
     for (var i = 0; i < usuarios.length; i++) {
       if (usuarios[i]['username']==username && usuarios[i]['password']==password) {
-      res.cookie('cookie_'+username, dato, { maxAge: 12 * 60 * 60 * 10000, httpOnly: true }); //crea una cookie en bakend temporalmente 12 horas * 60 minutos * 60 segundos * 1000 milisegundos
+      res.cookie('cookie_'+username, dato, { maxAge: 12 * 60 * 60 * 1000, httpOnly: true }); //crea una cookie en bakend temporalmente 12 horas * 60 minutos * 60 segundos * 1000 milisegundos
 /*
         const writeJSON =  (data) => {
            fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');  // esto es por si desea guardar algo en el json de usuarios
@@ -40,12 +40,10 @@ app.use(body_parser.urlencoded({extended:true}))
 */
         res.send('LogIn')
         return('LogIn')
-      }else {
-        res.send("usuario o contrasena invalidos");
-        return("usuario o contrasena invalidos")
       }
     }
-
+    res.send("usuario o contrasena invalidos back");
+    return("usuario o contrasena invalidos")
   })
 
 
