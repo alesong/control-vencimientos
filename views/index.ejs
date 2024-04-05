@@ -4,7 +4,7 @@
     <%- include('includes/head') %>
     <title>Este es el index</title>
   </head>
-  <body>
+  <body class="oculto">
     <div class="micontenedor">
       <div class="right">
         <i class="fa fa-sign-out f30" aria-hidden="true" id="iconLogOut"></i>
@@ -24,7 +24,7 @@
                 <h4>Renovaciones</h4>
               </div>
               <div class="col33">
-                <!--espacio en blanco-->.
+                <input class="form-control f-left" type="text" name="" value="" placeholder="Buscar" id="buscar"><i class="fa fa-search -ml30 mt10 tc-ccc" aria-hidden="true"></i>
               </div>
               <div class="col33">
                 <form class="" action="" method="get">
@@ -117,32 +117,27 @@
           <div class="mirow mb50">
             <div class="">
               <div class="mirow">
-                <div class="col33">
+                <div class="col50">
                   <div class="f12 borde1 bg-white tc-333">
-                    <h4 class="mt15 ml15">Tareas</h4>
+                    <h4 class="mt15 ml15">Tareas Alex</h4>
                     <div class="" id="box-tareas">
                       tolls
                     </div>
                     <div class="modal-footer">
                       <input type="text" id="nuevoTareaInput" name="nuevoTareaInput" class="form-control mb10" autocomplete="off" value="" placeholder="Escriba aquí una nueva tarea">
                       <button  id="nuevoTareaBtn" onclick="nuevoTarea()" class="btn btn-primary">Guardar</button>
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
-                <div class="col33">
-                  <div class="oculto">
-                    <h4 class="">Notas Tápidas</h4>
-                    <div class="f12 borde1 bg-white tc-333">
+                <div class="col50">
+                  <div class="f12 borde1 bg-white tc-333">
+                    <h4 class="">Notas Henry</h4>
+                    <div class="" id="box-notas">
                       Nota
                     </div>
-                  </div>
-                </div>
-                <div class="col33">
-                  <div class="oculto">
-                    <h4 class="">Otra Cosa</h4>
-                    <div class="f12 borde1 bg-white tc-333">
-                      Algo
+                    <div class="modal-footer">
+                      <input type="text" id="nuevoNotaInput" name="nuevoNotaInput" class="form-control mb10" autocomplete="off" value="" placeholder="Escriba aquí una nueva nota">
+                      <button  id="nuevoNotaBtn" onclick="nuevoNota()" class="btn btn-primary">Guardar</button>
                     </div>
                   </div>
                 </div>
@@ -158,27 +153,27 @@
     <div class="ventana-nav bg-crema1 tc-444" id=mesesButtom>
       <div class="sub-ventana-nav micontenedor">
         <div class="col33">
-          <div class="mirow pt6 pb6">
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('ene');carga_control();">ene</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('feb');carga_control();">feb</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('mar');carga_control();">mar</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('abr');carga_control();">abr</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('may');carga_control();">may</div>
+          <div class="mirow pt8 pb0">
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('ene');carga_control();" id="btnene">ene</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('feb');carga_control();" id="btnfeb">feb</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('mar');carga_control();" id="btnmar">mar</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('abr');carga_control();" id="btnabr">abr</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('may');carga_control();" id="btnmay">may</div>
           </div>
         </div>
         <div class="col33">
-          <div class="mirow pt6 pb6">
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('jun');carga_control();">jun</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('jul');carga_control();">jul</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('ago');carga_control();">ago</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('sept');carga_control();">sep</div>
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('oct');carga_control();">oct</div>
+          <div class="mirow pt8 pb0">
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('jun');carga_control();" id="btnjun">jun</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('jul');carga_control();" id="btnjul">jul</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('ago');carga_control();" id="btnago">ago</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('sept');carga_control();" id="btnsept">sep</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('oct');carga_control();" id="btnoct">oct</div>
           </div>
         </div>
         <div class="col33">
-          <div class="mirow pt6 pb6">
-            <div class="col20 pointer bl1 bc-aaa center" onclick="$('#fecha_busqueda').val('nov');carga_control();">nov</div>
-            <div class="col20 pointer bl1 bc-aaa center br1" onclick="$('#fecha_busqueda').val('dic');carga_control();">dic</div>
+          <div class="mirow pt8 pb0">
+            <div class="col20 pointer bl1 bc-aaa center btnmes" onclick="$('#fecha_busqueda').val('nov');carga_control();" id="btnnov">nov</div>
+            <div class="col20 pointer bl1 bc-aaa center btnmes br1" onclick="$('#fecha_busqueda').val('dic');carga_control();" id="btndic">dic</div>
             <div class="col20"></div>
             <div class="col20"></div>
             <div class="col20"></div>
@@ -239,5 +234,6 @@
     <%- include('includes/scripts') %>
     <script type="text/javascript" src="../js/miscript.js"></script>
     <script type="text/javascript" src="../js/script-tareas-control.js"></script>
+    <script type="text/javascript" src="../js/script-notas-control.js"></script>
   </body>
 </html>

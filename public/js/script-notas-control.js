@@ -1,20 +1,20 @@
 $(document).ready(function(){
-  console.log('pasó por script-tareas-control front');
-  carga_tareas();
+  console.log('pasó por script-notas-control front');
+  carga_notas();
 });
 
-function carga_tareas() {
-  $("#box-tareas").html('<div class="center"><img src="img/spinner.gif"></div>')
-  var div = document.getElementById('box-tareas');
+function carga_notas() {
+  $("#box-notas").html('<div class="center"><img src="img/spinner.gif"></div>')
+  var div = document.getElementById('box-notas');
   div.scrollTop = div.scrollHeight; // Esto es para que el scrol cargue abajo
   $.ajax({
       type: "GET",
-      url: "../tareas",
+      url: "../notas",
       success: function (objeto) {
-        //console.log('tareas front');
+        //console.log('notas front');
         console.log(objeto);
-        $("#box-tareas").html('')
-        $("#box-tareas").addClass('boxseguimientos')
+        $("#box-notas").html('')
+        $("#box-notas").addClass('boxseguimientos')
         color='bg-eee';
         //x='<i class="fa fa-times orange" onclick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i>' //Este elemento es solo una guia, es reemplazado en el siguiente for.
         const objetoIdClientes = []
@@ -55,7 +55,7 @@ function carga_tareas() {
           if (fechaResueltoFormateada==undefined) {
             $('#resuelto'+objeto[i]['id']).addClass('oculto')
           }
-          $("#box-tareas").append('<div id="seg'+objeto[i]['id']+'" class="mirow pl15 pr15 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
 
         }
@@ -64,7 +64,7 @@ function carga_tareas() {
 }
 
 
-function realizarTarea(id, dato){
+function realizarNota(id, dato){
   campo='resuelto';
   //console.log(id);
   //console.log(dato);
@@ -73,7 +73,7 @@ if (dato == '0') {nuevoDato='1'}
 console.log('el nuevo dato es: '+nuevoDato);
   $.ajax({
       type: "PUT",
-      url: "../tareas",
+      url: "../notas",
       data: {id:id,campo:campo,dato:nuevoDato},
       success: function (objeto) {
         if (objeto=='LogOut') {
@@ -85,16 +85,16 @@ console.log('el nuevo dato es: '+nuevoDato);
             var idcliente = objeto[i]['idcliente'];
           }
         }
-        carga_tareas();
+        carga_notas();
         info(idcliente);
       }
     })
 }
 
 
-function nuevoTarea(id_cliente){
-  $("#nuevoTareaBtn").html('<div class="center"><img src="img/spinner.gif" width="15px"></div>')
-  const dataSeg=$("#nuevoTareaInput").val()
+function nuevoNota(id_cliente){
+  $("#nuevoNotaBtn").html('<div class="center"><img src="img/spinner.gif" width="15px"></div>')
+  const dataSeg=$("#nuevoNotaInput").val()
   //var checkbox = document.getElementById("nuevoCheckbox");
   var valorCheckbox = true;
 console.log('El valor del checkbox front es: '+valorCheckbox);
@@ -103,19 +103,37 @@ console.log('El valor del checkbox front es: '+valorCheckbox);
   }else {
     $.ajax({
         type: "POST",
-        url: "../seguimientos",
+        url: "../notas",
         data: {id_cliente:id_cliente, dataSeg:dataSeg, checkbox:valorCheckbox},
         success: function (res) {
           if (res=='ok') {
-            $("#nuevoTareaInput").val('')
-            $("#nuevoTareaBtn").html('Guardar')
+            $("#nuevoNotaInput").val('')
+            $("#nuevoNotaBtn").html('Guardar')
             info(id_cliente)
-            carga_tareas()
+            carga_notas()
           }else {
             alert(res)
           }
         }
       });
   }
+}
 
+
+function trashedNota(id){
+  $("#not"+id).css("background-color","yelow")
+  $.ajax({
+      type: "DELETE",
+      url: "../notas",
+      data: {id:id},
+      success: function (res) {
+        if (res=='ok') {
+          $("#not"+id).css("background-color","red")
+          $("#not"+id).slideUp()
+        }else {
+          console.log(res);
+          alert('No fue posible eliminar l anota')
+        }
+      }
+    });
 }

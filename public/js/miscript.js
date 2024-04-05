@@ -2,7 +2,7 @@ $(document).ready(function(){
   console.log('jQuery incluído');
   carga_control();
 });
-
+$('body').fadeIn(2000);
 $("#fecha_busqueda").change(function(){
   carga_control();
 });
@@ -12,6 +12,8 @@ function carga_control(){
   $(".imgspin").slideDown(250);
   var mes_actual  = new Date().toLocaleDateString('es-es', {month:"short"})
   const filtro = $("#fecha_busqueda").val();
+  $('.btnmes').removeClass('bb3');$('.btnmes').removeClass('bg-crema2');
+  $('#btn'+filtro).addClass('bb3');$('#btn'+filtro).addClass('bg-crema2')
   setTimeout(function(){
     if (filtro=='') {
       var parametro = '/'+mes_actual
@@ -192,7 +194,7 @@ function carga_control(){
       } //---fin function success
   });
 
-},1000)  //el numero son milisegundos de delay para permitir visualizar el spinner
+},500)  //el numero son milisegundos de delay para permitir visualizar el spinner
 inicializarColorBoxes();
 }
 
@@ -315,8 +317,13 @@ function info(id) {
   var nombre = $("#input_"+id+"_nombre").val()
   var observaciones = $("#input_"+id+"_observaciones").val()
   var descripcion = $("#input_"+id+"_descripcion").val()
-  $("#modalInfo-titulo").html(nombre);
-  $("#modalInfo-header").html('<div class="col100 pt10">'+descripcion+' </div><div class="col100 bb1 pb10">'+observaciones+'</div>');
+  if (observaciones == undefined || descripcion == undefined) {
+    $("#modalInfo-titulo").html('');
+    $("#modalInfo-header").html('');
+  }else {
+    $("#modalInfo-titulo").html(nombre);
+    $("#modalInfo-header").html('<div class="col100 pt10 tc-bluedefault">'+descripcion+' </div><div class="col100 bb1 pb10 tc-blueviolet">'+observaciones+'</div>');
+  }
   $("#modalInfo-body").html('<div class="center"><img src="img/spinner.gif"></div>')
   $("#nuevoSegBtn"). attr('onclick' , 'nuevoSeguimiento('+id+')')
   var div = document.getElementById('modalInfo-body');
@@ -422,7 +429,9 @@ console.log('El valor del checkbox front es: '+valorCheckbox);
             $("#nuevoSegInput").val('')
             $("#nuevoSegBtn").html('Guardar')
             info(id_cliente)
-            carga_tareas()
+            if (valorCheckbox==true) {
+              carga_tareas()  // esta funcion se encuentra en el archivo script-tareas-control.json
+            }
           }else {
             alert(res)
           }

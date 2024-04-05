@@ -47,7 +47,7 @@
             "idcliente": "11",
             "fecha_seguimiento": "2024-03-12T06:56:29.686Z",
             "seguimiento": "Care Chimbo X2",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 8,
@@ -354,8 +354,8 @@
             "fecha_seguimiento": "2024-03-27T08:01:10.579Z",
             "seguimiento": "Estudio seguro KIA Andrea Mayorga",
             "tarea": "1",
-            "resuelto": 0,
-            "fechaResuelto": "",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-05T17:26:55.149Z",
             "papelera": 0
         },
         {
@@ -366,7 +366,7 @@
             "tarea": "0",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 48,
@@ -374,8 +374,8 @@
             "fecha_seguimiento": "2024-03-27T20:03:57.129Z",
             "seguimiento": "Voltear el Cuadro de Agente Motor",
             "tarea": "1",
-            "resuelto": 0,
-            "fechaResuelto": "",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-05T17:37:28.254Z",
             "papelera": 0
         },
         {
@@ -392,7 +392,7 @@
             "id": 50,
             "idcliente": "7",
             "fecha_seguimiento": "2024-03-27T20:12:17.273Z",
-            "seguimiento": "Hacer póliza de Alexandra Mejía en Solidaria con financiación Finesa cuota inicial 500.000",
+            "seguimiento": "Alexandra Mejía en Solidaria hacer financiación Finesa cuota inicial 500.000 - Esperar correo de Olga Lucia Gutierrez confirmando la póliza en Solidaria",
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
@@ -476,7 +476,7 @@
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 59,
@@ -524,6 +524,196 @@
             "fecha_seguimiento": "2024-03-28T18:04:07.854Z",
             "seguimiento": "FINSU nueva financiera de primas de SBS, ver instructivo en carpeta de SBS y agregar al comparativo de financiaciones.",
             "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 64,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-01T19:45:39.706Z",
+            "seguimiento": "Diligenciar sarlaft Solidaria Alexandra Mejía para enviar a Olga Gutiérrez junto con cc, tp y cotización para tramitar emisión póliza en Solidaria",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 1
+        },
+        {
+            "id": 65,
+            "idcliente": "26",
+            "fecha_seguimiento": "2024-04-01T20:07:33.933Z",
+            "seguimiento": "Se envia renovacion via whatsapp, el cliente no tiene correo electrónico",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 66,
+            "idcliente": "7",
+            "fecha_seguimiento": "2024-04-01T20:08:20.320Z",
+            "seguimiento": "Diligenciar sarlaft Solidaria Alexandra Mejía para enviar a Olga Gutiérrez junto con cc, tp y cotización para tramitar emisión póliza en Solidaria",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-02T19:51:11.640Z",
+            "papelera": 0
+        },
+        {
+            "id": 67,
+            "idcliente": "26",
+            "fecha_seguimiento": "2024-04-01T20:37:11.294Z",
+            "seguimiento": "Se realiza financiacion a 9 cuotas,  se envía correo para firma del pagaré a liz.esco@outlook.com",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 68,
+            "idcliente": "7",
+            "fecha_seguimiento": "2024-04-02T19:33:41.383Z",
+            "seguimiento": "Enviar carta a Equidad indicando que no va a retomar por alto costo de la prima",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-02T20:27:42.655Z",
+            "papelera": 0
+        },
+        {
+            "id": 69,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-02T19:50:49.812Z",
+            "seguimiento": "Realizar Factura Mapfre.",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-02T20:47:51.382Z",
+            "papelera": 0
+        },
+        {
+            "id": 70,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-04-02T21:54:41.630Z",
+            "seguimiento": "SE REQUIERE INSPECCION (8387) Llamar a Braulio Gomez a indicar la autoinspección",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 1
+        },
+        {
+            "id": 71,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-04-03T18:53:02.454Z",
+            "seguimiento": "No fue posible realizar póliza en Mapfre ni en Bolívar por que pide inspección. Se deja dedinitivamente la póliza con Colpatria",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 72,
+            "idcliente": "24",
+            "fecha_seguimiento": "2024-04-03T18:56:25.694Z",
+            "seguimiento": "Preprar correo con renovacion Colpatria a Braulio y con copia a lla esposa Gloria Gallego",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-03T20:41:35.063Z",
+            "papelera": 0
+        },
+        {
+            "id": 73,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-03T18:57:50.641Z",
+            "seguimiento": "Proceder con esta cancelación de Lucely Mery a partir del 9 de abril, gestionar por Simón Servicios, ta no se utiliza oficina.cali",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-03T23:39:37.665Z",
+            "papelera": 0
+        },
+        {
+            "id": 74,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-03T20:55:41.346Z",
+            "seguimiento": "Gestionar solicitud financiación seguro edificio Inversiones Arroyave, ver liquidación en carpeta, enviar a HDI",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-03T23:51:18.529Z",
+            "papelera": 0
+        },
+        {
+            "id": 75,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-03T20:56:27.841Z",
+            "seguimiento": "Tramitar orden de inspección a domicilio Suzuki Cielito Arroyave, con HDI",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-05T17:58:48.493Z",
+            "papelera": 0
+        },
+        {
+            "id": 76,
+            "idcliente": "6",
+            "fecha_seguimiento": "2024-04-03T21:17:08.187Z",
+            "seguimiento": "Se alista correo con renovacion junto con comprobante para pago",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 77,
+            "idcliente": "7",
+            "fecha_seguimiento": "2024-04-04T19:23:05.642Z",
+            "seguimiento": "En la inspeccion salió pelicula de seguridad.",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 78,
+            "idcliente": "6",
+            "fecha_seguimiento": "2024-04-04T19:25:55.575Z",
+            "seguimiento": "Cotizar hogar con previsora",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 79,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-04-04T20:29:19.383Z",
+            "seguimiento": "h",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 1
+        },
+        {
+            "id": 80,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-04-04T20:29:32.822Z",
+            "seguimiento": "t",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-05T22:02:00.183Z",
+            "papelera": 1
+        },
+        {
+            "id": 81,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-05T21:07:40.349Z",
+            "seguimiento": "Revisar si se puede agregar notas a la cancelacion de Lucely",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 82,
+            "idcliente": "6",
+            "fecha_seguimiento": "2024-04-05T22:35:07.566Z",
+            "seguimiento": "Previsora no muestra resultados en cotización",
+            "tarea": "0",
             "resuelto": 0,
             "fechaResuelto": "",
             "papelera": 0

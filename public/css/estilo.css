@@ -234,8 +234,8 @@ table tr td{
   margin-left: 250px;
   margin-top: 5px;
 }
-#box-tareas{
-  height: 600px;
+#box-tareas, #box-notas{
+  height: 500px;
 }
 input{
   background-color: transparent;
@@ -244,3 +244,7 @@ input{
   #mesesButtom{
     display: none;
   }
+.fa-search{
+  position: absolute;
+  margin-left: -30px;
+}
