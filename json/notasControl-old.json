@@ -1,1 +1,14 @@
-{"notasControl":[{"id":1,"idcliente":"undefined","fecha_seguimiento":"2024-04-05T22:30:47.386Z","seguimiento":"Primera nota","tarea":"1","resuelto":"1","fechaResuelto":"2024-04-06T23:23:05.300Z","papelera":0}]}
+{
+    "notasControl": [
+        {
+            "id": 1,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-05T22:30:47.386Z",
+            "seguimiento": "Primera nota",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-06T23:23:05.300Z",
+            "papelera": 1
+        }
+    ]
+}
