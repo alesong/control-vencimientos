@@ -430,15 +430,15 @@ app.use(body_parser.urlencoded({extended:true}))
      return JSON.parse(data)
      }
      const objeto = []
-     const {seguimientos} = readJSON()
+     const {notasControl} = readJSON()
 
-     for (var i = 0; i < seguimientos.length; i++) {
-       if (seguimientos[i]['papelera'] == 0 && seguimientos[i]['tarea'] == 1) {
+     for (var i = 0; i < notasControl.length; i++) {
+       if (notasControl[i]['papelera'] == 0 && notasControl[i]['tarea'] == 1) {
          var nombreCliente=''
 
 
-         if (seguimientos[i]['resuelto'] == 1) {
-           var fecha = new Date(seguimientos[i]['fechaResuelto']);
+         if (notasControl[i]['resuelto'] == 1) {
+           var fecha = new Date(notasControl[i]['fechaResuelto']);
            //console.log(fecha);
            // Obtener la fecha actual
            var fechaActual = new Date();
@@ -451,32 +451,32 @@ app.use(body_parser.urlencoded({extended:true}))
 
            if (dias < 5) {
              //Realiza el push si está resuelto y tiene menos de 5 días
-             nombreCliente=traerNombreCliente(seguimientos[i]['idcliente']);
+             nombreCliente=traerNombreCliente(notasControl[i]['idcliente']);
              objeto.push({
-               id : seguimientos[i]['id'],
-               idcliente : seguimientos[i]['idcliente'],
+               id : notasControl[i]['id'],
+               idcliente : notasControl[i]['idcliente'],
                nombreCliente : nombreCliente,
-               fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
-               seguimiento : seguimientos[i]['seguimiento'],
-               tarea : seguimientos[i]['tarea'],
-               resuelto : seguimientos[i]['resuelto'],
-               fechaResuelto : seguimientos[i]['fechaResuelto'],
-               papelera : seguimientos[i]['papelera'],
+               fecha_seguimiento : notasControl[i]['fecha_seguimiento'],
+               seguimiento : notasControl[i]['seguimiento'],
+               tarea : notasControl[i]['tarea'],
+               resuelto : notasControl[i]['resuelto'],
+               fechaResuelto : notasControl[i]['fechaResuelto'],
+               papelera : notasControl[i]['papelera'],
              })
            }
          }else {
            //Realiza el push por defecto si no esta resuelto;
-           nombreCliente=traerNombreCliente(seguimientos[i]['idcliente']);
+           nombreCliente=traerNombreCliente(notasControl[i]['idcliente']);
            objeto.push({
-             id : seguimientos[i]['id'],
-             idcliente : seguimientos[i]['idcliente'],
+             id : notasControl[i]['id'],
+             idcliente : notasControl[i]['idcliente'],
              nombreCliente : nombreCliente,
-             fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
-             seguimiento : seguimientos[i]['seguimiento'],
-             tarea : seguimientos[i]['tarea'],
-             resuelto : seguimientos[i]['resuelto'],
-             fechaResuelto : seguimientos[i]['fechaResuelto'],
-             papelera : seguimientos[i]['papelera'],
+             fecha_seguimiento : notasControl[i]['fecha_seguimiento'],
+             seguimiento : notasControl[i]['seguimiento'],
+             tarea : notasControl[i]['tarea'],
+             resuelto : notasControl[i]['resuelto'],
+             fechaResuelto : notasControl[i]['fechaResuelto'],
+             papelera : notasControl[i]['papelera'],
            })
          }
        }
@@ -600,22 +600,22 @@ app.use(body_parser.urlencoded({extended:true}))
      const data =  fs.readFileSync(patJSON, 'utf-8')
      return JSON.parse(data)
      }
-     const {seguimientos} = readJSON()
-     for (var i = 0; i < seguimientos.length; i++) {
-       if (seguimientos[i]['id']==id) {
-         seguimientos[i][campo]=dato
-         seguimientos[i]['fechaResuelto']=fechaResuelto
+     const {notasControl} = readJSON()
+     for (var i = 0; i < notasControl.length; i++) {
+       if (notasControl[i]['id']==id) {
+         notasControl[i][campo]=dato
+         notasControl[i]['fechaResuelto']=fechaResuelto
        }
      }
      const writeJSON =  (data) => {
         fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
      }
      writeJSON({
-       seguimientos: seguimientos,
+       notasControl: notasControl,
      })
      console.log('Se ha modificado el id : '+id+' campo: '+campo+' dato: '+dato)
 
-     res.json(seguimientos)
+     res.json(notasControl)
 
 
    }else {
@@ -686,17 +686,17 @@ app.use(body_parser.urlencoded({extended:true}))
     const data =  fs.readFileSync(patJSON, 'utf-8')
     return JSON.parse(data)
     }
-    const {seguimientos} = readJSON()
-    for (var i = 0; i < seguimientos.length; i++) {
-      if (seguimientos[i]['id']==id) {
-        seguimientos[i]['papelera']=1
+    const {notasControl} = readJSON()
+    for (var i = 0; i < notasControl.length; i++) {
+      if (notasControl[i]['id']==id) {
+        notasControl[i]['papelera']=1
       }
     }
     const writeJSON =  (data) => {
        fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
     }
     writeJSON({
-      seguimientos: seguimientos,
+      notasControl: notasControl,
     })
     console.log('Se ha eliminado el seguimiento con id : '+id)
 
@@ -820,9 +820,9 @@ app.use(body_parser.urlencoded({extended:true}))
            fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
         }
 
-        const {seguimientos} = readJSON()
-        const n = seguimientos.length
-        seguimientos.push({
+        const {notasControl} = readJSON()
+        const n = notasControl.length
+        notasControl.push({
           id : n+1,
           idcliente : id_cliente,
           fecha_seguimiento : fecha,
@@ -834,7 +834,7 @@ app.use(body_parser.urlencoded({extended:true}))
         })
 
         writeJSON({
-          seguimientos: seguimientos,
+          notasControl: notasControl,
         })
 
         console.log('Se ha agregado el seguimiento: '+dataSeg)
@@ -857,6 +857,65 @@ app.use(body_parser.urlencoded({extended:true}))
     res.send('ok post')
 
   })
+
+
+
+  app.get('/backup', function (req, res) {
+    //console.log('tareas back');
+    if (session()==true) {
+
+      const fs = require('fs')
+      const path = require("path")
+
+      const patJSON1 = path.join(__dirname, '../json/clientes.json')
+      const readJSON1 =  () => {
+      const data1 =  fs.readFileSync(patJSON1, 'utf-8')
+      return JSON.parse(data1)
+      }
+
+      const patJSON2 = path.join(__dirname, '../json/seguimientos.json')
+      const readJSON2 =  () => {
+      const data2 =  fs.readFileSync(patJSON2, 'utf-8')
+      return JSON.parse(data2)
+      }
+
+      const patJSON3 = path.join(__dirname, '../json/notasControl.json')
+      const readJSON3 =  () => {
+      const data3 =  fs.readFileSync(patJSON3, 'utf-8')
+      return JSON.parse(data3)
+      }
+
+      const objetoBackup = []
+
+      objetoBackup.push(
+          readJSON1(),
+          readJSON2(),
+          readJSON3()
+      )
+
+      //console.log(objeto);
+      res.json(objetoBackup);
+    }else {
+      res.send('LogOut');
+    }
+
+
+    //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
+    function session(){
+      const puedeRenderizar = verificarCookies(req);
+      if (puedeRenderizar) {
+          return(true); // Renderiza la vista si se pueden renderizar las cookies
+      } else {
+          return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+      }
+    }
+    //-------fin Compruebador de sesion-----//
+
+ });
+
+
+
+
 
   // Define el intervalo de tiempo en segundos
   const intervalo = 40 * 1000; // 40 segundos
