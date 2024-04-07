@@ -232,7 +232,7 @@
             "estudio": "1",
             "financiacion": "0",
             "correo": "1",
-            "pago": "0",
+            "pago": "1",
             "tp": "1",
             "bg": "",
             "papelera": 0
@@ -249,7 +249,7 @@
             "estudio": "0",
             "financiacion": "0",
             "correo": "0",
-            "pago": "0",
+            "pago": "1",
             "tp": "1",
             "bg": "",
             "papelera": 0
@@ -286,7 +286,7 @@
             "pago": "0",
             "tp": "1",
             "bg": "",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 18,
@@ -294,7 +294,7 @@
             "nombre": "Condominio Rincón de Las Mercedes",
             "ramo": "AC",
             "cia": "Mapfre",
-            "descripcion": "Areas Comunes",
+            "descripcion": "Areas Comunes - Responsabilidad civil",
             "observaciones": "",
             "renovacion": "1",
             "estudio": "0",
@@ -317,7 +317,7 @@
             "estudio": "0",
             "financiacion": "0",
             "correo": "1",
-            "pago": "0",
+            "pago": "1",
             "tp": "1",
             "bg": "",
             "papelera": 0
@@ -351,7 +351,7 @@
             "estudio": "1",
             "financiacion": "0",
             "correo": "1",
-            "pago": "0",
+            "pago": "1",
             "tp": "1",
             "bg": "",
             "papelera": 0
@@ -368,7 +368,7 @@
             "estudio": "1",
             "financiacion": "0",
             "correo": "1",
-            "pago": "0",
+            "pago": "1",
             "tp": "1",
             "bg": "",
             "papelera": 0
