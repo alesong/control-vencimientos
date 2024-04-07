@@ -9,6 +9,16 @@
             "resuelto": "1",
             "fechaResuelto": "2024-04-06T23:23:05.300Z",
             "papelera": 1
+        },
+        {
+            "id": 2,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-07T05:13:59.984Z",
+            "seguimiento": "Nota 1",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
         }
     ]
 }
