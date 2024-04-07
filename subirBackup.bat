@@ -114,11 +114,12 @@ for %%F in (clientes seguimientos notasControl) do (
             git add %%F-old.json
             git status
             git commit -m "backup-%%F-!datetime!"
-          ::  git push -u origin master
+
             echo Operaciones de Git realizadas.
         ) else (
             echo Error: La copia del archivo %%G no fue exitosa.
         )
+          git push -u origin master
         endlocal
     )
 )
