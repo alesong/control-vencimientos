@@ -55,7 +55,7 @@ function carga_notas() {
           if (fechaResueltoFormateada==undefined) {
             $('#resuelto'+objeto[i]['id']).addClass('oculto')
           }
-          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
 
         }

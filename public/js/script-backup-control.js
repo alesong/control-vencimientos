@@ -1,3 +1,35 @@
+function controlVersion(){
+
+  $.ajax({
+      url:'/ultimaFecha',
+      type: 'GET',
+      success: function(ultimaFecha){
+        $('#controlVersion').html(ultimaFecha)
+        const myDiv = document.getElementById('controlVersion');
+        const divContent = myDiv.innerHTML;
+        var ultimaFecha = new Date(divContent);
+        var nuevaFecha = new Date();
+        var diferencia = nuevaFecha.getTime() - ultimaFecha.getTime();
+        var dias = 3 * 24 * 60 * 60 * 1000
+        if (diferencia > dias) {
+          diasDiferencia = Math.round(diferencia / (24 * 60 * 60 * 1000))
+          var msg = 'Tiene '+diasDiferencia+' dias de direfencia, requiere realizar push con un commit de fecha más reciente.';
+          $('#controlVersion').append(msg)
+          console.log(msg);
+          $('#controlVersion').addClass('alert alert-danger')
+        }else {
+          console.log('es menor de 3 dia, actualizarFechaServidor()');
+          //$('#controlVersion').addClass('alert alert-success')
+        }
+        changeColorProgressively();
+      }
+  })
+}
+
+
+
+
+
 function descargarBackup() {
     // Realizar la petición AJAX
     $.ajax({
@@ -52,6 +84,21 @@ function descargarBackup() {
 
                     // Eliminar el elemento 'a' después de la descarga
                     document.body.removeChild(a);
+
+                    var nuevaFecha = new Date();
+                    $('#controlVersion').html(nuevaFecha)
+                    $('#controlVersion').removeClass('alert alert-danger')
+                    //$('#controlVersion').addClass('alert alert-success')
+                    $.ajax({
+                        url:'/ultimaFecha',
+                        type: 'POST',
+                        data: {nuevaFecha:nuevaFecha},
+                        success: function(res){
+                          if (res == 'ok') {
+                            changeColorProgressively();
+                          }
+                        }
+                    })
                 }
             }
         },
@@ -63,3 +110,82 @@ function descargarBackup() {
 
 // Asignar la función al evento 'click' del botón "btnBackup"
 $('#btnBackup').on('click', descargarBackup);
+
+
+
+// Función que simula un clic en el botón "btnBackup"
+function clickBackupButton() {
+  // Obtener el elemento del botón
+  const backupButton = document.getElementById('btnBackup');
+
+  // Simular un clic en el botón
+  backupButton.click();
+}
+
+// Función que programa la ejecución de la función clickBackupButton() a las 6:30 p.m. todos los días
+function scheduleBackupClick() {
+  // Obtener la hora actual
+  const now = new Date();
+
+  // Calcular la próxima hora de ejecución (6:30 p.m. del día actual)
+  const nextExecutionTime = new Date(
+    now.getFullYear(),
+    now.getMonth(),
+    now.getDate(),
+    18, // Hora: 6 p.m.
+    30, // Minutos: 30
+    0 // Segundos: 0
+  );
+
+  // Si la próxima hora de ejecución ya pasó, programar para el día siguiente
+  if (nextExecutionTime < now) {
+    nextExecutionTime.setDate(nextExecutionTime.getDate() + 1);
+  }
+
+  // Programar la ejecución de la función clickBackupButton() a la próxima hora de ejecución
+  setTimeout(clickBackupButton, nextExecutionTime - now);
+
+  // Programar la siguiente ejecución
+  setTimeout(scheduleBackupClick, 24 * 60 * 60 * 1000); // 24 horas en milisegundos
+}
+
+// Iniciar la programación de la ejecución
+scheduleBackupClick();
+
+
+
+
+function changeColorProgressively() {
+  // Obtener el elemento con el ID "controlVersion"
+  const controlVersionElement = document.getElementById("controlVersion");
+
+  // Obtener la fecha almacenada en el elemento
+  var elemento = $('#controlVersion').html()
+  const storedDate = new Date(elemento);
+
+  // Obtener la fecha actual
+  const currentDate = new Date();
+
+  // Calcular el tiempo transcurrido en milisegundos
+  const timeDiff = currentDate.getTime() - storedDate.getTime();
+
+  // Calcular el porcentaje de tiempo transcurrido (de 0 a 1)
+  const progressPercentage = Math.min(timeDiff / (24 * 60 * 60 * 1000), 1);
+
+  // Calcular el color intermedio entre #75c675 y #c67575 en función del porcentaje de tiempo transcurrido
+  const redValue = Math.round(0x75 + (0xc6 - 0x75) * progressPercentage);
+  const greenValue = Math.round(0xc6 - (0xc6 - 0x75) * progressPercentage);
+  const blueValue = Math.round(0x75 + (0x75 - 0x75) * progressPercentage);
+
+  // Convertir los valores RGB a un color hexadecimal
+  const newColor = `#${redValue.toString(16).padStart(2, '0')}${greenValue.toString(16).padStart(2, '0')}${blueValue.toString(16).padStart(2, '0')}`;
+
+  // Establecer el nuevo color en el elemento
+  controlVersionElement.style.color = newColor;
+
+  // Solicitar la siguiente actualización de color
+  requestAnimationFrame(changeColorProgressively);
+}
+
+
+controlVersion();

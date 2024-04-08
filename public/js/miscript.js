@@ -378,7 +378,7 @@ function info(id) {
           if (objeto[i]['tarea']=='1') {
             vistaCheckbox='<input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
           }
-          $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow pt0 pb0 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
         }
 

@@ -937,5 +937,40 @@ app.use(body_parser.urlencoded({extended:true}))
   })
 
 
+  app.get('/ultimaFecha', function(req, res){
+  const fs = require('fs');
+  const path = require("path");
+  const filepath = path.join(__dirname, '../json/ultimaFecha.txt');
+
+  fs.readFile(filepath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error al leer el archivo');
+    } else {
+      res.send(data);
+    }
+  });
+});
+
+
+app.post('/ultimaFecha', function(req, res){
+  const nuevaFecha = req.body.nuevaFecha
+  const fs = require('fs');
+  const path = require("path");
+  const filepath = path.join(__dirname, '../json/ultimaFecha.txt');
+
+  //const newDate = 'Sat Apr 06 2024 23:45:00 GMT-0500 (hora estándar de Colombia)';
+  const newDate = nuevaFecha;
+
+  fs.writeFile(filepath, newDate, 'utf8', (err) => {
+    if (err) {
+      console.error(err);
+      res.status(500).send('Error al escribir en el archivo');
+    } else {
+      res.send('ok');
+    }
+  });
+});
+
 }
 module.exports=ruta_control

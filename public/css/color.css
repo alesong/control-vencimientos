@@ -2,6 +2,7 @@
 .white{color: white} .tc-white{color: white} .bc-white{border-color: white} .bg-white{background-color: white}
 .black{color: black} .tc-black{color: black} .bc-black{border-color: black} .bg-black{background-color: black}
 .green{color: green} .tc-green{color: green} .bc-green{border-color: green} .bg-green{background-color: green}
+.greenlite{color:#75c675} .tc-greenlite{color: #75c675} .bc-greenlite{border-color: #75c675} .bg-greenlite{background-color: #75c675}
 .blue{color: blue} .tc-blue{color: blue} .bc-blue{border-color: blue} .bg-blue{background-color: blue}
 .yellow{color: yellow} .tc-yellow{color: yellow} .bc-yellow{border-color: yellow} .bg-yellow{background-color: yellow}
 .pink{color: pink} .tc-pink{color: pink} .bc-pink{border-color: pink} .bg-pink{background-color: pink}
