@@ -98,7 +98,12 @@
 .pointer{
   cursor: pointer;
 }
-
+.inlineBlock{
+  display: inline-block;
+}
+.inline{
+  display: inline;
+}
 .f6{font-size: 6px}
 .f7{font-size: 7px}
 .f8{font-size: 8px}

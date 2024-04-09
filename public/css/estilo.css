@@ -201,6 +201,7 @@ table tr td{
 .boxseguimientos{
   height: 400px;
   overflow-y: auto;
+  overflow-x: inherit;
 }
 #colorPicker {
     display: none;
@@ -235,7 +236,7 @@ table tr td{
   margin-top: 5px;
 }
 #box-tareas, #box-notas{
-  
+
 }
 input{
   background-color: transparent;
@@ -247,4 +248,13 @@ input{
 .fa-search{
   position: absolute;
   margin-left: -30px;
+}
+#cantidadTareas, #cantidadNotas{
+  right: 30px;
+}
+.closeModal{
+  position: absolute;
+  top: 0;
+  margin-top: 10px;
+  right: 10px;
 }

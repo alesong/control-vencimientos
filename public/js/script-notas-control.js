@@ -18,6 +18,9 @@ function carga_notas() {
         color='bg-eee';
         //x='<i class="fa fa-times orange" onclick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i>' //Este elemento es solo una guia, es reemplazado en el siguiente for.
         const objetoIdClientes = []
+        var cantidadResuelto = 0
+        var cantidadSinResolver = 0
+        var cantidadTotal = 0
         for (var i = 0; i < objeto.length; i++) {
           var fecha = new Date(objeto[i]['fecha_seguimiento']);
           var opcionesFecha = { weekday: 'long', day: '2-digit', month: 'short', year: 'numeric' };
@@ -41,9 +44,13 @@ function carga_notas() {
             color='bg-green-lite';
             checked="checked";dato=1;
             var vistaResuelto='</br><span class="tc-555">'+fechaResueltoFormateada+'</span> - <span class="gray f10">'+horaResueltoFormateada+'</span>';
+            cantidadResuelto++
           }else {
             var vistaResuelto='';
+            cantidadSinResolver++
           }
+          cantidadTotal++
+          $('#cantidadNotas').html(cantidadSinResolver+' de '+cantidadTotal)
           var vistaCreado='<span class="tc-555">'+fechaFormateada+'</span> - <span class="gray f10">'+horaFormateada+'</span>';
           //const vistaResuelto='</br><span class="tc-555">'+fechaResueltoFormateada+'</span> - <span class="gray f10">'+horaResueltoFormateada+'</span>';
           if (objeto[i]['idcliente'] == 'undefined') {
@@ -55,7 +62,7 @@ function carga_notas() {
           if (fechaResueltoFormateada==undefined) {
             $('#resuelto'+objeto[i]['id']).addClass('oculto')
           }
-          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col90">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="col10 pointer center"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
 
         }

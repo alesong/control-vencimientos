@@ -13,7 +13,7 @@ function controlVersion(){
         var dias = 3 * 24 * 60 * 60 * 1000
         if (diferencia > dias) {
           diasDiferencia = Math.round(diferencia / (24 * 60 * 60 * 1000))
-          var msg = 'Tiene '+diasDiferencia+' dias de direfencia, requiere realizar push con un commit de fecha más reciente.';
+          var msg = 'Tiene '+diasDiferencia+' dias de direfencia, requiere realizar push con un commit de fecha más reciente en el archivo ultimaFecha.txt.';
           $('#controlVersion').append(msg)
           console.log(msg);
           $('#controlVersion').addClass('alert alert-danger')

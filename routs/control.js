@@ -14,6 +14,7 @@ app.use(body_parser.urlencoded({extended:true}))
 
   app.get('/control/:mes', function (req, res) {
 
+
     if (session()==true) {
       const mes = req.params['mes']
       console.log('Mes solicitado: '+mes);
@@ -26,6 +27,42 @@ app.use(body_parser.urlencoded({extended:true}))
       }
       const objeto = []
       const {clientes} = readJSON()
+
+
+
+      // Agregar la siguiente condición
+   if (mes === 'Buscar') {
+     const palabraClave = req.query.palabraClave // Obtener la palabra clave de la consulta
+     for (var i = 0; i < clientes.length; i++) {
+       const cliente = clientes[i]
+       if (Object.values(cliente).some(value => value.toString().toLowerCase().includes(palabraClave.toLowerCase()))) {
+         if (clientes[i]['papelera'] == 0) {
+           objeto.push({
+             id : cliente['id'],
+             fecha : cliente['fecha'],
+             nombre : cliente['nombre'],
+             ramo : cliente['ramo'],
+             cia : cliente['cia'],
+             descripcion : cliente['descripcion'],
+             observaciones : cliente['observaciones'],
+             renovacion : cliente['renovacion'],
+             estudio : cliente['estudio'],
+             financiacion : cliente['financiacion'],
+             correo : cliente['correo'],
+             pago : cliente['pago'],
+             tp : cliente['tp'],
+             bg : cliente['bg'],
+             papelera : cliente['papelera']
+           });
+         }
+       }
+     }
+     res.json(objeto);
+     return; // Salir del código después de la búsqueda
+   }
+
+
+
       for (var i = 0; i < clientes.length; i++) {
 
         if (clientes[i]['fecha']!='') {

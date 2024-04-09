@@ -26,7 +26,7 @@
                 <h4>Renovaciones</h4>
               </div>
               <div class="col33">
-                <input class="form-control f-left" type="text" name="" value="" placeholder="Buscar" id="buscar"><i class="fa fa-search -ml30 mt10 tc-ccc" aria-hidden="true"></i>
+                <input class="form-control f-left" type="text" name="" value="" placeholder="Buscar" id="Buscar" onkeydown="eventoBuscador(event)"><i class="fa fa-search -ml30 mt10 tc-ccc" aria-hidden="true" id="btnBuscar"></i>
               </div>
               <div class="col33">
                 <form class="" action="" method="get">
@@ -121,7 +121,8 @@
               <div class="mirow">
                 <div class="col50">
                   <div class="f12 borde1 bg-white tc-333">
-                    <h4 class="mt15 ml15">Tareas Alex</h4>
+                    <div class="ml15 mt10 mb10 f20 inlineBlock">Tareas Alex</div>
+                    <div class="ml15 mt10 mb10 f15 inlineBlock" id="cantidadTareas">0/0</div>
                     <div class="" id="box-tareas">
                       tolls
                     </div>
@@ -133,7 +134,8 @@
                 </div>
                 <div class="col50">
                   <div class="f12 borde1 bg-white tc-333">
-                    <h4 class="mt15 ml15">Notas Henry</h4>
+                    <div class="ml15 mt10 mb10 f20 inlineBlock">Notas Henry</div>
+                    <div class="ml15 mt10 mb10 f15 inlineBlock" id="cantidadNotas">0/0</div>
                     <div class="" id="box-notas">
                       Nota
                     </div>
@@ -189,7 +191,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 id="modalInfo-titulo" class="modal-title tc-333">Titulo</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <button type="button" class="close oculto" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -238,5 +240,6 @@
     <script type="text/javascript" src="../js/script-tareas-control.js"></script>
     <script type="text/javascript" src="../js/script-notas-control.js"></script>
     <script type="text/javascript" src="../js/script-backup-control.js"></script>
+    <script type="text/javascript" src="../js/script-buscar-control.js"></script>
   </body>
 </html>
