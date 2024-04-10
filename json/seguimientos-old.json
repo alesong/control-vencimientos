@@ -486,7 +486,7 @@
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0
+            "papelera": 1
         },
         {
             "id": 60,
@@ -724,8 +724,8 @@
             "fecha_seguimiento": "2024-04-07T05:13:49.566Z",
             "seguimiento": "El lunes verificar inspeccion Sarain, o decistir.",
             "tarea": "1",
-            "resuelto": 0,
-            "fechaResuelto": "",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-09T17:31:24.058Z",
             "papelera": 0
         },
         {
@@ -746,17 +746,13 @@
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0,
-            "subnota": [
-                "Esta es la subnota",
-                "insertando otra subnota más"
-            ]
+            "papelera": 0
         },
         {
             "id": 86,
             "idcliente": "undefined",
-            "fecha_seguimiento": "2024-04-09T19:47:16.674Z",
-            "seguimiento": "CESI: informan que la inspección fue realizada el viernes al finalizar la tarde. El código Fasecolda coincide con el resultado. Anexan resultado de la inspección a la solicitud de la plataforma, en el transcurso de la tarde inviarán póliza.",
+            "fecha_seguimiento": "2024-04-09T07:04:01.048Z",
+            "seguimiento": "Lamentamos informarle que, después de varios intentos por contactarlo y no haber recibido respuesta de su parte, hemos decidido no continuar prestando nuestros servicios de intermediación de seguros.  Dada la falta de interés y gestiones de su parte para completar el proceso de suscripción, consideramos que no podemos garantizar brindarle la atención y el servicio que merece.  Agradecemos su comprensión y le deseamos éxitos en la búsqueda de un nuevo intermediario de seguros que se ajuste mejor a sus necesidades.",
             "tarea": "0",
             "resuelto": 0,
             "fechaResuelto": "",
@@ -765,14 +761,58 @@
         {
             "id": 87,
             "idcliente": "48",
-            "fecha_seguimiento": "2024-04-09T23:16:13.891Z",
-            "seguimiento": "Test subnotas",
+            "fecha_seguimiento": "2024-04-09T18:40:30.980Z",
+            "seguimiento": "Se indica atravez de solicitudes que el cliente ya realizó la inspección",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 88,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-04-09T19:50:51.665Z",
+            "seguimiento": "CESI: informan que la inspección fue realizada el viernes al finalizar la tarde. El código Fasecolda coincide con el resultado. Anexan resultado de la inspección a la solicitud de la plataforma, en el transcurso de la tarde inviarán póliza.",
+            "tarea": "0",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 89,
+            "idcliente": "48",
+            "fecha_seguimiento": "2024-04-09T20:09:04.951Z",
+            "seguimiento": "Enviar póliza de Previsora a Saraín, esperar respuesta de la solicitud de Synergias.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 90,
+            "idcliente": "49",
+            "fecha_seguimiento": "2024-04-09T20:11:26.242Z",
+            "seguimiento": "Realizar orden de inspección con HDI ",
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
             "papelera": 0,
             "subnota": [
-                "Esta es la subnota del test"
+                "Texto del sub comentario"
+            ]
+        },
+        {
+            "id": 91,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T00:16:08.901Z",
+            "seguimiento": "test",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0,
+            "subnota": [
+                "commit test",
+                "commit "
             ]
         }
     ]
