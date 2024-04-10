@@ -309,150 +309,146 @@ app.use(body_parser.urlencoded({extended:true}))
 
 
   app.get('/seguimientos/:id', function (req, res) {
-    if (session()==true) {
-      const id = req.params['id']
-      const fs = require('fs')
-      const path = require("path")
-      const patJSON = path.join(__dirname, '../json/seguimientos.json')
-      const readJSON =  () => {
-      const data =  fs.readFileSync(patJSON, 'utf-8')
-      return JSON.parse(data)
-      }
-      const objeto = []
-      const {seguimientos} = readJSON()
+  if (session()) {
+    const id = req.params['id'];
 
-      for (var i = 0; i < seguimientos.length; i++) {
-        if (id == seguimientos[i]['idcliente'] && seguimientos[i]['papelera'] == 0) {
-          //console.log(mes_objeto);
-          objeto.push({
-            id : seguimientos[i]['id'],
-            id_cliente : seguimientos[i]['id_cliente'],
-            fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
-            seguimiento : seguimientos[i]['seguimiento'],
-            tarea : seguimientos[i]['tarea'],
-            resuelto : seguimientos[i]['resuelto'],
-            fechaResuelto : seguimientos[i]['fechaResuelto'],
-            papelera : seguimientos[i]['papelera'],
-          })
-        }
+    const fs = require('fs');
+    const path = require("path");
+    const patJSON = path.join(__dirname, '../json/seguimientos.json');
+
+    const readJSON = () => {
+      const data = fs.readFileSync(patJSON, 'utf-8');
+      return JSON.parse(data);
+    };
+
+    const objeto = [];
+
+    const { seguimientos } = readJSON();
+
+    for (let i = 0; i < seguimientos.length; i++) {
+      if (id == seguimientos[i]['idcliente'] && seguimientos[i]['papelera'] == 0) {
+        objeto.push({
+          id: seguimientos[i]['id'],
+          id_cliente: seguimientos[i]['id_cliente'],
+          fecha_seguimiento: seguimientos[i]['fecha_seguimiento'],
+          seguimiento: seguimientos[i]['seguimiento'],
+          tarea: seguimientos[i]['tarea'],
+          resuelto: seguimientos[i]['resuelto'],
+          fechaResuelto: seguimientos[i]['fechaResuelto'],
+          papelera: seguimientos[i]['papelera'],
+          subnota: seguimientos[i]['subnota'] || [] // Agrega las subnotes
+        });
       }
-      res.json(objeto);
-    }else {
-      res.send('LogOut');
     }
 
-
-     //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
-     function session(){
-       const puedeRenderizar = verificarCookies(req);
-       if (puedeRenderizar) {
-           return(true); // Renderiza la vista si se pueden renderizar las cookies
-       } else {
-           return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
-       }
-     }
-     //-------fin Compruebador de sesion-----//
-
-  });
-
-
-  app.get('/tareas', function (req, res) {
-    //console.log('tareas back');
-    if (session()==true) {
-
-      const fs = require('fs')
-      const path = require("path")
-      const patJSON = path.join(__dirname, '../json/seguimientos.json')
-      const readJSON =  () => {
-      const data =  fs.readFileSync(patJSON, 'utf-8')
-      return JSON.parse(data)
-      }
-      const objeto = []
-      const {seguimientos} = readJSON()
-
-      for (var i = 0; i < seguimientos.length; i++) {
-        if (seguimientos[i]['papelera'] == 0 && seguimientos[i]['tarea'] == 1) {
-          var nombreCliente=''
-
-
-          if (seguimientos[i]['resuelto'] == 1) {
-            var fecha = new Date(seguimientos[i]['fechaResuelto']);
-            //console.log(fecha);
-            // Obtener la fecha actual
-            var fechaActual = new Date();
-            // Calcular la diferencia en milisegundos
-            var diferencia = fechaActual - fecha;
-            // Convertir la diferencia a días
-            var dias = diferencia / (1000 * 60 * 60 * 24);
-            //console.log(dias);
-
-
-            if (dias < 5) {
-              //Realiza el push si está resuelto y tiene menos de 5 días
-              nombreCliente=traerNombreCliente(seguimientos[i]['idcliente']);
-              objeto.push({
-                id : seguimientos[i]['id'],
-                idcliente : seguimientos[i]['idcliente'],
-                nombreCliente : nombreCliente,
-                fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
-                seguimiento : seguimientos[i]['seguimiento'],
-                tarea : seguimientos[i]['tarea'],
-                resuelto : seguimientos[i]['resuelto'],
-                fechaResuelto : seguimientos[i]['fechaResuelto'],
-                papelera : seguimientos[i]['papelera'],
-              })
-            }
-          }else {
-            //Realiza el push por defecto si no esta resuelto;
-            nombreCliente=traerNombreCliente(seguimientos[i]['idcliente']);
-            objeto.push({
-              id : seguimientos[i]['id'],
-              idcliente : seguimientos[i]['idcliente'],
-              nombreCliente : nombreCliente,
-              fecha_seguimiento : seguimientos[i]['fecha_seguimiento'],
-              seguimiento : seguimientos[i]['seguimiento'],
-              tarea : seguimientos[i]['tarea'],
-              resuelto : seguimientos[i]['resuelto'],
-              fechaResuelto : seguimientos[i]['fechaResuelto'],
-              papelera : seguimientos[i]['papelera'],
-            })
-          }
-        }
-      }
-      //console.log(objeto);
-      res.json(objeto);
-    }else {
-      res.send('LogOut');
-    }
-
-    function traerNombreCliente(id){
-      const fs = require('fs')
-      const path = require("path")
-      const patJSON = path.join(__dirname, '../json/clientes.json')
-      const readJSON =  () => {
-      const data =  fs.readFileSync(patJSON, 'utf-8')
-      return JSON.parse(data)
-      }
-      const {clientes} = readJSON()
-      for (var i = 0; i < clientes.length; i++) {
-        if (id==clientes[i]['id']) {
-          return clientes[i]['nombre']
-        }
-     }
+    res.json(objeto);
+  } else {
+    res.send('LogOut');
   }
 
-    //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
-    function session(){
-      const puedeRenderizar = verificarCookies(req);
-      if (puedeRenderizar) {
-          return(true); // Renderiza la vista si se pueden renderizar las cookies
-      } else {
-          return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+  function session() {
+    const puedeRenderizar = verificarCookies(req);
+    if (puedeRenderizar) {
+      return true; // Renderiza la vista si se pueden renderizar las cookies
+    } else {
+      return false; // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+    }
+  }
+});
+
+  app.get('/tareas', function (req, res) {
+  // console.log('tareas back');
+
+  if (session()) {
+    const fs = require('fs');
+    const path = require("path");
+    const patJSON = path.join(__dirname, '../json/seguimientos.json');
+
+    const readJSON = () => {
+      const data = fs.readFileSync(patJSON, 'utf-8');
+      return JSON.parse(data);
+    };
+
+    const objeto = [];
+
+    const { seguimientos } = readJSON();
+
+    for (let i = 0; i < seguimientos.length; i++) {
+      if (seguimientos[i]['papelera'] == 0 && seguimientos[i]['tarea'] == 1) {
+        let nombreCliente = '';
+        if (seguimientos[i]['resuelto'] == 1) {
+          const fecha = new Date(seguimientos[i]['fechaResuelto']);
+          const fechaActual = new Date();
+          const diferencia = fechaActual - fecha;
+          const dias = diferencia / (1000 * 60 * 60 * 24);
+
+          if (dias < 5) {
+            nombreCliente = traerNombreCliente(seguimientos[i]['idcliente']);
+            objeto.push({
+              id: seguimientos[i]['id'],
+              idcliente: seguimientos[i]['idcliente'],
+              nombreCliente: nombreCliente,
+              fecha_seguimiento: seguimientos[i]['fecha_seguimiento'],
+              seguimiento: seguimientos[i]['seguimiento'],
+              tarea: seguimientos[i]['tarea'],
+              resuelto: seguimientos[i]['resuelto'],
+              fechaResuelto: seguimientos[i]['fechaResuelto'],
+              papelera: seguimientos[i]['papelera'],
+              subnota: seguimientos[i]['subnota'] || [] // Agrega las subnotes
+            });
+          }
+        } else {
+          nombreCliente = traerNombreCliente(seguimientos[i]['idcliente']);
+          objeto.push({
+            id: seguimientos[i]['id'],
+            idcliente: seguimientos[i]['idcliente'],
+            nombreCliente: nombreCliente,
+            fecha_seguimiento: seguimientos[i]['fecha_seguimiento'],
+            seguimiento: seguimientos[i]['seguimiento'],
+            tarea: seguimientos[i]['tarea'],
+            resuelto: seguimientos[i]['resuelto'],
+            fechaResuelto: seguimientos[i]['fechaResuelto'],
+            papelera: seguimientos[i]['papelera'],
+            subnota: seguimientos[i]['subnota'] || [] // Agrega las subnotes
+          });
+        }
       }
     }
-    //-------fin Compruebador de sesion-----//
 
- });
+    // console.log(objeto);
+    res.json(objeto);
+  } else {
+    res.send('LogOut');
+  }
+
+  function traerNombreCliente(id) {
+    const fs = require('fs');
+    const path = require("path");
+    const patJSON = path.join(__dirname, '../json/clientes.json');
+
+    const readJSON = () => {
+      const data = fs.readFileSync(patJSON, 'utf-8');
+      return JSON.parse(data);
+    };
+
+    const { clientes } = readJSON();
+
+    for (let i = 0; i < clientes.length; i++) {
+      if (id == clientes[i]['id']) {
+        return clientes[i]['nombre'];
+      }
+    }
+  }
+
+  function session() {
+    const puedeRenderizar = verificarCookies(req);
+    if (puedeRenderizar) {
+      return true; // Renderiza la vista si se pueden renderizar las cookies
+    } else {
+      return false; // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+    }
+  }
+});
 
 
  app.get('/notas', function (req, res) {
@@ -1008,6 +1004,49 @@ app.post('/ultimaFecha', function(req, res){
     }
   });
 });
+
+
+
+app.post('/seguimientos/subnota', (req, res) => {
+  const { id, subNota } = req.body;
+
+  const fs = require('fs');
+  const path = require("path");
+  const patJSON = path.join(__dirname, '../json/seguimientos.json');
+
+  const readJSON = () => {
+    const data = fs.readFileSync(patJSON, 'utf-8');
+    return JSON.parse(data);
+  };
+
+  const writeJSON = (data) => {
+    fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
+  };
+
+  const { seguimientos } = readJSON();
+
+  const seguimientoIndex = seguimientos.findIndex(seguimiento => seguimiento.id === parseInt(id));
+
+  if (seguimientoIndex !== -1) {
+    if (!seguimientos[seguimientoIndex].subnota) {
+      seguimientos[seguimientoIndex].subnota = [];
+    }
+
+    seguimientos[seguimientoIndex].subnota.push(subNota);
+
+    writeJSON({
+      seguimientos: seguimientos,
+    });
+
+    console.log(`Se ha agregado la subNota "${subNota}" al seguimiento con ID ${id}`);
+    res.send('ok');
+  } else {
+    console.log(`No se encontró el seguimiento con ID ${id}`);
+    res.status(404).send('No se encontró el seguimiento');
+  }
+});
+
+
 
 }
 module.exports=ruta_control

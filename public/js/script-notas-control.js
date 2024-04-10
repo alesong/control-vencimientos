@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log('pasó por script-notas-control front');
+  //console.log('pasó por script-notas-control front');
   carga_notas();
 });
 

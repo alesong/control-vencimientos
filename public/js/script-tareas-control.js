@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  console.log('pasó por script-tareas-control front');
+  //console.log('pasó por script-tareas-control front');
   carga_tareas();
 });
 
@@ -62,12 +62,45 @@ function carga_tareas() {
           if (fechaResueltoFormateada==undefined) {
             $('#resuelto'+objeto[i]['id']).addClass('oculto')
           }
-          $("#box-tareas").append('<div id="seg'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+
+          var vistaSubNotas = '<div class="-mt12" id="boxSubNotas'+objeto[i]['id']+'"></div>'
+          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-ccc pointer plusSN" aria-hidden="true" id="plusSN'+objeto[i]['id']+'" onClick="clickPlusSN('+objeto[i]['id']+')"></i>'
+          var vistaInputSubNotas='<input class="form-control oculto" type="text" onChange="addSubNota('+objeto[i]['id']+')" id="inputAddNuevaSubNota'+objeto[i]['id']+'"/>'
+
+          $("#box-tareas").append('<div id="seg'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'" onmouseover="mouseOverFunction('+objeto[i]['id']+')" onmouseout="mouseOutFunction('+objeto[i]['id']+')"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p>'+vistaSubNotas+vistaPlusSN+vistaInputSubNotas+'</div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+
+
+
+
+          if (objeto[i][['subnota']]) {
+              subNotas=objeto[i]['subnota']
+
+              for (var j = 0; j < subNotas.length; j++) {
+                $('#boxSubNotas'+objeto[i]['id']).append('<div class="flechaSubNota mt0 bl2 bc-green" style="width: 15px;  float: left;  margin-left: 15px;  margin-right: 2px; margin-top: 0;"><i class="fa fa-long-arrow-right tc-green" aria-hidden="true"></i></div><div>'+subNotas[j]+'</div>')
+              }
+          }
 
 
         }
       }
     });
+}
+
+
+function mouseOverFunction(id) {
+  console.log("El mouse está sobre el elemento");
+  $('#plusSN'+id).css('color','green')
+}
+
+function mouseOutFunction(id) {
+  console.log("El mouse ha salido del elemento");
+  $('#plusSN'+id).css('color','#ccc')
+}
+
+
+function clickPlusSN(id){
+  $('#plusSN'+id).fadeOut(0)
+  $('#inputAddNuevaSubNota'+id).fadeIn(0)
 }
 
 
@@ -124,5 +157,21 @@ console.log('El valor del checkbox front es: '+valorCheckbox);
         }
       });
   }
+
+}
+
+
+function addSubNota(id){
+  var input = $('#inputAddNuevaSubNota'+id)
+  console.log(input.val());
+  $.ajax({
+      type: "POST",
+      url: "../seguimientos/subnota",
+      data: {id:id, subNota:input.val()},
+      success: function (res) {
+        console.log(res);
+        carga_tareas();
+      }
+    });
 
 }

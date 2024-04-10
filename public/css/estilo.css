@@ -258,3 +258,6 @@ input{
   margin-top: 10px;
   right: 10px;
 }
+.plusSN:hover{
+  color: green;
+}

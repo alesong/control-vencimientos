@@ -59,7 +59,7 @@ function carga_control(){
             var nuevos = 0;
             while (n < filas) {
               if (objeto[n]["fecha"]!='') {
-                console.log(objeto[n]["fecha"]);
+                //console.log(objeto[n]["fecha"]);
                 var fecha  = new Date(objeto[n]["fecha"]).toLocaleDateString('es-la', { year:"numeric", month:"short"})
                 var ano  = new Date(objeto[n]["fecha"]).toLocaleDateString('es-la', { year:"numeric"})
                 var mes  = new Date(objeto[n]["fecha"]).toLocaleDateString('es-la', { month:"numeric"})
@@ -117,7 +117,7 @@ function carga_control(){
                   var input_tp = '<input id="input_'+id+'_tp" type="hidden" value="1">'
                 }
                 var td_estado = renovacion+' '+estudio+' '+financiacion+' '+correo+' '+pago+' '+tp+' '+spinner+' '+input_renovacion+' '+input_estudio+' '+input_financiacion+' '+input_correo+' '+input_pago+' '+input_tp;
-                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg"></div><i class="fa fa-info-circle blueviolet pointer" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
+                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg"></div><i class="fa fa-info-circle blueviolet pointer f16 ml10 mr10" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
                 var vista = '<tr id="tr_'+id+'" class="cn" style="background-color:'+objeto[n]["bg"]+'"><td>'+input_fecha+input_fecha_hidden+'</td><td>'+input_nombre+'</td><td>'+input_ramo+'</td><td>'+input_cia+'</td><td>'+input_descripcion+'</td><td>'+input_observaciones+'</td><td>'+td_estado+'</td>'+td_opciones+'</tr>'
                 $(".tabla-control").append(vista);
                 viejos++;
@@ -176,7 +176,7 @@ function carga_control(){
                   var input_tp = '<input id="input_'+id+'_tp" type="hidden" value="1">'
                 }
                 var td_estado = renovacion+' '+estudio+' '+financiacion+' '+correo+' '+pago+' '+tp+' '+spinner+' '+input_renovacion+' '+input_estudio+' '+input_financiacion+' '+input_correo+' '+input_pago+' '+input_tp;
-                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg"></div><i class="fa fa-info-circle blueviolet pointer" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
+                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg"></div><i class="fa fa-info-circle blueviolet pointer f16 ml10 mr10" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
                 var vista = '<tr class="cn"><td>'+input_fecha+input_fecha_hidden+'</td><td>'+input_nombre+'</td><td>'+input_ramo+'</td><td>'+input_cia+'</td><td>'+input_descripcion+'</td><td>'+input_observaciones+'</td><td>'+td_estado+'</td>'+td_opciones+'</tr>'
                 $(".tabla-nuevos").append(vista);
                 nuevos++;
@@ -379,7 +379,20 @@ function info(id) {
           if (objeto[i]['tarea']=='1') {
             vistaCheckbox='<input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
           }
-          $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p></div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+
+          var vistaSubNotas = '<div class="-mt12 tc-555" id="boxSubNotasSeg'+objeto[i]['id']+'"></div>'
+          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-green pointer plusSN" aria-hidden="true" id="plusSNSeg'+objeto[i]['id']+'" onClick="clickPlusSN('+objeto[i]['id']+')"></i>'
+          var vistaInputSubNotas='<input class="form-control oculto" type="text" onChange="addSubNota('+objeto[i]['id']+')" id="inputAddNuevaSubNotaSeg'+objeto[i]['id']+'"/>'
+
+          $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p>'+vistaSubNotas+vistaPlusSN+vistaInputSubNotas+'</div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+
+          if (objeto[i][['subnota']]) {
+              subNotas=objeto[i]['subnota']
+
+              for (var j = 0; j < subNotas.length; j++) {
+                $('#boxSubNotasSeg'+objeto[i]['id']).append('<div class="flechaSubNota mt0 bl2 bc-green" style="width: 15px;  float: left;  margin-left: 15px;  margin-right: 2px; margin-top: 0;"><i class="fa fa-long-arrow-right tc-green" aria-hidden="true"></i></div><div>'+subNotas[j]+'</div>')
+              }
+          }
 
         }
 
