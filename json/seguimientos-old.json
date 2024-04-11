@@ -356,7 +356,11 @@
             "tarea": "1",
             "resuelto": "1",
             "fechaResuelto": "2024-04-05T17:26:55.149Z",
-            "papelera": 0
+            "papelera": 0,
+            "subnota": [
+                "Mejor opción Bolívar $5000000",
+                "$5.997.469"
+            ]
         },
         {
             "id": 47,
@@ -796,24 +800,7 @@
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0,
-            "subnota": [
-                "Texto del sub comentario"
-            ]
-        },
-        {
-            "id": 91,
-            "idcliente": "undefined",
-            "fecha_seguimiento": "2024-04-10T00:16:08.901Z",
-            "seguimiento": "test",
-            "tarea": "1",
-            "resuelto": 0,
-            "fechaResuelto": "",
-            "papelera": 0,
-            "subnota": [
-                "commit test",
-                "commit "
-            ]
+            "papelera": 0
         }
     ]
 }
