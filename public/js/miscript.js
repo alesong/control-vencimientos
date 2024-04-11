@@ -381,8 +381,8 @@ function info(id) {
           }
 
           var vistaSubNotas = '<div class="-mt12 tc-555" id="boxSubNotasSeg'+objeto[i]['id']+'"></div>'
-          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-green pointer plusSN" aria-hidden="true" id="plusSNSeg'+objeto[i]['id']+'" onClick="clickPlusSN('+objeto[i]['id']+')"></i>'
-          var vistaInputSubNotas='<input class="form-control oculto" type="text" onChange="addSubNota('+objeto[i]['id']+')" id="inputAddNuevaSubNotaSeg'+objeto[i]['id']+'"/>'
+          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-green pointer plusSN" aria-hidden="true" id="plusSNSeg'+objeto[i]['id']+'" onClick="clickPlusSNSeg('+objeto[i]['id']+')"></i>'
+          var vistaInputSubNotas='<input class="form-control oculto" type="text" onChange="addSubNotaSeg('+objeto[i]['id']+')" id="inputAddNuevaSubNotaSeg'+objeto[i]['id']+'"/>'
 
           $("#modalInfo-body").append('<div id="seg'+objeto[i]['id']+'" class="mirow pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+''+vistaCheckbox+' <p class="black mt10">'+objeto[i]['seguimiento']+'</p>'+vistaSubNotas+vistaPlusSN+vistaInputSubNotas+'</div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
@@ -405,6 +405,11 @@ function info(id) {
         */
       }
     });
+}
+
+function clickPlusSNSeg(id){
+  $('#plusSNSeg'+id).fadeOut(0)
+  $('#inputAddNuevaSubNotaSeg'+id).fadeIn(0)
 }
 
 function trashedSeguimiento(id){
@@ -543,4 +548,19 @@ function getCookieValue(cookieName) {  // Es pra obtener el valor de la cookie
     }
   }
   return "";
+}
+
+function addSubNotaSeg(id){
+  var input = $('#inputAddNuevaSubNotaSeg'+id)
+  console.log(input.val());
+  $.ajax({
+      type: "POST",
+      url: "../seguimientos/subnota",
+      data: {id:id, subNota:input.val()},
+      success: function (res) {
+        console.log(res);
+        carga_tareas();
+      }
+    });
+
 }

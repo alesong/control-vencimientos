@@ -64,10 +64,10 @@ function carga_tareas() {
           }
 
           var vistaSubNotas = '<div class="-mt12" id="boxSubNotas'+objeto[i]['id']+'"></div>'
-          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-ccc pointer plusSN" aria-hidden="true" id="plusSN'+objeto[i]['id']+'" onClick="clickPlusSN('+objeto[i]['id']+')"></i>'
+          var vistaPlusSN = '<i class="fa fa-plus-square ml12 f9 tc-green pointer plusSN" aria-hidden="true" id="plusSN'+objeto[i]['id']+'" onClick="clickPlusSN('+objeto[i]['id']+')"></i>'
           var vistaInputSubNotas='<input class="form-control oculto" type="text" onChange="addSubNota('+objeto[i]['id']+')" id="inputAddNuevaSubNota'+objeto[i]['id']+'"/>'
 
-          $("#box-tareas").append('<div id="seg'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'" onmouseover="mouseOverFunction('+objeto[i]['id']+')" onmouseout="mouseOutFunction('+objeto[i]['id']+')"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p>'+vistaSubNotas+vistaPlusSN+vistaInputSubNotas+'</div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          $("#box-tareas").append('<div id="seg'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+objeto[i]['seguimiento']+'</p>'+vistaSubNotas+vistaPlusSN+vistaInputSubNotas+'</div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedSeguimiento('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
 
 
 
@@ -86,7 +86,8 @@ function carga_tareas() {
     });
 }
 
-
+//onmouseover="mouseOverFunction('+objeto[i]['id']+')" onmouseout="mouseOutFunction('+objeto[i]['id']+')"
+/*
 function mouseOverFunction(id) {
   console.log("El mouse está sobre el elemento");
   $('#plusSN'+id).css('color','green')
@@ -102,7 +103,7 @@ function clickPlusSN(id){
   $('#plusSN'+id).fadeOut(0)
   $('#inputAddNuevaSubNota'+id).fadeIn(0)
 }
-
+*/
 
 function realizarTarea(id, dato){
   campo='resuelto';
