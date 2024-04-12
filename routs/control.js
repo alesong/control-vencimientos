@@ -951,7 +951,7 @@ app.use(body_parser.urlencoded({extended:true}))
 
 
   // Define el intervalo de tiempo en segundos
-  const intervalo = 40 * 1000; // 40 segundos
+  const intervalo = 4 * 60 * 1000; // 4minutos
 
   setInterval(async () => {
       try {

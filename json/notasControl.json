@@ -1,1 +1,394 @@
-{"notasControl":[{"id":1,"idcliente":"undefined","fecha_seguimiento":"2024-04-05T22:30:47.386Z","seguimiento":"Primera nota","tarea":"1","resuelto":"1","fechaResuelto":"2024-04-06T23:23:05.300Z","papelera":1},{"id":2,"idcliente":"undefined","fecha_seguimiento":"2024-04-07T05:13:59.984Z","seguimiento":"Nota 1","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":1},{"id":3,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:32:28.137Z","seguimiento":"1.\tEstudio toyota juan Carlos / césar franco 16,360,256","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":4,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:32:42.771Z","seguimiento":"2.\tCotiFinanciación HDI Suzuki Cielo e Inversiones Arroyave","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":5,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:32:51.236Z","seguimiento":"3.\tBlindaje toyota hilux julio césar mejía","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":6,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:33:03.374Z","seguimiento":"4.\tHogar Susana","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":7,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:33:14.242Z","seguimiento":"5.\tCobrar comisiones Antonio Delgado","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":8,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:33:37.670Z","seguimiento":"6.\tCuadre comisiones Evelio","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":9,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:33:46.157Z","seguimiento":"7.\tCobro comisiones Mundial maquinaria y volqueta","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":10,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:33:58.892Z","seguimiento":"8.\tCancelación Lucely, averiguar estado cuenta","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":11,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:34:08.535Z","seguimiento":"9.\tDevolución prima Mundial a rehimac","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":12,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:34:17.544Z","seguimiento":"10.\tCorreo cancelación Alvaro Iván Valencia a Equidad y Gustavo","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":13,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:34:29.123Z","seguimiento":"11.\tPLO REHIMAC: MUNDIAL, BOLÍVAR, MAPFRE, SBS, ZURICH, PREVISORA","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":14,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:34:44.711Z","seguimiento":"12.\tR C Hyundai KLP677 Juan Manuel 14899377/ Luis Mario, responder SGO 8584896 RESPONDIDO 26 DE MARZO","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":15,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:34:54.981Z","seguimiento":"13.\tSeguro casa Montenegro de Ana Milena Campuzano","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":16,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:35:06.010Z","seguimiento":"14.\tRenovaciones cámara de comercio Prosese","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":17,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:35:19.543Z","seguimiento":"15.\tSeguro Mercedes Sara Campuzano","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":18,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:35:31.945Z","seguimiento":"16.\tSeguro casa Sara Campuzano","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":19,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:35:42.310Z","seguimiento":"17.\tDeclaraciones de renta e iva ","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":20,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:35:55.433Z","seguimiento":"18.\tSeguro bodega Coldeaceros: previsora, hdi, zurich, sbs","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":21,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:36:12.759Z","seguimiento":"19.\tCondicionado pérdida bonificación Equidad, Mapfre, Sura, bolívar, Previ, Zurich, SBS","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":22,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:36:30.442Z","seguimiento":"20.\tSAWPALMETO PRÓSTATA","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":23,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:36:41.319Z","seguimiento":"21.\tCobro comisión Nubia Milena Garzón a Ma. Dacier.","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":24,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:36:50.920Z","seguimiento":"22.\tVida Julián Caicedo 16.102.427","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":25,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:37:00.652Z","seguimiento":"23.\tEMISIÓN SOLIDARIA ALEXANDRA MEJIA SEGURO SANDERO","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":26,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:37:09.904Z","seguimiento":"24.\tComisiones Previsora ingresar página ver correo Nubia junio 25","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":27,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:37:28.117Z","seguimiento":"25.\tDECLARACIONES DE RENTA PROSESE Y HAL","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":28,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:37:40.456Z","seguimiento":"26.\tPAGOS IVA","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":29,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:37:54.187Z","seguimiento":"27.\tSarain","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":30,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:41:21.986Z","seguimiento":"28.\tImpuesto KIA","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":31,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:41:32.553Z","seguimiento":"29.\tReclamo Estado PYC","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":32,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:41:43.211Z","seguimiento":"30.\tPagar Amanda comisión Hogar Maricela","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":33,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:41:55.367Z","seguimiento":"31.\tReclamo Rincón de Las Mercedes ver correo yahoo 21-06.2021","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":34,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:42:06.606Z","seguimiento":"32.\tCotización Andrea Mayorga","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":35,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:42:29.583Z","seguimiento":"33.\tLlamar a Libington Murillo 16.493. 897 kia picanto 2021 JSY375","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":36,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:42:40.757Z","seguimiento":"34.\tRenovación Hogar Martha Aguilar","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":37,"idcliente":"undefined","fecha_seguimiento":"2024-04-10T19:42:55.701Z","seguimiento":"35.\tEmisión Wilson Bueno ","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":38,"idcliente":"undefined","fecha_seguimiento":"2024-04-11T01:33:24.719Z","seguimiento":"Pagar comisión Camilo","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0},{"id":39,"idcliente":"undefined","fecha_seguimiento":"2024-04-11T19:01:03.880Z","seguimiento":"Comisiones  Nubia Garzon y Braulio","tarea":"1","resuelto":0,"fechaResuelto":"","papelera":0}]}
+{
+    "notasControl": [
+        {
+            "id": 1,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-05T22:30:47.386Z",
+            "seguimiento": "Primera nota",
+            "tarea": "1",
+            "resuelto": "1",
+            "fechaResuelto": "2024-04-06T23:23:05.300Z",
+            "papelera": 1
+        },
+        {
+            "id": 2,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-07T05:13:59.984Z",
+            "seguimiento": "Nota 1",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 1
+        },
+        {
+            "id": 3,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:32:28.137Z",
+            "seguimiento": "Estudio toyota juan Carlos / césar franco 16,360,256",
+            "tarea": "1",
+            "resuelto": "0",
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 4,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:32:42.771Z",
+            "seguimiento": "CotiFinanciación HDI Suzuki Cielo e Inversiones Arroyave",
+            "tarea": "1",
+            "resuelto": "0",
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 5,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:32:51.236Z",
+            "seguimiento": "Blindaje toyota hilux julio césar mejía",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 6,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:33:03.374Z",
+            "seguimiento": "Hogar Susana",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 7,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:33:14.242Z",
+            "seguimiento": "Cobrar comisiones Antonio Delgado",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 8,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:33:37.670Z",
+            "seguimiento": "Cuadre comisiones Evelio",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 9,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:33:46.157Z",
+            "seguimiento": "Cobro comisiones Mundial maquinaria y volqueta",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 10,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:33:58.892Z",
+            "seguimiento": "Cancelación Lucely, averiguar estado cuenta",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 11,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:34:08.535Z",
+            "seguimiento": "Devolución prima Mundial a rehimac",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 12,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:34:17.544Z",
+            "seguimiento": "Correo cancelación Alvaro Iván Valencia a Equidad y Gustavo",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 13,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:34:29.123Z",
+            "seguimiento": "PLO REHIMAC: MUNDIAL, BOLÍVAR, MAPFRE, SBS, ZURICH, PREVISORA",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 14,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:34:44.711Z",
+            "seguimiento": "R C Hyundai KLP677 Juan Manuel 14899377/ Luis Mario, responder SGO 8584896 RESPONDIDO 26 DE MARZO",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 15,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:34:54.981Z",
+            "seguimiento": "Seguro casa Montenegro de Ana Milena Campuzano",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 16,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:35:06.010Z",
+            "seguimiento": "Renovaciones cámara de comercio Prosese",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 17,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:35:19.543Z",
+            "seguimiento": "Seguro Mercedes Sara Campuzano",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 18,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:35:31.945Z",
+            "seguimiento": "Seguro casa Sara Campuzano",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 19,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:35:42.310Z",
+            "seguimiento": "Declaraciones de renta e iva ",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 20,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:35:55.433Z",
+            "seguimiento": "Seguro bodega Coldeaceros: previsora, hdi, zurich, sbs",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 21,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:36:12.759Z",
+            "seguimiento": "Condicionado pérdida bonificación Equidad, Mapfre, Sura, bolívar, Previ, Zurich, SBS",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 22,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:36:30.442Z",
+            "seguimiento": "SAWPALMETO PRÓSTATA",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 23,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:36:41.319Z",
+            "seguimiento": "Cobro comisión Nubia Milena Garzón a Ma. Dacier.",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 24,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:36:50.920Z",
+            "seguimiento": "Vida Julián Caicedo 16.102.427",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 25,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:37:00.652Z",
+            "seguimiento": "EMISIÓN SOLIDARIA ALEXANDRA MEJIA SEGURO SANDERO",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 26,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:37:09.904Z",
+            "seguimiento": "Comisiones Previsora ingresar página ver correo Nubia junio 25",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 27,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:37:28.117Z",
+            "seguimiento": "DECLARACIONES DE RENTA PROSESE Y HAL",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 28,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:37:40.456Z",
+            "seguimiento": "PAGOS IVA",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 29,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:37:54.187Z",
+            "seguimiento": "Sarain",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 30,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:41:21.986Z",
+            "seguimiento": "Impuesto KIA",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 31,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:41:32.553Z",
+            "seguimiento": "Reclamo Estado PYC",
+            "tarea": "1",
+            "resuelto": "0",
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 32,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:41:43.211Z",
+            "seguimiento": "Pagar Amanda comisión Hogar Maricela",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 33,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:41:55.367Z",
+            "seguimiento": "Reclamo Rincón de Las Mercedes ver correo yahoo 21-06.2021",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 34,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:42:06.606Z",
+            "seguimiento": "Cotización Andrea Mayorga",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 35,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:42:29.583Z",
+            "seguimiento": "Llamar a Libington Murillo 16.493. 897 kia picanto 2021 JSY375",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 36,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:42:40.757Z",
+            "seguimiento": "Renovación Hogar Martha Aguilar",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 37,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-10T19:42:55.701Z",
+            "seguimiento": "Emisión Wilson Bueno ",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 38,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-11T01:33:24.719Z",
+            "seguimiento": "Pagar comisión Camilo",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 39,
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-11T19:01:03.880Z",
+            "seguimiento": "Comisiones  Nubia Garzon y Braulio",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        }
+    ]
+}
