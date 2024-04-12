@@ -220,10 +220,11 @@ table tr td{
     border-radius: 4px;
 }
 .colorBox {
-  display: inline-block;
-    width: 10px;
-    height: 10px;
-    border: 1px solid #333;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #d3ff00;
+    color: brown;
     cursor: pointer;
     border-radius: 3px;
     font-size: 7px;

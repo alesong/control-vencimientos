@@ -377,7 +377,7 @@ function info(id) {
           var vistaCheckbox='';
 
           if (objeto[i]['tarea']=='1') {
-            vistaCheckbox='<input type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
+            vistaCheckbox='<input style="position: absolute;top: 10px;right: 60px;" type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
           }
 
           var vistaSubNotas = '<div class="-mt12 tc-555" id="boxSubNotasSeg'+objeto[i]['id']+'"></div>'
