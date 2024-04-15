@@ -495,6 +495,7 @@ app.use(body_parser.urlencoded({extended:true}))
                resuelto : notasControl[i]['resuelto'],
                fechaResuelto : notasControl[i]['fechaResuelto'],
                papelera : notasControl[i]['papelera'],
+               bg : notasControl[i]['bg']
              })
            }
          }else {
@@ -510,6 +511,7 @@ app.use(body_parser.urlencoded({extended:true}))
              resuelto : notasControl[i]['resuelto'],
              fechaResuelto : notasControl[i]['fechaResuelto'],
              papelera : notasControl[i]['papelera'],
+             bg : notasControl[i]['bg']
            })
          }
        }
@@ -649,6 +651,62 @@ app.use(body_parser.urlencoded({extended:true}))
      console.log('Se ha modificado el id : '+id+' campo: '+campo+' dato: '+dato)
 
      res.json(notasControl)
+
+
+   }else {
+     res.send('LogOut');
+   }
+
+
+
+
+
+   //-------inicio Compruebador de sesion-----// agregar esto a todas las vistas
+   function session(){
+     const puedeRenderizar = verificarCookies(req);
+     if (puedeRenderizar) {
+         return(true); // Renderiza la vista si se pueden renderizar las cookies
+     } else {
+         return(false); // Redirige al usuario al inicio de sesión si no se pueden renderizar las cookies
+     }
+   }
+   //-------fin Compruebador de sesion-----//
+
+
+ })
+
+
+ app.put('/editarNotas', (req, res)=>{
+
+   if (session()==true) {
+
+
+     const id = req.body.id
+     const campo = req.body.campo
+     const dato = req.body.dato
+     //res.send('entró al put, '+id+campo+dato)
+     const fs = require('fs');
+     const path = require("path")
+     const patJSON = path.join(__dirname, '../json/notasControl.json')
+     const readJSON =  () => {
+     const data =  fs.readFileSync(patJSON, 'utf-8')
+     return JSON.parse(data)
+     }
+     const {notasControl} = readJSON()
+     for (var i = 0; i < notasControl.length; i++) {
+       if (notasControl[i]['id']==id) {
+         notasControl[i][campo]=dato
+       }
+     }
+     const writeJSON =  (data) => {
+        fs.writeFileSync(patJSON, JSON.stringify(data, null, 4), 'utf-8');
+     }
+     writeJSON({
+       notasControl: notasControl,
+     })
+     console.log('Se ha modificado la nota id : '+id+' campo: '+campo+' dato: '+dato)
+
+     res.send('ok')
 
 
    }else {

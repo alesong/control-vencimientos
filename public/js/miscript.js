@@ -117,7 +117,7 @@ function carga_control(){
                   var input_tp = '<input id="input_'+id+'_tp" type="hidden" value="1">'
                 }
                 var td_estado = renovacion+' '+estudio+' '+financiacion+' '+correo+' '+pago+' '+tp+' '+spinner+' '+input_renovacion+' '+input_estudio+' '+input_financiacion+' '+input_correo+' '+input_pago+' '+input_tp;
-                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg"></div><i class="fa fa-info-circle blueviolet pointer f16 ml10 mr10" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
+                var td_opciones = '<td class="td-opciones"><div class="colorBox" data-miVariable="'+id+'" campo="bg" seccion="clientes"></div><i class="fa fa-info-circle blueviolet pointer f16 ml10 mr10" aria-hidden="true" data-toggle="modal" data-target="#modalInfo" onClick="info('+id+')"></i> <i id="trash_'+id+'" class="fa fa-trash-o red pointer" aria-hidden="true" onClick="trash('+id+')"></i></td>'
                 var vista = '<tr id="tr_'+id+'" class="cn" style="background-color:'+objeto[n]["bg"]+'"><td>'+input_fecha+input_fecha_hidden+'</td><td>'+input_nombre+'</td><td>'+input_ramo+'</td><td>'+input_cia+'</td><td>'+input_descripcion+'</td><td>'+input_observaciones+'</td><td>'+td_estado+'</td>'+td_opciones+'</tr>'
                 $(".tabla-control").append(vista);
                 viejos++;
@@ -377,7 +377,7 @@ function info(id) {
           var vistaCheckbox='';
 
           if (objeto[i]['tarea']=='1') {
-            vistaCheckbox='<input style="position: absolute;top: 10px;right: 60px;" type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
+            vistaCheckbox='<input style="position: absolute;top: px;right: 60px;" type="checkbox" onClick="realizarTarea('+objeto[i]['id']+', '+dato+')" '+checked+' />';
           }
 
           var vistaSubNotas = '<div class="-mt12 tc-555" id="boxSubNotasSeg'+objeto[i]['id']+'"></div>'
@@ -489,9 +489,17 @@ function inicializarColorBoxes() {
     colorPicker.selectedBox.style.background = selectedColor;
     var id = colorPicker.selectedBox.getAttribute('data-miVariable');
     var campo = colorPicker.selectedBox.getAttribute('campo');
-    console.log(id +' '+ campo +' '+ selectedColor);
-    $("#tr_"+id).css("background", selectedColor);
-    modificar_control(id,  campo, selectedColor);
+    var seccion = colorPicker.selectedBox.getAttribute('seccion');
+    if (seccion == 'clientes') {
+      console.log(id +' '+ campo +' '+ selectedColor);
+      $("#tr_"+id).css("background", selectedColor);
+      modificar_control(id,  campo, selectedColor);
+    }
+    if (seccion == 'notas') {
+      console.log(id +' '+ campo +' '+ selectedColor+' En la seccion notas');
+      modificar_nota(id,  campo, selectedColor); //esta funcion se encuentra en el archivo notasControl.js.
+    }
+
   }
   colorPicker.style.display = 'none';
   });
@@ -560,6 +568,7 @@ function addSubNotaSeg(id){
       success: function (res) {
         console.log(res);
         carga_tareas();
+        info(id)
       }
     });
 

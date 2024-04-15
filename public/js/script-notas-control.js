@@ -62,10 +62,23 @@ function carga_notas() {
           if (fechaResueltoFormateada==undefined) {
             $('#resuelto'+objeto[i]['id']).addClass('oculto')
           }
-          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'"><div class="col100 f-left">'+vistaCreado+''+vistaResuelto+' <input style="position: absolute;top: 8px;right: 45px;" type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' /><div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10">'+cantidadTotal+'. '+objeto[i]['seguimiento']+'</p></div><div class="pointer center absolute mt10" style="right:30px;"><i class="fa fa-times orange" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i></div></div>')
+          if (objeto[i]['bg']) {
+            var bgNota = objeto[i]['bg'];
+          }else {
+            var bgNota = '';
+          }
+
+
+
+          var btnResaltarNota = '<div class="colorBox ml10 mr10" data-miVariable="'+objeto[i]['id']+'" campo="bg" seccion="notas" title="Resaltar"></div>';
+          var inputCheckNota = '<input id="checkboxNota'+objeto[i]['id']+'" type="checkbox" onClick="realizarNota('+objeto[i]['id']+', '+dato+')" '+checked+' />';
+          var btnEliminatNota = '<i class="fa fa-times ml10 mr10 orange pointer" onClick="trashedNota('+objeto[i]['id']+')" aria-hidden="true" title="Eliminar"></i>';
+          var vistaOPcionesNota = '<div class="mt10 absolute" style="right:30px;">'+btnResaltarNota+inputCheckNota+btnEliminatNota+'</div>';
+          $("#box-notas").append('<div id="not'+objeto[i]['id']+'" class="mirow pl15 pr15 pt0 pb0 '+color+'" contextmenu="clickDerechoNota(not'+objeto[i]['id']+')"><div id="bgnot'+objeto[i]['id']+'" class="f-left" style="width:80%;background-color:'+bgNota+'">'+vistaCreado+''+vistaResuelto+' <div class="f10 tc-green">'+vistaInbox+'</div><p class="black mt10 ml15"><span class="tc-333">'+cantidadTotal+'. </span><span>'+objeto[i]['seguimiento']+'</span></p></div>'+vistaOPcionesNota+'</div>')
 
 
         }
+
       }
     });
 }
@@ -143,4 +156,27 @@ function trashedNota(id){
         }
       }
     });
+}
+
+
+function modificar_nota(id,campo,dato){ //esta funcion la carga el inicializarColorBoxes() desde el archivo miscript.js
+console.log(id+' '+campo+' '+dato+ 'esta funcion la carga el inicializarColorBoxes() desde el archivo miscript.js' );
+
+  $.ajax({
+      type: "PUT",
+      url: "../editarNotas",
+      data: {id:id,campo:campo,dato:dato},
+      success: function (res) {
+        if (res=='LogOut') {
+          console.log("sesion cerrada");
+          window.location.href = "./login";
+        }
+        console.log(res);
+        if (res=='ok' && campo=='bg') {
+          console.log('ok');
+          $('#bgnot'+id).css('backgroundColor',dato)
+        }
+      }
+    })
+
 }
