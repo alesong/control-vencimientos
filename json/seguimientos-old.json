@@ -528,8 +528,8 @@
             "fecha_seguimiento": "2024-03-28T18:04:07.854Z",
             "seguimiento": "FINSU nueva financiera de primas de SBS, ver instructivo en carpeta de SBS y agregar al comparativo de financiaciones.",
             "tarea": "1",
-            "resuelto": "1",
-            "fechaResuelto": "2024-04-13T03:15:57.849Z",
+            "resuelto": 0,
+            "fechaResuelto": "",
             "papelera": 0
         },
         {
@@ -678,8 +678,8 @@
             "fecha_seguimiento": "2024-04-04T19:25:55.575Z",
             "seguimiento": "Cotizar hogar con previsora",
             "tarea": "1",
-            "resuelto": "1",
-            "fechaResuelto": "2024-04-08T20:14:54.050Z",
+            "resuelto": "0",
+            "fechaResuelto": "",
             "papelera": 0
         },
         {
@@ -818,7 +818,8 @@
             "papelera": 0,
             "subnota": [
                 "Automas: Se ha enviado un correo con el número 4351361 de la autorización para la inspección.",
-                "Se notifica a Sarain via whatsapp con instrucciones para proceder."
+                "Se notifica a Sarain via whatsapp con instrucciones para proceder.",
+                "La inspección fue realizada. Sab 13 abril 2024"
             ]
         },
         {
@@ -837,7 +838,7 @@
             "fecha_seguimiento": "2024-04-10T19:29:17.352Z",
             "seguimiento": "Realizar Zarlaft con HDI Wilson Bueno",
             "tarea": "1",
-            "resuelto": "0",
+            "resuelto": 0,
             "fechaResuelto": "",
             "papelera": 0,
             "subnota": [
@@ -846,23 +847,43 @@
         },
         {
             "id": 93,
-            "idcliente": "49",
-            "fecha_seguimiento": "2024-04-12T22:20:17.296Z",
-            "seguimiento": "borrame",
+            "idcliente": "6",
+            "fecha_seguimiento": "2024-04-13T22:57:40.088Z",
+            "seguimiento": "Wilson Bueno ya inspeccionó ayer a las 10 y pico ver correo de confirmación de Yahoo dice que rechazado pero no dice la causa Entonces tenemos que averiguar parte la causa de rechazo y están pidiendo y ahí salen unos accesorios",
             "tarea": "0",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 1
+            "papelera": 0
         },
         {
             "id": 94,
-            "idcliente": "49",
-            "fecha_seguimiento": "2024-04-12T22:20:48.357Z",
-            "seguimiento": "Botrame otra vez",
+            "idcliente": "undefined",
+            "fecha_seguimiento": "2024-04-14T00:51:33.195Z",
+            "seguimiento": "Tomar nota vencimiento póliza de olmes Zúñiga con seguros del Estado para estudiar cambio de póliza",
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 1
+            "papelera": 0
+        },
+        {
+            "id": 95,
+            "idcliente": "50",
+            "fecha_seguimiento": "2024-04-15T16:45:42.840Z",
+            "seguimiento": "Gestionar orden de inspección virtual kia July Andrea Mayorga con Seguros Bolívar",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
+        },
+        {
+            "id": 96,
+            "idcliente": "9",
+            "fecha_seguimiento": "2024-04-16T19:16:51.093Z",
+            "seguimiento": "Mensaje enviado por Catalina Valdes, verificar firma digital financiación e informarle proceso para el pago",
+            "tarea": "1",
+            "resuelto": 0,
+            "fechaResuelto": "",
+            "papelera": 0
         }
     ]
 }

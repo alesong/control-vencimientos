@@ -1009,7 +1009,7 @@ app.use(body_parser.urlencoded({extended:true}))
 
 
   // Define el intervalo de tiempo en segundos
-  const intervalo = 4 * 60 * 1000; // 4minutos
+  const intervalo = 15 * 60 * 1000; // 15minutos
 
   setInterval(async () => {
       try {
@@ -1096,13 +1096,46 @@ app.post('/seguimientos/subnota', (req, res) => {
       seguimientos: seguimientos,
     });
 
+    for (var i = 0; i < seguimientos.length; i++) {
+      if (seguimientos[i]['id'] == id) {
+        idcliente = seguimientos[i]['idcliente']
+      }
+    }
     console.log(`Se ha agregado la subNota "${subNota}" al seguimiento con ID ${id}`);
-    res.send('ok');
+    res.send(idcliente);
   } else {
     console.log(`No se encontró el seguimiento con ID ${id}`);
     res.status(404).send('No se encontró el seguimiento');
   }
 });
+
+
+app.get('/datosP/:id', function (req, res) {
+  const id = req.params['id']
+  const fs = require('fs');
+  const path = require("path")
+  const patJSON = path.join(__dirname, '../json/clientes.json')
+  const readJSON =  () => {
+  const data =  fs.readFileSync(patJSON, 'utf-8')
+  return JSON.parse(data)
+  }
+  const objeto = []
+  const {clientes} = readJSON()
+
+  for (var i = 0; i < clientes.length; i++) {
+
+    if (clientes[i]['id'] == id) {
+      console.log(clientes[i]['cedula']);
+      objeto.push({
+        cedula : clientes[i]['cedula'],
+        celular : clientes[i]['celular'],
+        email : clientes[i]['email'],
+        nacimiento : clientes[i]['nacimiento']
+      });
+    }
+  }
+  res.json(objeto);
+})
 
 
 

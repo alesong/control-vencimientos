@@ -68,7 +68,7 @@ var datos = [
   },
   {
     "nombre": "Jazmin",
-    "record": "30.090.027",
+    "record": "46.594.350",
     "headshot": "3",
     "imgPath": "img/avatar/jazmin.png"
   },
@@ -148,6 +148,12 @@ var datos = [
     "nombre": "Ericd HzGz",
     "record": "12.051.714",
     "headshot": "9",
+    "imgPath": "img/avatar/avatar.png"
+  },
+  {
+    "nombre": "Netoo",
+    "record": "67.071.593",
+    "headshot": "6",
     "imgPath": "img/avatar/avatar.png"
   }
 ];

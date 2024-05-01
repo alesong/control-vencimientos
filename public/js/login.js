@@ -16,7 +16,7 @@ $("#formlogin").submit(function(e){
       success: function (res) {
         console.log('Respuesta: '+res);
         if (res=='LogIn') {
-          document.cookie = "cookieControl="+username+"; max-age=" + 30 * 60 + "; path=/";
+          document.cookie = "cookieControl="+username+"; max-age=" + 90 * 60 + "; path=/";
           window.location.href = "./";
         }else {
           alert(res)

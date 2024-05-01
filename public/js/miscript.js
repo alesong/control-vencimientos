@@ -315,15 +315,38 @@ function trash(id) {
 }
 
 function info(id) {
+  $.ajax({
+    type: "GET",
+    url: "datosP/"+id,
+    success: function(objeto){
+      console.log(objeto);
+      for (var i = 0; i < objeto.length; i++) {
+        var cedula=objeto[i]['cedula'];
+        var celular=objeto[i]['celular'];
+        var email=objeto[i]['email'];
+        var nacimiento=objeto[i]['nacimiento'];
+        $('#input_'+id+'_cedula').val(cedula)
+        $('#input_'+id+'_celular').val(celular)
+        $('#input_'+id+'_email').val(email)
+        $('#input_'+id+'_nacimiento').val(nacimiento)
+        $('#whatsapp'+id).attr('href','https://api.whatsapp.com/send/?phone='+celular+'&text&type=phone_number&app_absent=0')
+    }
+    }
+  })
   var nombre = $("#input_"+id+"_nombre").val()
   var observaciones = $("#input_"+id+"_observaciones").val()
   var descripcion = $("#input_"+id+"_descripcion").val()
+  var inputCedula = '<input id="input_'+id+'_cedula" type="text" class="b0 inlineBlock" value="" onChange="modificar_control('+id+',`cedula`)" style="width:150px;"/>';
+  var inputCelular = '<input id="input_'+id+'_celular" type="text" class="b0 inlineBlock" value="" onChange="modificar_control('+id+',`celular`)" style="width:150px;"/>';
+  var inputEmail = '<input id="input_'+id+'_email" type="text" class="b0 inlineBlock" value="" onChange="modificar_control('+id+',`email`)" style="width:150px;"/>';
+  var inputNacimiento = '<input id="input_'+id+'_nacimiento" type="text" class="b0 inlineBlock" value="'+0+'" onChange="modificar_control('+id+',`nacimiento`)" style="width:150px;"/>';
+  var vistadatosP = '<div class="col33"><a id="whatsapp'+id+'" class="center" href="" target="_blank"><i class="fa fa-whatsapp green" aria-hidden="true" ></i></a> '+inputCelular+'</div><div class="col33"><i class="fa fa-envelope" aria-hidden="true"></i> '+inputEmail+'</div><div class="col33"><i class="fa fa-birthday-cake" aria-hidden="true"></i> '+inputNacimiento+'</div>';
   if (observaciones == undefined || descripcion == undefined) {
     $("#modalInfo-titulo").html('');
     $("#modalInfo-header").html('');
   }else {
-    $("#modalInfo-titulo").html('<h4>'+nombre+'</h4>');
-    $("#modalInfo-header").html('<div class="col100 pt10 tc-bluedefault">'+descripcion+' </div><div class="col100 bb1 pb10 tc-555">'+observaciones+'</div>');
+    $("#modalInfo-titulo").html('<h4>'+id+'. '+nombre+'</h4><div><i class="fa fa-id-card-o" aria-hidden="true"></i> '+inputCedula+'</div>');
+    $("#modalInfo-header").html('<div class="tc-333">'+vistadatosP+'</div><div class="col100 pt10 tc-bluedefault">'+descripcion+' </div><div class="col100 bb1 pb10 tc-555">'+observaciones+'</div>');
   }
   $("#modalInfo-body").html('<div class="center"><img src="img/spinner.gif"></div>')
   $("#nuevoSegBtn"). attr('onclick' , 'nuevoSeguimiento('+id+')')
@@ -565,10 +588,10 @@ function addSubNotaSeg(id){
       type: "POST",
       url: "../seguimientos/subnota",
       data: {id:id, subNota:input.val()},
-      success: function (res) {
-        console.log(res);
+      success: function (idcliente) {
+        console.log(idcliente);
         carga_tareas();
-        info(id)
+        info(idcliente)
       }
     });
 
