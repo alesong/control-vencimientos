@@ -5,6 +5,7 @@ $(document).ready(function(){
 
 function reload(){
   //console.log('cargando JSON');
+  var tiempo = 24*60*60*1000; //24horas
   $.ajax({
       type: "GET",
       url: "/loadpvp",
@@ -32,10 +33,10 @@ function reload(){
 
         }
 
-
+        console.log(tiempo);
         setTimeout(() => {
         reload();
-      }, "3000");
+      }, tiempo);
         }
     })
 
