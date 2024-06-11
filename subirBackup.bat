@@ -1,10 +1,21 @@
 @echo off
-setlocal
-
+chcp 65001 > nul
 cls
+setlocal enabledelayedexpansion
+
+:: Configurar el registro de actividades (logging)
+set "logFile=%~dpn0.log"
+echo ====================================== >> "%logFile%"
+echo Inicio del proceso: %date% %time% >> "%logFile%"
+
+:: Fecha y hora actuales
+for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /format:list') do set "datetime=%%I"
+set "datetime=!datetime:~0,14!"
+
 echo.
-echo. ******* Realizando Backup de la informacion de la aplicacion Control de Vencimientos. *******
-echo.
+echo. ******* Realizando copia de seguridad de la información de la aplicación Control de Vencimientos. *******
+echo. >> "%logFile%"
+
 :: Directorio de trabajo
 set "WORKDIR=E:\appsNode\Control\json"
 
@@ -20,108 +31,156 @@ set "keyword3=seguimientos"
 
 :: Comprobar si los directorios existen
 if exist "%WORKDIR%" (
-    echo El directorio de trabajo "%WORKDIR%" existe.
+    echo El directorio de trabajo "%WORKDIR%" existe. >> "%logFile%"
 ) else (
-    echo Error: El directorio de trabajo "%WORKDIR%" no existe.
+    echo Error: El directorio de trabajo "%WORKDIR%" no existe. >> "%logFile%"
     pause > nul
     exit /b
 )
 
 if exist "%DOWNLOADDIR%" (
-    echo El directorio de descargas "%DOWNLOADDIR%" existe.
+    echo El directorio de descargas "%DOWNLOADDIR%" existe. >> "%logFile%"
 ) else (
-    echo Error: El directorio de descargas "%DOWNLOADDIR%" no existe.
+    echo Error: El directorio de descargas "%DOWNLOADDIR%" no existe. >> "%logFile%"
     pause > nul
     exit /b
 )
 
 if exist "%BACKUPDIR%" (
-    echo El directorio de respaldo "%BACKUPDIR%" existe.
+    echo El directorio de respaldo "%BACKUPDIR%" existe. >> "%logFile%"
 ) else (
-    echo Error: El directorio de respaldo "%BACKUPDIR%" no existe.
+    echo Error: El directorio de respaldo "%BACKUPDIR%" no existe. >> "%logFile%"
     pause > nul
     exit /b
 )
 
-:: Buscar archivos que comienzan con "clientes o notasControl o seguimientos" en el directorio de origen
-echo.
-echo Buscando archivos que comienzan con "clientes o notasControl o seguimientos" en el directorio de origen:
-echo.
+:: Buscar archivos que comienzan con "clientes" en el directorio de origen
+echo. >> "%logFile%"
+echo Buscando archivos que comienzan con "clientes" en el directorio de descargas: >> "%logFile%"
+
 set "fileFound=false"
-
 for %%F in ("%DOWNLOADDIR%\%keyword1%*.json") do (
-    echo Archivo encontrado: %%~nxF
+    echo Archivo encontrado: %%~nxF >> "%logFile%"
     set "fileFound=true"
 )
 if "%fileFound%"=="false" (
-    echo No se encontraron archivos que comiencen con "clientes o notasControl o seguimientos" en el directorio de origen.
-    pause > nul
-    exit /b
+    echo No se encontraron archivos que comiencen con "clientes" en el directorio de descargas. >> "%logFile%"
 )
 
+:: Buscar archivos que comienzan con "notasControl" en el directorio de origen
+echo. >> "%logFile%"
+echo Buscando archivos que comienzan con "notasControl" en el directorio de descargas: >> "%logFile%"
+
+set "fileFound=false"
 for %%F in ("%DOWNLOADDIR%\%keyword2%*.json") do (
-    echo Archivo encontrado: %%~nxF
+    echo Archivo encontrado: %%~nxF >> "%logFile%"
     set "fileFound=true"
 )
 if "%fileFound%"=="false" (
-    echo No se encontraron archivos que comiencen con "%clientes o notasControl o seguimientos%" en el directorio de origen.
-    pause > nul
-    exit /b
+    echo No se encontraron archivos que comiencen con "notasControl" en el directorio de descargas. >> "%logFile%"
 )
 
+:: Buscar archivos que comienzan con "seguimientos" en el directorio de origen
+echo. >> "%logFile%"
+echo Buscando archivos que comienzan con "seguimientos" en el directorio de descargas: >> "%logFile%"
+
+set "fileFound=false"
 for %%F in ("%DOWNLOADDIR%\%keyword3%*.json") do (
-    echo Archivo encontrado: %%~nxF
+    echo Archivo encontrado: %%~nxF >> "%logFile%"
     set "fileFound=true"
 )
 if "%fileFound%"=="false" (
-    echo No se encontraron archivos que comiencen con "%clientes o notasControl o seguimientos%" en el directorio de origen.
-    pause > nul
-    exit /b
+    echo No se encontraron archivos que comiencen con "seguimientos" en el directorio de descargas. >> "%logFile%"
 )
-
-
-:: Fecha y hora actuales
-for /f "tokens=2 delims==" %%I in ('wmic os get localdatetime /format:list') do set "datetime=%%I"
-set "datetime=%datetime:~0,14%"
 
 :: Verificar la existencia y la fecha de los nuevos archivos
-for %%F in (clientes seguimientos notasControl) do (
+set /a totalFiles=0, processedFiles=0
+for %%F in ("clientes" "seguimientos" "notasControl") do (
     for /r "%DOWNLOADDIR%" %%G in ("%%F-*.json") do (
+        set /a totalFiles+=1
+    )
+)
+
+for %%F in ("clientes" "seguimientos" "notasControl") do (
+    for /r "%DOWNLOADDIR%" %%G in ("%%F-*.json") do (
+        set /a processedFiles+=1
+        echo. >> "%logFile%"
+        echo Procesando: %%G >> "%logFile%"
+        echo [!processedFiles!/!totalFiles!] Archivos procesados
+
         set "filename=%%~nG"
-        setlocal enabledelayedexpansion
-        set "filedate=!filename:~8,8!!filename:~18,6!"
+        
+        for /l %%A in (8,1,15) do (
+            if "!filename:~%%A,1!" neq "" (
+                set "filedate=!filedate!!filename:~%%A,1!"
+            )
+        )
 
         :: Eliminar los archivos antiguos
-        del /Q "%WORKDIR%\%%F-old.json"
+        if exist "%WORKDIR%\%%F-old.json" (
+            del /Q "%WORKDIR%\%%F-old.json"
+            echo Archivo eliminado: %WORKDIR%\%%F-old.json >> "%logFile%"
+        )
 
         :: Renombrar los archivos actuales
-        ren "%WORKDIR%\%%F.json" "%%F-old.json"
+        if exist "%WORKDIR%\%%F.json" (
+            ren "%WORKDIR%\%%F.json" "%%F-old.json"
+            echo Archivo renombrado: %WORKDIR%\%%F.json a %%F-old.json >> "%logFile%"
+        )
 
         :: Copiar los nuevos archivos
         copy /Y "%%G" "%WORKDIR%\%%F.json"
-        echo Archivo copiado: %%G
-
+        
         :: Verificar si la copia fue exitosa
         if exist "%WORKDIR%\%%F.json" (
             :: Mover el archivo al directorio de respaldo
             move /Y "%%G" "%BACKUPDIR%\%%~nxG"
-            echo Archivo movido a respaldo: %%G
+            echo Archivo movido al directorio de respaldo: %%G >> "%logFile%"
 
             :: Realizar operaciones de Git
             cd "%WORKDIR%"
-            git status
-            git add %%F.json
-            git add %%F-old.json
-            git status
-            git commit -m "backup-%%F-!datetime!"
-
-            echo Operaciones de Git realizadas.
+            cd ..
+            git add "%%F.json" >> "%logFile%" 2>&1
+            git add "%%F-old.json" >> "%logFile%" 2>&1
+            echo. >> "%logFile%"
+            echo Se agregaron los siguientes archivos al índice de Git: >> "%logFile%"
+            echo. >> "%logFile%"
+            echo %%F.json >> "%logFile%"
+            echo %%F-old.json >> "%logFile%"
         ) else (
-            echo Error: La copia del archivo %%G no fue exitosa.
+            echo Error: La copia del archivo %%G no fue exitosa. >> "%logFile%"
         )
-          git push -u origin master
-        endlocal
     )
 )
 
+:: Realizar operaciones de Git
+echo. ******************************** >> "%logFile%"
+git diff --cached --name-only > changes.txt 2>&1
+findstr /r /v "^$" changes.txt > changes_non_empty.txt 2>&1
+if exist changes_non_empty.txt (
+    set /p first_line=<changes_non_empty.txt
+    if not "%first_line%"==" " (
+        echo Los siguientes archivos se han agregado al índice de Git pero aún no tienen un commit: >> "%logFile%"
+        type changes_non_empty.txt >> "%logFile%"
+        git status >> "%logFile%" 2>&1
+        echo Realizando commit y push. >> "%logFile%"
+        git commit -m "copia-seguridad-database-%datetime%" >> "%logFile%" 2>&1
+
+        if !errorlevel! neq 0 (
+        echo Hubo un error al realizar el commit. >> "%logFile%"
+        ) else (
+            git push -u origin master  >> "%logFile%" 2>&1
+            if !errorlevel! neq 0 (
+                echo Hubo un error al subir los cambios al repositorio. >> "%logFile%"
+            ) else (
+                echo Se ha realizado un nuevo commit y se subio al repositorio GitHub. >> "%logFile%"
+            )
+        )
+    )
+) else (
+    echo No hay archivos en el índice de Git que se hayan agregado sin realizar un commit. >> "%logFile%"
+)
+
+del changes.txt 2>nul
+del changes_non_empty.txt 2>nul
 endlocal

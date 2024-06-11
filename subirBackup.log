@@ -1,0 +1,162 @@
+====================================== 
+Inicio del proceso: mié. 15/05/2024 18:31:02,25 
+ 
+El directorio de trabajo "E:\appsNode\Control\json" existe. 
+El directorio de descargas "E:\Users\aleso\Downloads" existe. 
+El directorio de respaldo "E:\appsNode\Control\json\backups" existe. 
+ 
+Buscando archivos que comienzan con "clientes" en el directorio de descargas: 
+Archivo encontrado: clientes-20240515182958.json 
+ 
+Buscando archivos que comienzan con "notasControl" en el directorio de descargas: 
+Archivo encontrado: notasControl-20240515182958.json 
+ 
+Buscando archivos que comienzan con "seguimientos" en el directorio de descargas: 
+Archivo encontrado: seguimientos-20240515182958.json 
+ 
+Procesando: E:\Users\aleso\Downloads\clientes-20240515182958.json 
+Archivo eliminado: E:\appsNode\Control\json\"clientes"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"clientes".json a "clientes"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\clientes-20240515182958.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"clientes".json 
+"clientes"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\seguimientos-20240515182958.json 
+Archivo eliminado: E:\appsNode\Control\json\"seguimientos"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"seguimientos".json a "seguimientos"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\seguimientos-20240515182958.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"seguimientos".json 
+"seguimientos"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\notasControl-20240515182958.json 
+Archivo eliminado: E:\appsNode\Control\json\"notasControl"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"notasControl".json a "notasControl"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\notasControl-20240515182958.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"notasControl".json 
+"notasControl"-old.json 
+ ******************************** 
+No hay archivos en el índice de Git que se hayan agregado sin realizar un commit. 
+====================================== 
+Inicio del proceso: jue. 16/05/2024 18:31:02,00 
+ 
+El directorio de trabajo "E:\appsNode\Control\json" existe. 
+El directorio de descargas "E:\Users\aleso\Downloads" existe. 
+El directorio de respaldo "E:\appsNode\Control\json\backups" existe. 
+ 
+Buscando archivos que comienzan con "clientes" en el directorio de descargas: 
+Archivo encontrado: clientes-20240516155159.json 
+Archivo encontrado: clientes-20240516182959.json 
+ 
+Buscando archivos que comienzan con "notasControl" en el directorio de descargas: 
+Archivo encontrado: notasControl-20240516155159.json 
+Archivo encontrado: notasControl-20240516182959.json 
+ 
+Buscando archivos que comienzan con "seguimientos" en el directorio de descargas: 
+Archivo encontrado: seguimientos-20240516155159.json 
+Archivo encontrado: seguimientos-20240516182959.json 
+ 
+Procesando: E:\Users\aleso\Downloads\clientes-20240516155159.json 
+Archivo eliminado: E:\appsNode\Control\json\"clientes"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"clientes".json a "clientes"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\clientes-20240516155159.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"clientes".json 
+"clientes"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\clientes-20240516182959.json 
+Archivo eliminado: E:\appsNode\Control\json\"clientes"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"clientes".json a "clientes"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\clientes-20240516182959.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"clientes".json 
+"clientes"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\seguimientos-20240516155159.json 
+Archivo eliminado: E:\appsNode\Control\json\"seguimientos"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"seguimientos".json a "seguimientos"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\seguimientos-20240516155159.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"seguimientos".json 
+"seguimientos"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\seguimientos-20240516182959.json 
+Archivo eliminado: E:\appsNode\Control\json\"seguimientos"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"seguimientos".json a "seguimientos"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\seguimientos-20240516182959.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"seguimientos".json 
+"seguimientos"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\notasControl-20240516155159.json 
+Archivo eliminado: E:\appsNode\Control\json\"notasControl"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"notasControl".json a "notasControl"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\notasControl-20240516155159.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"notasControl".json 
+"notasControl"-old.json 
+ 
+Procesando: E:\Users\aleso\Downloads\notasControl-20240516182959.json 
+Archivo eliminado: E:\appsNode\Control\json\"notasControl"-old.json 
+Archivo renombrado: E:\appsNode\Control\json\"notasControl".json a "notasControl"-old.json 
+Archivo movido al directorio de respaldo: E:\Users\aleso\Downloads\notasControl-20240516182959.json 
+fatal: not a git repository (or any of the parent directories): .git
+fatal: not a git repository (or any of the parent directories): .git
+ 
+Se agregaron los siguientes archivos al índice de Git: 
+ 
+"notasControl".json 
+"notasControl"-old.json 
+ ******************************** 
+No hay archivos en el índice de Git que se hayan agregado sin realizar un commit. 
+====================================== 
+Inicio del proceso: vie. 17/05/2024 18:31:02,77 
+ 
+El directorio de trabajo "E:\appsNode\Control\json" existe. 
+El directorio de descargas "E:\Users\aleso\Downloads" existe. 
+El directorio de respaldo "E:\appsNode\Control\json\backups" existe. 
+ 
+Buscando archivos que comienzan con "clientes" en el directorio de descargas: 
+No se encontraron archivos que comiencen con "clientes" en el directorio de descargas. 
+ 
+Buscando archivos que comienzan con "notasControl" en el directorio de descargas: 
+No se encontraron archivos que comiencen con "notasControl" en el directorio de descargas. 
+ 
+Buscando archivos que comienzan con "seguimientos" en el directorio de descargas: 
+No se encontraron archivos que comiencen con "seguimientos" en el directorio de descargas. 
+ ******************************** 
+No hay archivos en el índice de Git que se hayan agregado sin realizar un commit. 

@@ -262,3 +262,7 @@ input{
 .plusSN:hover{
   color: green;
 }
+
+.filaTabla:hover{
+  background-color: #b2fdb2;
+}

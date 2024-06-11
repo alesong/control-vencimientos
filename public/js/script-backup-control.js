@@ -10,7 +10,7 @@ function controlVersion(){
         var ultimaFecha = new Date(divContent);
         var nuevaFecha = new Date();
         var diferencia = nuevaFecha.getTime() - ultimaFecha.getTime();
-        var dias = 3 * 24 * 60 * 60 * 1000
+        var dias = 15 * 24 * 60 * 60 * 1000
         if (diferencia > dias) {
           diasDiferencia = Math.round(diferencia / (24 * 60 * 60 * 1000))
           var msg = 'Tiene '+diasDiferencia+' dias de direfencia, requiere realizar push con un commit de fecha más reciente en el archivo ultimaFecha.txt.';
@@ -18,7 +18,7 @@ function controlVersion(){
           console.log(msg);
           $('#controlVersion').addClass('alert alert-danger')
         }else {
-          console.log('es menor de 3 dia, actualizarFechaServidor()');
+          console.log('es menor de '+diasDiferencia+' dias, actualizarFechaServidor()');
           //$('#controlVersion').addClass('alert alert-success')
         }
         changeColorProgressively();
@@ -33,7 +33,7 @@ function controlVersion(){
 function descargarBackup() {
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
       console.log("La URL es localhost");
-      alert('No se permite descargar la base de datos desde localhost')
+      //alert('No se permite descargar la base de datos desde localhost')
   } else {
       console.log("La URL no es localhost, es " + window.location.hostname);
       // Realizar la petición AJAX
@@ -128,6 +128,7 @@ function clickBackupButton() {
   // Simular un clic en el botón
   backupButton.click();
 }
+
 
 // Función que programa la ejecución de la función clickBackupButton() a las 6:30 p.m. todos los días
 function scheduleBackupClick() {

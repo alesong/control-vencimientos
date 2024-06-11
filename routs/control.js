@@ -1006,7 +1006,7 @@ app.use(body_parser.urlencoded({extended:true}))
 
 
 
-
+/*
 
   // Define el intervalo de tiempo en segundos
   //const intervalo = 2 * 60 * 1000; // 2minutos
@@ -1023,6 +1023,8 @@ app.use(body_parser.urlencoded({extended:true}))
           console.error(error);
       }
   }, intervalo);
+
+  */
 
   app.get('/ping', function (req, res) {
       res.send('pong');

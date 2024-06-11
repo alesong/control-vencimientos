@@ -74,9 +74,10 @@ function carga_tareas() {
 
           if (objeto[i][['subnota']]) {
               subNotas=objeto[i]['subnota']
-
+              var idSubN='';
               for (var j = 0; j < subNotas.length; j++) {
-                $('#boxSubNotas'+objeto[i]['id']).append('<div class="flechaSubNota mt0 bl2 bc-green" style="width: 15px;  float: left;  margin-left: 15px;  margin-right: 2px; margin-top: 0;"><i class="fa fa-long-arrow-right tc-green" aria-hidden="true"></i></div><div>'+subNotas[j]+'</div>')
+                idSubN = 'Obj'+objeto[i]['id']+'Nt'+j;
+                $('#boxSubNotas'+objeto[i]['id']).append('<div class="flechaSubNota mt0 bl2 bc-green" style="width: 15px;  float: left;  margin-left: 15px;  margin-right: 2px; margin-top: 0;"><i class="fa fa-long-arrow-right tc-green" aria-hidden="true"></i></div><div onmouseover=mostrarlapiz("'+idSubN+'") onmouseout=ocultarlapiz("'+idSubN+'") id="div1'+idSubN+'">'+subNotas[j]+' <i class="fa fa-pencil-square-o tc-333 oculto" aria-hidden="true" id="lapiz'+idSubN+'" onClick=editSubN("'+idSubN+'")></i></div><div class="oculto" id="div2'+idSubN+'"><input type="text" class="inputSubN" style="min-width:70%"  class="bg-fff b1" value="'+subNotas[j]+'" onChange=realizarCambioSubN("'+idSubN+'") id="input'+idSubN+'"/></div>')
               }
           }
 
@@ -182,3 +183,37 @@ function addSubNota(id){
     });
 
 }
+
+
+function mostrarlapiz(idSubN){
+  $('#lapiz'+idSubN).fadeIn(100);
+}
+
+function ocultarlapiz(idSubN){
+  $('#lapiz'+idSubN).fadeOut(100);
+}
+
+function editSubN(idnota){
+  console.log(idnota);
+  $('#div1'+idnota).fadeOut(0);
+  $('#div2'+idnota).fadeIn(0);
+}
+
+function realizarCambioSubN(idnota){
+  var contenido = $('#input'+idnota).val();
+  $('#div1'+idnota).html(contenido);
+
+  $('#div2'+idnota).fadeOut(0);
+  $('#div1'+idnota).fadeIn(0);
+  console.log('realizó un cambio temporal, falta el ajax.');
+}
+
+/*
+//tts
+document.documentElement.lang = 'es';
+let texto=`Hola soy Alex... la fecha actual es: ${new Date()}. Esta es una funcion de prueba para hablar que se encuentra en el documento de script-tareas-control.js`;
+const hablar = (texto) => {
+  speechSynthesis.speak(new SpeechSynthesisUtterance(texto))
+}
+hablar(texto)
+*/
