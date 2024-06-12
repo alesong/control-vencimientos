@@ -1487,7 +1487,10 @@
             "tarea": "1",
             "resuelto": 0,
             "fechaResuelto": "",
-            "papelera": 0
+            "papelera": 0,
+            "subnota": [
+                "Se autorizó la inspección con el número 4422940 en Automas"
+            ]
         }
     ]
 }

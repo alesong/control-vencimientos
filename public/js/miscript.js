@@ -1,5 +1,5 @@
-var newHost;
-window.location.hostname === "https://control-vencimientos.onrender.com/" ?  newHost = 'http://45.173.12.90:3000' :  newHost = 'http://localhost:3000';
+//import newHost from './config.js';
+
 
 $(document).ready(function(){
   console.log('jQuery incluído');
@@ -29,7 +29,7 @@ function carga_control(){
     console.log(parametro);
   $.ajax({
       type: "GET",
-      url: newHost + "/control"+parametro,
+      url: "../control"+parametro,
       success: function (objeto) {
 
         if (objeto=='LogOut') {
@@ -209,7 +209,7 @@ $("#form_add").submit(function(e){
   setTimeout(function(){
   $.ajax({
         type: $("#form_add").attr('method'),
-        url: newHost + "/control",
+        url: "../control",
         data: $("#form_add").serialize(),
         success: function (data) {
             console.log(data);
@@ -239,7 +239,7 @@ function modificar_control(id,campo,dato){
   }else{
     $.ajax({
         type: "PUT",
-        url: newHost + "/control",
+        url: "../control",
         data: {id:id,campo:campo,dato:dato},
         success: function (objeto) {
           if (objeto=='LogOut') {
@@ -283,7 +283,7 @@ function trashed(id){
   $(".spinner_"+id).delay(1000).fadeIn()
   $.ajax({
       type: "DELETE",
-      url: newHost + "/control",
+      url: "../control",
       data: {id:id},
       success: function (res) {
         if (res=='LogOut') {
@@ -319,9 +319,10 @@ function trash(id) {
 }
 
 function info(id) {
+  console.log("entró al info");
   $.ajax({
     type: "GET",
-    url: newHost + "/datosP/"+id,
+    url: "../datosP/"+id,
     success: function(objeto){
       console.log(objeto);
       for (var i = 0; i < objeto.length; i++) {
@@ -358,7 +359,7 @@ function info(id) {
   div.scrollTop = div.scrollHeight; // Esto es para que el scrol cargue abajo
   $.ajax({
       type: "GET",
-      url: newHost + "/seguimientos/"+id,
+      url: "../seguimientos/"+id,
       success: function (objeto) {
         console.log(objeto);
         $("#modalInfo-body").html('<div class="f18 tc-111" style="display:inline-block">Seguimientos</div>')
@@ -443,7 +444,7 @@ function trashedSeguimiento(id){
   $("#seg"+id).css("background-color","yelow")
   $.ajax({
       type: "DELETE",
-      url: newHost + "/seguimientos",
+      url: "../seguimientos",
       data: {id:id},
       success: function (res) {
         if (res=='ok') {
@@ -468,7 +469,7 @@ console.log('El valor del checkbox front es: '+valorCheckbox);
   }else {
     $.ajax({
         type: "POST",
-        url: newHost + "/seguimientos",
+        url: "../seguimientos",
         data: {id_cliente:id_cliente, dataSeg:dataSeg, checkbox:valorCheckbox},
         success: function (res) {
           if (res=='ok') {
@@ -541,7 +542,7 @@ $("#iconLogOut").click(function(){
     console.log('Serramdo sesión '+username);
     $.ajax({
       type: "GET",
-      url: newHost + "/logout/"+username,
+      url: "../logout/"+username,
       success: function (res) {
         if (res=='LogOut') {
             console.log('Sesión cerrada exitosamente');
@@ -590,7 +591,7 @@ function addSubNotaSeg(id){
   console.log(input.val());
   $.ajax({
       type: "POST",
-      url: newHost + "/seguimientos/subnota",
+      url: "../seguimientos/subnota",
       data: {id:id, subNota:input.val()},
       success: function (idcliente) {
         console.log(idcliente);
